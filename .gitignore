@@ -1,0 +1,28 @@
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+
+# cargo-script build cache
+.cargo-script/
+
+# Local env
+.env
+.env.local
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+checks.log
+output.log
+
+# Artifacts
+dist/
+build/
