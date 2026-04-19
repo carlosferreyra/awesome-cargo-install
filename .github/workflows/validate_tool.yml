@@ -1,0 +1,98 @@
+name: Validate Tool PR
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools.json'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: validate-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: '0'
+  CARGO_HOME: ${{ github.workspace }}/.cargo-home
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Rust (nightly, for cargo -Zscript)
+        uses: dtolnay/rust-toolchain@nightly
+
+      - name: Cache cargo registry, git, build cache, binaries
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.CARGO_HOME }}/registry/index
+            ${{ env.CARGO_HOME }}/registry/cache
+            ${{ env.CARGO_HOME }}/git/db
+            ${{ env.CARGO_HOME }}/build
+            ${{ env.CARGO_HOME }}/bin
+          key: cargo-pr-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'tools.json') }}
+          restore-keys: |
+            cargo-pr-${{ runner.os }}-nightly-
+            cargo-${{ runner.os }}-nightly-
+
+      - name: Install cargo-binstall (prebuilt, no compile)
+        uses: cargo-bins/cargo-binstall@main
+
+      - name: Validate tools.json schema
+        run: cargo +nightly -Zscript scripts/checks.rs
+
+      - name: Extract added tools from diff
+        id: diff
+        continue-on-error: true
+        run: |
+          set +e
+          TOOLS=$(cargo +nightly -Zscript scripts/diff_tools.rs -- --base origin/main)
+          EXIT=$?
+          if [ $EXIT -eq 2 ]; then
+            echo "no_new_tools=true" >> "$GITHUB_OUTPUT"
+            echo "No new tools in this PR — schema-only change."
+          elif [ $EXIT -ne 0 ]; then
+            echo "diff_error=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "tools=$TOOLS" >> "$GITHUB_OUTPUT"
+            echo "no_new_tools=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Test new tools via binstall + cargo install fallback
+        if: steps.diff.outputs.no_new_tools != 'true' && steps.diff.outputs.diff_error != 'true'
+        id: test
+        continue-on-error: true
+        run: |
+          cargo +nightly -Zscript scripts/test_clients.rs -- \
+            --tools '${{ steps.diff.outputs.tools }}' \
+            --output output.log
+
+      - name: Comment on PR — tool failure
+        if: steps.test.outcome == 'failure'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          ACTION: comment_failure
+        run: cargo +nightly -Zscript scripts/check_and_comment.rs
+
+      - name: Auto-approve PR
+        if: steps.test.outcome == 'success' || steps.diff.outputs.no_new_tools == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          ACTION: approve
+        run: cargo +nightly -Zscript scripts/check_and_comment.rs
+
+      - name: Fail job if tool tests failed
+        if: steps.test.outcome == 'failure'
+        run: exit 1
