@@ -1,0 +1,55 @@
+# Awesome Cargo Install
+
+<div align="center">
+    <img width="500" height="350" src="https://github.com/sindresorhus/awesome/raw/main/media/logo.svg" alt="Awesome">
+    <br>
+    <a href="https://awesome.re">
+        <img src="https://awesome.re/badge.svg" alt="Awesome">
+    </a>
+    <p>A collection of Awesome Rust CLI Tools available via <code>cargo install</code>.</p>
+    <p>Use this list to find useful Rust command-line tools you can install directly from crates.io
+    with <code>cargo install &lt;crate&gt;</code> (or <code>cargo binstall &lt;crate&gt;</code> for
+    precompiled binaries). The list is curated and maintained by the community, so feel free to
+    contribute by adding your own favorite tools.</p>
+    <p>
+        <img src="https://img.shields.io/github/contributors/carlosferreyra/awesome-cargo-install" alt="Contributors">
+        <img src="https://img.shields.io/github/license/carlosferreyra/awesome-cargo-install" alt="License">
+        <img src="https://badges.pufler.dev/visits/carlosferreyra/awesome-cargo-install" alt="Visits">
+        <img src="https://img.shields.io/github/stars/carlosferreyra/awesome-cargo-install" alt="Stars">
+    </p>
+    <a href="https://github.com/carlosferreyra/awesome-cargo-install/actions/workflows/ci.yml">
+        <img src="https://github.com/carlosferreyra/awesome-cargo-install/actions/workflows/ci.yml/badge.svg" alt="Validation and Sync">
+    </a>
+</div>
+
+Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-rust</a>,
+<a href="https://github.com/carlosferreyra/awesome-uvx">awesome-uvx</a> and
+<a href="https://github.com/carlosferreyra/awesome-bunx">awesome-bunx</a>.
+
+> **Tip:** for faster installation (precompiled binaries, no compilation), install
+> [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) first, then replace
+> `cargo install <crate>` with `cargo binstall <crate>`.
+
+{% for category in categories %}
+- [{{ category.name }}](#{{ category.slug }})
+{%- endfor %}
+
+{% for category in categories %}
+## {{ category.name }}
+
+| Name | Description | Executable(s) | Latest Release |
+|:-----|:------------|:--------------|:--------------|
+{% for pkg_name, pkg in category.tools | dictsort %}| [{{ pkg_name }}]({{ pkg.url }}) | {{ pkg.description }}{% if pkg.examples %}<br><details><summary><strong><a href="#">Examples</a></strong></summary>{% for ex in pkg.examples %}<br>`{{ ex.cmd | escape_pipe }}`{% if ex.description %} — {{ ex.description }}{% endif %}{% endfor %}<br></details>{% endif %} | {% for exec in pkg.execs %}```{{ exec }}```{% if not loop.last %}, {% endif %}{% endfor %} | {% if pkg.version %}{{ pkg.version }}<br>{{ pkg.last_release }}{% else %}—{% endif %} |
+{% endfor %}
+{% endfor %}
+
+## Contributing
+
+Feel free to contribute by opening a pull request with your favorite Rust CLI tools that can be
+installed via `cargo install`!
+Please make sure to follow the <a href="CONTRIBUTING.md">contribution guidelines</a> and adhere to the <a href="CODE_OF_CONDUCT.md">code of conduct</a>.
+Please also check the <a href="https://github.com/carlosferreyra/awesome-cargo-install/issues">issues</a> for any open issues or discussions related to the project.
+
+## License
+
+This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.
