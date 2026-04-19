@@ -1,0 +1,51 @@
+name: Sync crates.io Release Metadata
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # every Monday at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: '0'
+  CARGO_HOME: ${{ github.workspace }}/.cargo-home
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Rust (nightly, for cargo -Zscript)
+        uses: dtolnay/rust-toolchain@nightly
+
+      - name: Cache cargo registry, git, build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.CARGO_HOME }}/registry/index
+            ${{ env.CARGO_HOME }}/registry/cache
+            ${{ env.CARGO_HOME }}/git/db
+            ${{ env.CARGO_HOME }}/build
+          key: cargo-sync-${{ runner.os }}-nightly-${{ hashFiles('scripts/latest_release.rs') }}
+          restore-keys: |
+            cargo-sync-${{ runner.os }}-nightly-
+            cargo-${{ runner.os }}-nightly-
+
+      - name: Fetch latest release info from crates.io
+        run: cargo +nightly -Zscript scripts/latest_release.rs
+
+      - name: Regenerate README from updated tools.json
+        run: cargo +nightly -Zscript scripts/readme.rs
+
+      - name: Commit changes if any
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(tools): sync latest crates.io release metadata [skip ci]'
+          file_pattern: |
+            tools.json
+            README.md
