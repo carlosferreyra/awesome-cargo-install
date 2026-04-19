@@ -1,0 +1,99 @@
+name: Validation and Sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools.json'
+      - 'scripts/**'
+      - 'template/**'
+  schedule:
+    # monthly: run full validation on the 1st at 00:00 UTC
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: '0'
+  # keep cargo-script build dir predictable for caching
+  CARGO_HOME: ${{ github.workspace }}/.cargo-home
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Rust (nightly, for cargo -Zscript)
+        uses: dtolnay/rust-toolchain@nightly
+
+      - name: Cache cargo registry, git, build cache, binaries
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.CARGO_HOME }}/registry/index
+            ${{ env.CARGO_HOME }}/registry/cache
+            ${{ env.CARGO_HOME }}/git/db
+            ${{ env.CARGO_HOME }}/build
+            ${{ env.CARGO_HOME }}/bin
+          key: cargo-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'tools.json') }}
+          restore-keys: |
+            cargo-${{ runner.os }}-nightly-
+
+      - name: Install cargo-binstall (prebuilt, no compile)
+        uses: cargo-bins/cargo-binstall@main
+
+      - name: Validate tools.json schema
+        run: cargo +nightly -Zscript scripts/checks.rs
+
+      - name: Build full tools list (stdin for test_clients)
+        id: tools
+        run: |
+          TOOLS=$(jq -c '[.categories[].tools | to_entries[] | {package: .key, execs: .value.execs}]' tools.json)
+          echo "json=$TOOLS" >> "$GITHUB_OUTPUT"
+
+      - name: Test all tools via binstall + cargo install fallback
+        id: test
+        continue-on-error: true
+        run: |
+          cargo +nightly -Zscript scripts/test_clients.rs -- \
+            --tools '${{ steps.tools.outputs.json }}' \
+            --output output.log
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: |
+            checks.log
+            output.log
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Remove logs from workspace
+        if: always()
+        run: rm -f checks.log output.log
+
+      - name: Regenerate README
+        run: cargo +nightly -Zscript scripts/readme.rs
+
+      - name: Commit README if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(readme): regenerate from tools.json [skip ci]'
+          file_pattern: README.md
+
+      - name: Fail job if tool tests failed
+        if: steps.test.outcome == 'failure'
+        run: exit 1
