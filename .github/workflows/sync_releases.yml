@@ -46,6 +46,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(tools): sync latest crates.io release metadata [skip ci]'
-          file_pattern: |
-            tools.json
-            README.md
+          # Single-line, space-separated — the action word-splits on spaces, not newlines.
+          file_pattern: 'tools.json README.md'
