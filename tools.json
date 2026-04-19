@@ -7,7 +7,9 @@
         "ripgrep": {
           "description": "Recursively search directories for a regex pattern — a faster grep",
           "url": "https://github.com/BurntSushi/ripgrep",
-          "execs": ["rg"],
+          "execs": [
+            "rg"
+          ],
           "examples": [
             {
               "cmd": "cargo install ripgrep",
@@ -17,89 +19,147 @@
               "cmd": "rg 'fn main' --type rust",
               "description": "Search for `fn main` only in Rust files"
             }
-          ]
+          ],
+          "version": "15.1.0",
+          "last_release": "2025-10-22"
         },
         "fd-find": {
           "description": "A simple, fast and user-friendly alternative to `find`",
           "url": "https://github.com/sharkdp/fd",
-          "execs": ["fd"],
+          "execs": [
+            "fd"
+          ],
           "examples": [
             {
               "cmd": "cargo install fd-find",
               "description": "Install fd-find (provides the `fd` binary)"
             }
-          ]
+          ],
+          "version": "10.4.2",
+          "last_release": "2026-03-10"
         },
         "bat": {
           "description": "A `cat(1)` clone with syntax highlighting and Git integration",
           "url": "https://github.com/sharkdp/bat",
-          "execs": ["bat"]
+          "execs": [
+            "bat"
+          ],
+          "version": "0.26.1",
+          "last_release": "2025-12-02"
         },
         "eza": {
           "description": "A modern, maintained replacement for `ls`",
           "url": "https://github.com/eza-community/eza",
-          "execs": ["eza"]
+          "execs": [
+            "eza"
+          ],
+          "version": "0.23.4",
+          "last_release": "2025-10-03"
         },
         "du-dust": {
           "description": "A more intuitive version of `du` in Rust",
           "url": "https://github.com/bootandy/dust",
-          "execs": ["dust"]
+          "execs": [
+            "dust"
+          ],
+          "version": "1.2.4",
+          "last_release": "2026-01-08"
         },
         "sd": {
           "description": "An intuitive find & replace CLI — an alternative to `sed`",
           "url": "https://github.com/chmln/sd",
-          "execs": ["sd"]
+          "execs": [
+            "sd"
+          ],
+          "version": "1.0.0",
+          "last_release": "2023-11-08"
         },
         "hyperfine": {
           "description": "A command-line benchmarking tool with statistical analysis",
           "url": "https://github.com/sharkdp/hyperfine",
-          "execs": ["hyperfine"],
+          "execs": [
+            "hyperfine"
+          ],
           "examples": [
             {
               "cmd": "hyperfine 'sleep 0.1' 'sleep 0.2'",
               "description": "Benchmark two commands head-to-head"
             }
-          ]
+          ],
+          "version": "1.20.0",
+          "last_release": "2025-11-18"
         },
         "tokei": {
           "description": "Count lines of code across a codebase, grouped by language",
           "url": "https://github.com/XAMPPRocky/tokei",
-          "execs": ["tokei"]
+          "execs": [
+            "tokei"
+          ],
+          "version": "14.0.0",
+          "last_release": "2025-12-30"
         },
         "tealdeer": {
           "description": "A very fast implementation of `tldr` in Rust",
           "url": "https://github.com/dbrgn/tealdeer",
-          "execs": ["tldr"]
+          "execs": [
+            "tldr"
+          ],
+          "version": "1.8.1",
+          "last_release": "2025-11-11"
         },
         "zoxide": {
           "description": "A smarter `cd` command — jump to frecent directories",
           "url": "https://github.com/ajeetdsouza/zoxide",
-          "execs": ["zoxide"]
+          "execs": [
+            "zoxide"
+          ],
+          "version": "0.9.9",
+          "last_release": "2026-01-31"
         },
         "choose": {
           "description": "A human-friendly and fast alternative to `cut` and (sometimes) `awk`",
           "url": "https://github.com/theryangeary/choose",
-          "execs": ["choose"]
+          "execs": [
+            "choose"
+          ],
+          "version": "1.3.7",
+          "last_release": "2025-08-26"
         },
         "tre-command": {
           "description": "A modern alternative to `tree` with git/gitignore awareness",
           "url": "https://github.com/dduan/tre",
-          "execs": ["tre"]
+          "execs": [
+            "tre"
+          ],
+          "version": "0.4.0",
+          "last_release": "2022-06-19"
         },
         "pastel": {
           "description": "A command-line tool to generate, analyze, convert and manipulate colors",
           "url": "https://github.com/sharkdp/pastel",
-          "execs": ["pastel"]
+          "execs": [
+            "pastel"
+          ],
+          "version": "0.12.0",
+          "last_release": "2026-02-14"
         },
         "grex": {
           "description": "Generate regular expressions from user-provided test cases",
           "url": "https://github.com/pemistahl/grex",
-          "execs": ["grex"]
+          "execs": [
+            "grex"
+          ],
+          "version": "1.4.6",
+          "last_release": "2025-11-14"
         },
         "ouch": {
           "description": "Painless compression and decompression for your terminal",
           "url": "https://github.com/ouch-org/ouch",
-          "execs": ["ouch"]
+          "execs": [
+            "ouch"
+          ],
+          "version": "0.6.1",
+          "last_release": "2025-04-21"
         }
       }
     },
@@ -110,12 +170,19 @@
         "cargo-edit": {
           "description": "Managing cargo dependencies from the command line (`cargo add/rm/upgrade`)",
           "url": "https://github.com/killercup/cargo-edit",
-          "execs": ["cargo-upgrade", "cargo-set-version"]
+          "execs": [
+            "cargo-upgrade",
+            "cargo-set-version"
+          ],
+          "version": "0.13.10",
+          "last_release": "2026-04-17"
         },
         "cargo-watch": {
           "description": "Watches over your project's source for changes, runs commands when they occur",
           "url": "https://github.com/watchexec/cargo-watch",
-          "execs": ["cargo-watch"],
+          "execs": [
+            "cargo-watch"
+          ],
           "examples": [
             {
               "cmd": "cargo install cargo-watch",
@@ -125,117 +192,207 @@
               "cmd": "cargo watch -x check -x test",
               "description": "Re-run `cargo check` and `cargo test` on every source change"
             }
-          ]
+          ],
+          "version": "8.5.3",
+          "last_release": "2024-10-02"
         },
         "cargo-expand": {
           "description": "Shows the result of macro expansion and `#[derive]` expansion",
           "url": "https://github.com/dtolnay/cargo-expand",
-          "execs": ["cargo-expand"]
+          "execs": [
+            "cargo-expand"
+          ],
+          "version": "1.0.121",
+          "last_release": "2026-02-12"
         },
         "cargo-outdated": {
           "description": "Displays when Rust dependencies are out of date",
           "url": "https://github.com/kbknapp/cargo-outdated",
-          "execs": ["cargo-outdated"]
+          "execs": [
+            "cargo-outdated"
+          ],
+          "version": "0.19.0",
+          "last_release": "2026-04-14"
         },
         "cargo-audit": {
           "description": "Audit `Cargo.lock` for crates with security vulnerabilities",
           "url": "https://github.com/rustsec/rustsec/tree/main/cargo-audit",
-          "execs": ["cargo-audit"]
+          "execs": [
+            "cargo-audit"
+          ],
+          "version": "0.22.1",
+          "last_release": "2026-02-04"
         },
         "cargo-deny": {
           "description": "Lint your dependencies: licenses, bans, advisories, sources",
           "url": "https://github.com/EmbarkStudios/cargo-deny",
-          "execs": ["cargo-deny"]
+          "execs": [
+            "cargo-deny"
+          ],
+          "version": "0.19.4",
+          "last_release": "2026-04-15"
         },
         "cargo-udeps": {
           "description": "Find unused dependencies in your Cargo.toml",
           "url": "https://github.com/est31/cargo-udeps",
-          "execs": ["cargo-udeps"]
+          "execs": [
+            "cargo-udeps"
+          ],
+          "version": "0.1.60",
+          "last_release": "2025-11-05"
         },
         "cargo-nextest": {
           "description": "A next-generation test runner for Rust — up to 3x faster than `cargo test`",
           "url": "https://github.com/nextest-rs/nextest",
-          "execs": ["cargo-nextest"]
+          "execs": [
+            "cargo-nextest"
+          ],
+          "version": "0.9.133",
+          "last_release": "2026-04-14"
         },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
           "url": "https://github.com/sagiegurari/cargo-make",
-          "execs": ["cargo-make", "makers"]
+          "execs": [
+            "cargo-make",
+            "makers"
+          ],
+          "version": "0.37.24",
+          "last_release": "2025-01-18"
         },
         "cargo-release": {
           "description": "Cargo subcommand for smoothly releasing a new version of your crate",
           "url": "https://github.com/crate-ci/cargo-release",
-          "execs": ["cargo-release"]
+          "execs": [
+            "cargo-release"
+          ],
+          "version": "1.1.2",
+          "last_release": "2026-03-24"
         },
         "cargo-tarpaulin": {
           "description": "A code coverage tool for Rust projects",
           "url": "https://github.com/xd009642/tarpaulin",
-          "execs": ["cargo-tarpaulin"]
+          "execs": [
+            "cargo-tarpaulin"
+          ],
+          "version": "0.35.2",
+          "last_release": "2026-02-19"
         },
         "cargo-generate": {
           "description": "A developer tool to help you get up and running quickly with a new Rust project",
           "url": "https://github.com/cargo-generate/cargo-generate",
-          "execs": ["cargo-generate"]
+          "execs": [
+            "cargo-generate"
+          ],
+          "version": "0.23.8",
+          "last_release": "2026-04-01"
         },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
           "url": "https://github.com/cargo-bins/cargo-binstall",
-          "execs": ["cargo-binstall"]
+          "execs": [
+            "cargo-binstall"
+          ],
+          "version": "1.18.1",
+          "last_release": "2026-04-13"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
           "url": "https://github.com/nabijaczleweli/cargo-update",
-          "execs": ["cargo-install-update"]
+          "execs": [
+            "cargo-install-update"
+          ],
+          "version": "20.0.0",
+          "last_release": "2026-04-06"
         },
         "cargo-cache": {
           "description": "Manage cargo cache (`~/.cargo/`), print sizes and remove directories",
           "url": "https://github.com/matthiaskrgr/cargo-cache",
-          "execs": ["cargo-cache"]
+          "execs": [
+            "cargo-cache"
+          ],
+          "version": "0.8.3",
+          "last_release": "2022-09-11"
         },
         "cargo-bloat": {
           "description": "Find out what takes most of the space in your executable",
           "url": "https://github.com/RazrFalcon/cargo-bloat",
-          "execs": ["cargo-bloat"]
+          "execs": [
+            "cargo-bloat"
+          ],
+          "version": "0.12.1",
+          "last_release": "2024-05-10"
         },
         "cargo-hack": {
           "description": "A cargo subcommand for testing feature flag combinations",
           "url": "https://github.com/taiki-e/cargo-hack",
-          "execs": ["cargo-hack"]
+          "execs": [
+            "cargo-hack"
+          ],
+          "version": "0.6.44",
+          "last_release": "2026-03-20"
         },
         "cargo-llvm-cov": {
           "description": "Cargo subcommand to easily use LLVM source-based code coverage",
           "url": "https://github.com/taiki-e/cargo-llvm-cov",
-          "execs": ["cargo-llvm-cov"]
+          "execs": [
+            "cargo-llvm-cov"
+          ],
+          "version": "0.8.5",
+          "last_release": "2026-03-20"
         },
         "cargo-flamegraph": {
           "description": "Easy flamegraphs for Rust projects and anything else, without Perl or pipes",
           "url": "https://github.com/flamegraph-rs/flamegraph",
-          "execs": ["cargo-flamegraph", "flamegraph"]
+          "execs": [
+            "cargo-flamegraph",
+            "flamegraph"
+          ]
         },
         "cargo-msrv": {
           "description": "Find the Minimum Supported Rust Version for your project",
           "url": "https://github.com/foresterre/cargo-msrv",
-          "execs": ["cargo-msrv"]
+          "execs": [
+            "cargo-msrv"
+          ],
+          "version": "0.19.3",
+          "last_release": "2026-03-25"
         },
         "cargo-semver-checks": {
           "description": "Scan your Rust crate for semver violations",
           "url": "https://github.com/obi1kenobi/cargo-semver-checks",
-          "execs": ["cargo-semver-checks"]
+          "execs": [
+            "cargo-semver-checks"
+          ],
+          "version": "0.47.0",
+          "last_release": "2026-03-08"
         },
         "cargo-chef": {
           "description": "A cargo-subcommand to speed up Rust Docker builds using Docker layer caching",
           "url": "https://github.com/LukeMathWalker/cargo-chef",
-          "execs": ["cargo-chef"]
+          "execs": [
+            "cargo-chef"
+          ],
+          "version": "0.1.77",
+          "last_release": "2026-03-03"
         },
         "cargo-modules": {
           "description": "A cargo plugin for showing a tree-like overview of a crate's modules",
           "url": "https://github.com/regexident/cargo-modules",
-          "execs": ["cargo-modules"]
+          "execs": [
+            "cargo-modules"
+          ],
+          "version": "0.26.0",
+          "last_release": "2026-04-18"
         },
         "cargo-info": {
           "description": "Show crate information from the terminal, pulled from crates.io",
           "url": "https://gitlab.com/imp/cargo-info",
-          "execs": ["cargo-info"]
+          "execs": [
+            "cargo-info"
+          ],
+          "version": "0.7.7",
+          "last_release": "2024-09-06"
         }
       }
     },
@@ -246,47 +403,84 @@
         "bottom": {
           "description": "Yet another cross-platform graphical process/system monitor",
           "url": "https://github.com/ClementTsang/bottom",
-          "execs": ["btm"]
+          "execs": [
+            "btm"
+          ],
+          "version": "0.12.3",
+          "last_release": "2026-01-01"
         },
         "procs": {
           "description": "A modern replacement for `ps` written in Rust",
           "url": "https://github.com/dalance/procs",
-          "execs": ["procs"]
+          "execs": [
+            "procs"
+          ],
+          "version": "0.14.11",
+          "last_release": "2026-02-27"
         },
         "bandwhich": {
           "description": "Terminal bandwidth utilization tool",
           "url": "https://github.com/imsnif/bandwhich",
-          "execs": ["bandwhich"]
+          "execs": [
+            "bandwhich"
+          ],
+          "version": "0.23.1",
+          "last_release": "2024-10-08"
         },
         "gping": {
           "description": "Ping, but with a graph",
           "url": "https://github.com/orf/gping",
-          "execs": ["gping"]
+          "execs": [
+            "gping"
+          ],
+          "version": "1.20.1",
+          "last_release": "2025-08-15"
         },
         "dog": {
           "description": "A command-line DNS client — like `dig` but with fewer surprises",
           "url": "https://github.com/ogham/dog",
-          "execs": ["dog"]
+          "execs": [
+            "dog"
+          ],
+          "version": "0.1.0",
+          "last_release": "2019-01-08"
         },
         "oha": {
           "description": "HTTP load generator with a TUI, inspired by rakyll/hey",
           "url": "https://github.com/hatoo/oha",
-          "execs": ["oha"]
+          "execs": [
+            "oha"
+          ],
+          "version": "1.14.0",
+          "last_release": "2026-02-28"
         },
         "xh": {
           "description": "A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust",
           "url": "https://github.com/ducaale/xh",
-          "execs": ["xh", "xhs"]
+          "execs": [
+            "xh",
+            "xhs"
+          ],
+          "version": "0.25.3",
+          "last_release": "2025-12-16"
         },
         "rustscan": {
           "description": "The modern port scanner — fast and extensible with a scripting engine",
           "url": "https://github.com/RustScan/RustScan",
-          "execs": ["rustscan"]
+          "execs": [
+            "rustscan"
+          ],
+          "version": "2.4.1",
+          "last_release": "2025-02-23"
         },
         "topgrade": {
           "description": "Upgrade all the things — a unified upgrade runner for many package managers",
           "url": "https://github.com/topgrade-rs/topgrade",
-          "execs": ["topgrade"]
+          "execs": [
+            "topgrade"
+          ],
+          "version": "17.3.0",
+          "last_release": "2026-04-09"
         }
       }
     },
@@ -297,22 +491,38 @@
         "git-delta": {
           "description": "A syntax-highlighting pager for git, diff, grep, and blame output",
           "url": "https://github.com/dandavison/delta",
-          "execs": ["delta"]
+          "execs": [
+            "delta"
+          ],
+          "version": "0.19.2",
+          "last_release": "2026-03-28"
         },
         "gitui": {
           "description": "Blazing fast terminal-UI for git, written in Rust",
           "url": "https://github.com/gitui-org/gitui",
-          "execs": ["gitui"]
+          "execs": [
+            "gitui"
+          ],
+          "version": "0.28.1",
+          "last_release": "2026-03-24"
         },
         "onefetch": {
           "description": "Git repository summary on your terminal — languages, stats and commit info",
           "url": "https://github.com/o2sh/onefetch",
-          "execs": ["onefetch"]
+          "execs": [
+            "onefetch"
+          ],
+          "version": "2.27.1",
+          "last_release": "2026-03-19"
         },
         "jujutsu": {
           "description": "A Git-compatible VCS that is both simple and powerful",
           "url": "https://github.com/martinvonz/jj",
-          "execs": ["jj"]
+          "execs": [
+            "jj"
+          ],
+          "version": "0.7.2",
+          "last_release": "2025-12-08"
         }
       }
     },
@@ -323,27 +533,48 @@
         "broot": {
           "description": "A new way to see and navigate directory trees",
           "url": "https://github.com/Canop/broot",
-          "execs": ["broot"]
+          "execs": [
+            "broot"
+          ],
+          "version": "1.56.2",
+          "last_release": "2026-03-26"
         },
         "yazi-fm": {
           "description": "Blazing fast terminal file manager written in Rust, based on async I/O",
           "url": "https://github.com/sxyazi/yazi",
-          "execs": ["yazi", "ya"]
+          "execs": [
+            "yazi",
+            "ya"
+          ],
+          "version": "26.1.22",
+          "last_release": "2026-01-22"
         },
         "xplr": {
           "description": "A hackable, minimal, fast TUI file explorer",
           "url": "https://github.com/sayanarijit/xplr",
-          "execs": ["xplr"]
+          "execs": [
+            "xplr"
+          ],
+          "version": "1.1.0",
+          "last_release": "2025-12-08"
         },
         "nomino": {
           "description": "Batch rename utility for developers",
           "url": "https://github.com/yaa110/nomino",
-          "execs": ["nomino"]
+          "execs": [
+            "nomino"
+          ],
+          "version": "1.6.4",
+          "last_release": "2025-08-07"
         },
         "felix": {
           "description": "A tui file manager with Vim-like key mapping",
           "url": "https://github.com/kyoheiu/felix",
-          "execs": ["fx"]
+          "execs": [
+            "fx"
+          ],
+          "version": "2.16.1",
+          "last_release": "2025-04-12"
         }
       }
     },
@@ -354,32 +585,57 @@
         "jql": {
           "description": "A JSON Query Language CLI tool",
           "url": "https://github.com/yamafaktory/jql",
-          "execs": ["jql"]
+          "execs": [
+            "jql"
+          ],
+          "version": "8.1.2",
+          "last_release": "2026-03-18"
         },
         "jaq": {
           "description": "A clone of jq — a JSON data processing tool",
           "url": "https://github.com/01mf02/jaq",
-          "execs": ["jaq"]
+          "execs": [
+            "jaq"
+          ],
+          "version": "3.0.0",
+          "last_release": "2026-03-27"
         },
         "xsv": {
           "description": "A fast CSV command-line toolkit written in Rust",
           "url": "https://github.com/BurntSushi/xsv",
-          "execs": ["xsv"]
+          "execs": [
+            "xsv"
+          ],
+          "version": "0.13.0",
+          "last_release": "2018-05-12"
         },
         "qsv": {
           "description": "CSVs sliced, diced & analyzed — a blazing-fast data-wrangling toolkit",
           "url": "https://github.com/dathere/qsv",
-          "execs": ["qsv"]
+          "execs": [
+            "qsv"
+          ],
+          "version": "16.1.0",
+          "last_release": "2026-02-15"
         },
         "xan": {
           "description": "The CSV magician — process CSV files from the command line",
           "url": "https://github.com/medialab/xan",
-          "execs": ["xan"]
+          "execs": [
+            "xan"
+          ],
+          "version": "0.57.1",
+          "last_release": "2026-04-15"
         },
         "sqlx-cli": {
           "description": "Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data",
           "url": "https://github.com/launchbadge/sqlx",
-          "execs": ["sqlx", "cargo-sqlx"]
+          "execs": [
+            "sqlx",
+            "cargo-sqlx"
+          ],
+          "version": "0.8.6",
+          "last_release": "2025-05-19"
         }
       }
     },
@@ -390,22 +646,38 @@
         "starship": {
           "description": "The minimal, blazing-fast, and infinitely customizable prompt for any shell",
           "url": "https://github.com/starship/starship",
-          "execs": ["starship"]
+          "execs": [
+            "starship"
+          ],
+          "version": "1.25.0",
+          "last_release": "2026-04-18"
         },
         "nu": {
           "description": "Nushell — a new type of shell where data is structured",
           "url": "https://github.com/nushell/nushell",
-          "execs": ["nu"]
+          "execs": [
+            "nu"
+          ],
+          "version": "0.112.2",
+          "last_release": "2026-04-15"
         },
         "zellij": {
           "description": "A terminal workspace with batteries included — multiplexer alternative to tmux",
           "url": "https://github.com/zellij-org/zellij",
-          "execs": ["zellij"]
+          "execs": [
+            "zellij"
+          ],
+          "version": "0.44.1",
+          "last_release": "2026-04-07"
         },
         "atuin": {
           "description": "Magical shell history — sync, search, and backup your shell history",
           "url": "https://github.com/atuinsh/atuin",
-          "execs": ["atuin"]
+          "execs": [
+            "atuin"
+          ],
+          "version": "18.15.2",
+          "last_release": "2026-04-16"
         }
       }
     },
@@ -416,22 +688,38 @@
         "just": {
           "description": "A handy way to save and run project-specific commands — a modern `make`",
           "url": "https://github.com/casey/just",
-          "execs": ["just"]
+          "execs": [
+            "just"
+          ],
+          "version": "1.49.0",
+          "last_release": "2026-04-05"
         },
         "watchexec-cli": {
           "description": "Executes commands in response to file modifications",
           "url": "https://github.com/watchexec/watchexec",
-          "execs": ["watchexec"]
+          "execs": [
+            "watchexec"
+          ],
+          "version": "2.5.1",
+          "last_release": "2026-03-30"
         },
         "bacon": {
           "description": "A background Rust code checker — fast and low-friction",
           "url": "https://github.com/Canop/bacon",
-          "execs": ["bacon"]
+          "execs": [
+            "bacon"
+          ],
+          "version": "3.22.0",
+          "last_release": "2026-01-16"
         },
         "mask": {
           "description": "A CLI task runner defined by a simple markdown file",
           "url": "https://github.com/jacobdeichert/mask",
-          "execs": ["mask"]
+          "execs": [
+            "mask"
+          ],
+          "version": "0.11.7",
+          "last_release": "2026-01-10"
         }
       }
     },
@@ -442,22 +730,38 @@
         "mdbook": {
           "description": "Create book-style documentation from Markdown files",
           "url": "https://github.com/rust-lang/mdBook",
-          "execs": ["mdbook"]
+          "execs": [
+            "mdbook"
+          ],
+          "version": "0.5.2",
+          "last_release": "2025-12-11"
         },
         "mdbook-mermaid": {
           "description": "A preprocessor for mdbook that renders Mermaid diagrams",
           "url": "https://github.com/badboy/mdbook-mermaid",
-          "execs": ["mdbook-mermaid"]
+          "execs": [
+            "mdbook-mermaid"
+          ],
+          "version": "0.17.0",
+          "last_release": "2025-11-18"
         },
         "mdbook-linkcheck": {
           "description": "A backend for mdbook that validates links",
           "url": "https://github.com/Michael-F-Bryan/mdbook-linkcheck",
-          "execs": ["mdbook-linkcheck"]
+          "execs": [
+            "mdbook-linkcheck"
+          ],
+          "version": "0.7.7",
+          "last_release": "2022-10-03"
         },
         "typst-cli": {
           "description": "A new markup-based typesetting system for the sciences",
           "url": "https://github.com/typst/typst",
-          "execs": ["typst"]
+          "execs": [
+            "typst"
+          ],
+          "version": "0.14.2",
+          "last_release": "2025-12-12"
         }
       }
     },
@@ -468,7 +772,11 @@
         "helix-term": {
           "description": "A post-modern modal text editor — like Vim but with better defaults",
           "url": "https://github.com/helix-editor/helix",
-          "execs": ["hx"]
+          "execs": [
+            "hx"
+          ],
+          "version": "0.0.0",
+          "last_release": "2021-06-02"
         }
       }
     },
@@ -479,12 +787,20 @@
         "feroxbuster": {
           "description": "A fast, simple, recursive content discovery tool written in Rust",
           "url": "https://github.com/epi052/feroxbuster",
-          "execs": ["feroxbuster"]
+          "execs": [
+            "feroxbuster"
+          ],
+          "version": "2.13.1",
+          "last_release": "2025-12-13"
         },
         "pipr": {
           "description": "Interactive, shell-command editor with preview and safe execution",
           "url": "https://github.com/elkowar/pipr",
-          "execs": ["pipr"]
+          "execs": [
+            "pipr"
+          ],
+          "version": "0.1.0",
+          "last_release": "2025-05-03"
         }
       }
     },
@@ -495,12 +811,20 @@
         "oxipng": {
           "description": "A multithreaded lossless PNG compression optimizer",
           "url": "https://github.com/shssoichiro/oxipng",
-          "execs": ["oxipng"]
+          "execs": [
+            "oxipng"
+          ],
+          "version": "10.1.0",
+          "last_release": "2026-01-25"
         },
         "rav1e": {
           "description": "The fastest and safest AV1 encoder",
           "url": "https://github.com/xiph/rav1e",
-          "execs": ["rav1e"]
+          "execs": [
+            "rav1e"
+          ],
+          "version": "0.8.1",
+          "last_release": "2025-06-16"
         }
       }
     },
@@ -511,17 +835,29 @@
         "kondo": {
           "description": "Cleans non-essential files from your software projects",
           "url": "https://github.com/tbillington/kondo",
-          "execs": ["kondo"]
+          "execs": [
+            "kondo"
+          ],
+          "version": "0.9.0",
+          "last_release": "2026-01-23"
         },
         "bob-nvim": {
           "description": "A version manager for neovim written in Rust",
           "url": "https://github.com/MordechaiHadad/bob",
-          "execs": ["bob"]
+          "execs": [
+            "bob"
+          ],
+          "version": "4.1.6",
+          "last_release": "2025-12-06"
         },
         "presenterm": {
           "description": "A markdown terminal slideshow tool",
           "url": "https://github.com/mfontanini/presenterm",
-          "execs": ["presenterm"]
+          "execs": [
+            "presenterm"
+          ],
+          "version": "0.16.1",
+          "last_release": "2026-02-20"
         }
       }
     }
