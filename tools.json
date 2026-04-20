@@ -691,8 +691,8 @@
           "execs": [
             "just"
           ],
-          "version": "1.49.0",
-          "last_release": "2026-04-05"
+          "version": "1.50.0",
+          "last_release": "2026-04-19"
         },
         "watchexec-cli": {
           "description": "Executes commands in response to file modifications",
