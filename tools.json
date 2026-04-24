@@ -341,7 +341,7 @@
           "version": "0.8.5",
           "last_release": "2026-03-20"
         },
-        "cargo-flamegraph": {
+        "flamegraph": {
           "description": "Easy flamegraphs for Rust projects and anything else, without Perl or pipes",
           "url": "https://github.com/flamegraph-rs/flamegraph",
           "execs": [
@@ -436,15 +436,6 @@
           "version": "1.20.1",
           "last_release": "2025-08-15"
         },
-        "dog": {
-          "description": "A command-line DNS client — like `dig` but with fewer surprises",
-          "url": "https://github.com/ogham/dog",
-          "execs": [
-            "dog"
-          ],
-          "version": "0.1.0",
-          "last_release": "2019-01-08"
-        },
         "oha": {
           "description": "HTTP load generator with a TUI, inspired by rakyll/hey",
           "url": "https://github.com/hatoo/oha",
@@ -515,14 +506,12 @@
           "version": "2.27.1",
           "last_release": "2026-03-19"
         },
-        "jujutsu": {
-          "description": "A Git-compatible VCS that is both simple and powerful",
-          "url": "https://github.com/martinvonz/jj",
+        "jj-cli": {
+          "description": "Jujutsu — a Git-compatible VCS that is both simple and powerful",
+          "url": "https://github.com/jj-vcs/jj",
           "execs": [
             "jj"
-          ],
-          "version": "0.7.2",
-          "last_release": "2025-12-08"
+          ]
         }
       }
     },
@@ -766,21 +755,6 @@
       }
     },
     {
-      "name": "Editors & IDE Helpers",
-      "slug": "editors-and-ide-helpers",
-      "tools": {
-        "helix-term": {
-          "description": "A post-modern modal text editor — like Vim but with better defaults",
-          "url": "https://github.com/helix-editor/helix",
-          "execs": [
-            "hx"
-          ],
-          "version": "0.0.0",
-          "last_release": "2021-06-02"
-        }
-      }
-    },
-    {
       "name": "Security & Auditing",
       "slug": "security-and-auditing",
       "tools": {
@@ -816,15 +790,6 @@
           ],
           "version": "10.1.0",
           "last_release": "2026-01-25"
-        },
-        "rav1e": {
-          "description": "The fastest and safest AV1 encoder",
-          "url": "https://github.com/xiph/rav1e",
-          "execs": [
-            "rav1e"
-          ],
-          "version": "0.8.1",
-          "last_release": "2025-06-16"
         }
       }
     },
