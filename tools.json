@@ -160,6 +160,20 @@
           ],
           "version": "0.6.1",
           "last_release": "2025-04-21"
+        },
+        "coreutils": {
+          "description": "Cross-platform Rust rewrite of the GNU coreutils",
+          "url": "https://github.com/uutils/coreutils",
+          "execs": [
+            "coreutils"
+          ]
+        },
+        "skim": {
+          "description": "Fuzzy finder in Rust — an alternative to fzf",
+          "url": "https://github.com/skim-rs/skim",
+          "execs": [
+            "sk"
+          ]
         }
       }
     },
@@ -393,6 +407,64 @@
           ],
           "version": "0.7.7",
           "last_release": "2024-09-06"
+        },
+        "cargo-auditable": {
+          "description": "Make production Rust binaries auditable — embed dep info into the binary",
+          "url": "https://github.com/rust-secure-code/cargo-auditable",
+          "execs": [
+            "cargo-auditable"
+          ]
+        },
+        "cargo-bundle": {
+          "description": "Wrap Rust executables in OS-specific app bundles",
+          "url": "https://github.com/burtonageo/cargo-bundle",
+          "execs": [
+            "cargo-bundle"
+          ]
+        },
+        "cargo-deadlinks": {
+          "description": "Cargo subcommand for checking your `cargo doc` output for broken links",
+          "url": "https://github.com/deadlinks/cargo-deadlinks",
+          "execs": [
+            "cargo-deadlinks",
+            "deadlinks"
+          ]
+        },
+        "cargo-dist": {
+          "description": "Shippable application packaging for Rust — prebuilt binary distribution",
+          "url": "https://github.com/axodotdev/cargo-dist",
+          "execs": [
+            "dist"
+          ]
+        },
+        "cargo-machete": {
+          "description": "Find and remove unused dependencies in your `Cargo.toml`",
+          "url": "https://github.com/bnjbvr/cargo-machete",
+          "execs": [
+            "cargo-machete"
+          ]
+        },
+        "cargo-sort": {
+          "description": "Check that tables and items in `Cargo.toml` are lexically sorted",
+          "url": "https://github.com/DevinR528/cargo-sort",
+          "execs": [
+            "cargo-sort"
+          ]
+        },
+        "cargo-sweep": {
+          "description": "A cargo subcommand for cleaning unused build files created by Cargo",
+          "url": "https://github.com/holmgr/cargo-sweep",
+          "execs": [
+            "cargo-sweep"
+          ]
+        },
+        "cargo-workspaces": {
+          "description": "A tool for managing cargo workspaces and their crates",
+          "url": "https://github.com/pksunkara/cargo-workspaces",
+          "execs": [
+            "cargo-workspaces",
+            "cargo-ws"
+          ]
         }
       }
     },
@@ -472,6 +544,13 @@
           ],
           "version": "17.3.0",
           "last_release": "2026-04-09"
+        },
+        "speedtest-rs": {
+          "description": "Speedtest.net testing utility implemented in Rust",
+          "url": "https://github.com/nelsonjchen/speedtest-rs",
+          "execs": [
+            "speedtest-rs"
+          ]
         }
       }
     },
@@ -511,6 +590,13 @@
           "url": "https://github.com/jj-vcs/jj",
           "execs": [
             "jj"
+          ]
+        },
+        "git-cliff": {
+          "description": "A highly customizable changelog generator that follows conventional commits",
+          "url": "https://github.com/orhun/git-cliff",
+          "execs": [
+            "git-cliff"
           ]
         }
       }
@@ -709,6 +795,13 @@
           ],
           "version": "0.11.7",
           "last_release": "2026-01-10"
+        },
+        "sccache": {
+          "description": "Shared compilation cache — a `ccache`-like compiler wrapper that avoids recompilation",
+          "url": "https://github.com/mozilla/sccache",
+          "execs": [
+            "sccache"
+          ]
         }
       }
     },
