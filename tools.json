@@ -160,6 +160,20 @@
           ],
           "version": "0.6.1",
           "last_release": "2025-04-21"
+        },
+        "coreutils": {
+          "description": "Cross-platform Rust rewrite of the GNU coreutils",
+          "url": "https://github.com/uutils/coreutils",
+          "execs": [
+            "coreutils"
+          ]
+        },
+        "skim": {
+          "description": "Fuzzy finder in Rust — an alternative to fzf",
+          "url": "https://github.com/skim-rs/skim",
+          "execs": [
+            "sk"
+          ]
         }
       }
     },
@@ -341,7 +355,7 @@
           "version": "0.8.5",
           "last_release": "2026-03-20"
         },
-        "cargo-flamegraph": {
+        "flamegraph": {
           "description": "Easy flamegraphs for Rust projects and anything else, without Perl or pipes",
           "url": "https://github.com/flamegraph-rs/flamegraph",
           "execs": [
@@ -393,6 +407,64 @@
           ],
           "version": "0.7.7",
           "last_release": "2024-09-06"
+        },
+        "cargo-auditable": {
+          "description": "Make production Rust binaries auditable — embed dep info into the binary",
+          "url": "https://github.com/rust-secure-code/cargo-auditable",
+          "execs": [
+            "cargo-auditable"
+          ]
+        },
+        "cargo-bundle": {
+          "description": "Wrap Rust executables in OS-specific app bundles",
+          "url": "https://github.com/burtonageo/cargo-bundle",
+          "execs": [
+            "cargo-bundle"
+          ]
+        },
+        "cargo-deadlinks": {
+          "description": "Cargo subcommand for checking your `cargo doc` output for broken links",
+          "url": "https://github.com/deadlinks/cargo-deadlinks",
+          "execs": [
+            "cargo-deadlinks",
+            "deadlinks"
+          ]
+        },
+        "cargo-dist": {
+          "description": "Shippable application packaging for Rust — prebuilt binary distribution",
+          "url": "https://github.com/axodotdev/cargo-dist",
+          "execs": [
+            "dist"
+          ]
+        },
+        "cargo-machete": {
+          "description": "Find and remove unused dependencies in your `Cargo.toml`",
+          "url": "https://github.com/bnjbvr/cargo-machete",
+          "execs": [
+            "cargo-machete"
+          ]
+        },
+        "cargo-sort": {
+          "description": "Check that tables and items in `Cargo.toml` are lexically sorted",
+          "url": "https://github.com/DevinR528/cargo-sort",
+          "execs": [
+            "cargo-sort"
+          ]
+        },
+        "cargo-sweep": {
+          "description": "A cargo subcommand for cleaning unused build files created by Cargo",
+          "url": "https://github.com/holmgr/cargo-sweep",
+          "execs": [
+            "cargo-sweep"
+          ]
+        },
+        "cargo-workspaces": {
+          "description": "A tool for managing cargo workspaces and their crates",
+          "url": "https://github.com/pksunkara/cargo-workspaces",
+          "execs": [
+            "cargo-workspaces",
+            "cargo-ws"
+          ]
         }
       }
     },
@@ -436,15 +508,6 @@
           "version": "1.20.1",
           "last_release": "2025-08-15"
         },
-        "dog": {
-          "description": "A command-line DNS client — like `dig` but with fewer surprises",
-          "url": "https://github.com/ogham/dog",
-          "execs": [
-            "dog"
-          ],
-          "version": "0.1.0",
-          "last_release": "2019-01-08"
-        },
         "oha": {
           "description": "HTTP load generator with a TUI, inspired by rakyll/hey",
           "url": "https://github.com/hatoo/oha",
@@ -481,6 +544,13 @@
           ],
           "version": "17.3.0",
           "last_release": "2026-04-09"
+        },
+        "speedtest-rs": {
+          "description": "Speedtest.net testing utility implemented in Rust",
+          "url": "https://github.com/nelsonjchen/speedtest-rs",
+          "execs": [
+            "speedtest-rs"
+          ]
         }
       }
     },
@@ -515,14 +585,19 @@
           "version": "2.27.1",
           "last_release": "2026-03-19"
         },
-        "jujutsu": {
-          "description": "A Git-compatible VCS that is both simple and powerful",
-          "url": "https://github.com/martinvonz/jj",
+        "jj-cli": {
+          "description": "Jujutsu — a Git-compatible VCS that is both simple and powerful",
+          "url": "https://github.com/jj-vcs/jj",
           "execs": [
             "jj"
-          ],
-          "version": "0.7.2",
-          "last_release": "2025-12-08"
+          ]
+        },
+        "git-cliff": {
+          "description": "A highly customizable changelog generator that follows conventional commits",
+          "url": "https://github.com/orhun/git-cliff",
+          "execs": [
+            "git-cliff"
+          ]
         }
       }
     },
@@ -720,6 +795,13 @@
           ],
           "version": "0.11.7",
           "last_release": "2026-01-10"
+        },
+        "sccache": {
+          "description": "Shared compilation cache — a `ccache`-like compiler wrapper that avoids recompilation",
+          "url": "https://github.com/mozilla/sccache",
+          "execs": [
+            "sccache"
+          ]
         }
       }
     },
@@ -766,21 +848,6 @@
       }
     },
     {
-      "name": "Editors & IDE Helpers",
-      "slug": "editors-and-ide-helpers",
-      "tools": {
-        "helix-term": {
-          "description": "A post-modern modal text editor — like Vim but with better defaults",
-          "url": "https://github.com/helix-editor/helix",
-          "execs": [
-            "hx"
-          ],
-          "version": "0.0.0",
-          "last_release": "2021-06-02"
-        }
-      }
-    },
-    {
       "name": "Security & Auditing",
       "slug": "security-and-auditing",
       "tools": {
@@ -816,15 +883,6 @@
           ],
           "version": "10.1.0",
           "last_release": "2026-01-25"
-        },
-        "rav1e": {
-          "description": "The fastest and safest AV1 encoder",
-          "url": "https://github.com/xiph/rav1e",
-          "execs": [
-            "rav1e"
-          ],
-          "version": "0.8.1",
-          "last_release": "2025-06-16"
         }
       }
     },
