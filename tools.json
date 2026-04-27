@@ -166,14 +166,18 @@
           "url": "https://github.com/uutils/coreutils",
           "execs": [
             "coreutils"
-          ]
+          ],
+          "version": "0.8.0",
+          "last_release": "2026-04-07"
         },
         "skim": {
           "description": "Fuzzy finder in Rust — an alternative to fzf",
           "url": "https://github.com/skim-rs/skim",
           "execs": [
             "sk"
-          ]
+          ],
+          "version": "4.6.1",
+          "last_release": "2026-04-26"
         }
       }
     },
@@ -289,8 +293,8 @@
           "execs": [
             "cargo-tarpaulin"
           ],
-          "version": "0.35.2",
-          "last_release": "2026-02-19"
+          "version": "0.35.4",
+          "last_release": "2026-04-25"
         },
         "cargo-generate": {
           "description": "A developer tool to help you get up and running quickly with a new Rust project",
@@ -361,7 +365,9 @@
           "execs": [
             "cargo-flamegraph",
             "flamegraph"
-          ]
+          ],
+          "version": "0.6.12",
+          "last_release": "2026-04-08"
         },
         "cargo-msrv": {
           "description": "Find the Minimum Supported Rust Version for your project",
@@ -413,14 +419,18 @@
           "url": "https://github.com/rust-secure-code/cargo-auditable",
           "execs": [
             "cargo-auditable"
-          ]
+          ],
+          "version": "0.7.4",
+          "last_release": "2026-03-04"
         },
         "cargo-bundle": {
           "description": "Wrap Rust executables in OS-specific app bundles",
           "url": "https://github.com/burtonageo/cargo-bundle",
           "execs": [
             "cargo-bundle"
-          ]
+          ],
+          "version": "0.10.0",
+          "last_release": "2026-04-18"
         },
         "cargo-deadlinks": {
           "description": "Cargo subcommand for checking your `cargo doc` output for broken links",
@@ -428,35 +438,45 @@
           "execs": [
             "cargo-deadlinks",
             "deadlinks"
-          ]
+          ],
+          "version": "0.8.1",
+          "last_release": "2021-10-13"
         },
         "cargo-dist": {
           "description": "Shippable application packaging for Rust — prebuilt binary distribution",
           "url": "https://github.com/axodotdev/cargo-dist",
           "execs": [
             "dist"
-          ]
+          ],
+          "version": "0.31.0",
+          "last_release": "2026-02-23"
         },
         "cargo-machete": {
           "description": "Find and remove unused dependencies in your `Cargo.toml`",
           "url": "https://github.com/bnjbvr/cargo-machete",
           "execs": [
             "cargo-machete"
-          ]
+          ],
+          "version": "0.9.2",
+          "last_release": "2026-04-15"
         },
         "cargo-sort": {
           "description": "Check that tables and items in `Cargo.toml` are lexically sorted",
           "url": "https://github.com/DevinR528/cargo-sort",
           "execs": [
             "cargo-sort"
-          ]
+          ],
+          "version": "2.1.4",
+          "last_release": "2026-04-25"
         },
         "cargo-sweep": {
           "description": "A cargo subcommand for cleaning unused build files created by Cargo",
           "url": "https://github.com/holmgr/cargo-sweep",
           "execs": [
             "cargo-sweep"
-          ]
+          ],
+          "version": "0.8.0",
+          "last_release": "2025-10-11"
         },
         "cargo-workspaces": {
           "description": "A tool for managing cargo workspaces and their crates",
@@ -464,7 +484,9 @@
           "execs": [
             "cargo-workspaces",
             "cargo-ws"
-          ]
+          ],
+          "version": "0.4.2",
+          "last_release": "2025-12-03"
         }
       }
     },
@@ -542,15 +564,17 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.3.0",
-          "last_release": "2026-04-09"
+          "version": "17.4.0",
+          "last_release": "2026-04-24"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
           "url": "https://github.com/nelsonjchen/speedtest-rs",
           "execs": [
             "speedtest-rs"
-          ]
+          ],
+          "version": "0.2.0",
+          "last_release": "2024-07-28"
         }
       }
     },
@@ -590,14 +614,18 @@
           "url": "https://github.com/jj-vcs/jj",
           "execs": [
             "jj"
-          ]
+          ],
+          "version": "0.40.0",
+          "last_release": "2026-04-02"
         },
         "git-cliff": {
           "description": "A highly customizable changelog generator that follows conventional commits",
           "url": "https://github.com/orhun/git-cliff",
           "execs": [
             "git-cliff"
-          ]
+          ],
+          "version": "2.13.1",
+          "last_release": "2026-04-26"
         }
       }
     },
@@ -801,7 +829,9 @@
           "url": "https://github.com/mozilla/sccache",
           "execs": [
             "sccache"
-          ]
+          ],
+          "version": "0.14.0",
+          "last_release": "2026-02-09"
         }
       }
     },
@@ -881,8 +911,8 @@
           "execs": [
             "oxipng"
           ],
-          "version": "10.1.0",
-          "last_release": "2026-01-25"
+          "version": "10.1.1",
+          "last_release": "2026-04-22"
         }
       }
     },
