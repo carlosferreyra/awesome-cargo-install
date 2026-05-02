@@ -12,13 +12,20 @@ regex = "1"
 //! `cargo install --locked` (source compile). Classifies failures so the PR workflow
 //! can comment helpfully.
 //!
-//! Usage:
+//! Usage (mutually exclusive sources):
+//!     cargo +nightly -Zscript scripts/test_clients.rs -- --all [--output <log>]
+//!     cargo +nightly -Zscript scripts/test_clients.rs -- --diff <ref> [--output <log>]
 //!     cargo +nightly -Zscript scripts/test_clients.rs -- --tools '<json>' [--output <log>]
 //!
-//! The --tools argument accepts a JSON array of {"package": "<name>", "execs": ["<bin>", ...]}
+//! --all   : test every tool in tools.json
+//! --diff  : delegate to diff_tools.rs to extract added tools vs <ref>; exits 0 cleanly
+//!           when no new tools are detected
+//! --tools : explicit JSON array of {"package": "<name>", "execs": ["<bin>", ...]}
+//!
+//! --tools-path overrides the default `tools.json` location.
 
 use std::fs;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::{Command, ExitCode, Output};
 
 use regex::Regex;
@@ -27,6 +34,9 @@ use serde_json::{Value as Json, json};
 fn main() -> ExitCode {
     let args: Vec<String> = std::env::args().collect();
     let mut tools_arg: Option<String> = None;
+    let mut all = false;
+    let mut diff_ref: Option<String> = None;
+    let mut tools_path = PathBuf::from("tools.json");
     let mut output = PathBuf::from("output.log");
     let mut i = 1;
     while i < args.len() {
@@ -34,6 +44,19 @@ fn main() -> ExitCode {
             "--tools" => {
                 i += 1;
                 tools_arg = args.get(i).cloned();
+            }
+            "--all" => {
+                all = true;
+            }
+            "--diff" => {
+                i += 1;
+                diff_ref = args.get(i).cloned();
+            }
+            "--tools-path" => {
+                i += 1;
+                if let Some(v) = args.get(i) {
+                    tools_path = PathBuf::from(v);
+                }
             }
             "--output" => {
                 i += 1;
@@ -46,20 +69,48 @@ fn main() -> ExitCode {
         i += 1;
     }
 
-    let Some(tools_json) = tools_arg else {
-        eprintln!("error: --tools is required");
+    let modes = [tools_arg.is_some(), all, diff_ref.is_some()]
+        .iter()
+        .filter(|b| **b)
+        .count();
+    if modes != 1 {
+        eprintln!("error: exactly one of --tools, --all, --diff <ref> is required");
         return ExitCode::FAILURE;
-    };
+    }
 
-    let tools: Json = match serde_json::from_str(&tools_json) {
-        Ok(v) => v,
-        Err(e) => {
-            eprintln!("error: --tools is not valid JSON: {e}");
-            return ExitCode::FAILURE;
+    let tools_value: Json = if all {
+        match load_all(&tools_path) {
+            Ok(v) => v,
+            Err(e) => {
+                eprintln!("error: {e}");
+                return ExitCode::FAILURE;
+            }
+        }
+    } else if let Some(r) = diff_ref {
+        match load_diff(&r, &tools_path) {
+            Ok(Some(v)) => v,
+            Ok(None) => {
+                println!("No new tools detected — nothing to test.");
+                return ExitCode::SUCCESS;
+            }
+            Err(e) => {
+                eprintln!("error: {e}");
+                return ExitCode::FAILURE;
+            }
+        }
+    } else {
+        let raw = tools_arg.unwrap();
+        match serde_json::from_str(&raw) {
+            Ok(v) => v,
+            Err(e) => {
+                eprintln!("error: --tools is not valid JSON: {e}");
+                return ExitCode::FAILURE;
+            }
         }
     };
-    let Some(tools) = tools.as_array() else {
-        eprintln!("error: --tools must be a JSON array");
+
+    let Some(tools) = tools_value.as_array() else {
+        eprintln!("error: tool source must be a JSON array");
         return ExitCode::FAILURE;
     };
 
@@ -209,6 +260,68 @@ fn test_tool(
             bin,
         ),
     )
+}
+
+fn load_all(path: &Path) -> Result<Json, String> {
+    let raw = fs::read_to_string(path)
+        .map_err(|e| format!("could not read {}: {e}", path.display()))?;
+    let data: Json = serde_json::from_str(&raw)
+        .map_err(|e| format!("invalid JSON in {}: {e}", path.display()))?;
+    let mut out: Vec<Json> = Vec::new();
+    if let Some(cats) = data.get("categories").and_then(Json::as_array) {
+        for cat in cats {
+            if let Some(obj) = cat.get("tools").and_then(Json::as_object) {
+                for (pkg, info) in obj {
+                    let execs = info
+                        .get("execs")
+                        .and_then(Json::as_array)
+                        .cloned()
+                        .unwrap_or_default();
+                    out.push(json!({ "package": pkg, "execs": execs }));
+                }
+            }
+        }
+    }
+    Ok(Json::Array(out))
+}
+
+fn load_diff(base: &str, tools_path: &Path) -> Result<Option<Json>, String> {
+    // Locate diff_tools.rs next to this script.
+    let script_dir = PathBuf::from(file!())
+        .parent()
+        .map(Path::to_path_buf)
+        .unwrap_or_else(|| PathBuf::from("scripts"));
+    let diff_script = script_dir.join("diff_tools.rs");
+
+    let out = Command::new("cargo")
+        .args([
+            "+nightly",
+            "-Zscript",
+            diff_script.to_str().unwrap_or("scripts/diff_tools.rs"),
+            "--",
+            "--base",
+            base,
+            "--path",
+            tools_path.to_str().unwrap_or("tools.json"),
+        ])
+        .output()
+        .map_err(|e| format!("running diff_tools.rs: {e}"))?;
+
+    match out.status.code() {
+        Some(0) => {
+            let s = String::from_utf8_lossy(&out.stdout).trim().to_string();
+            let v: Json = serde_json::from_str(&s)
+                .map_err(|e| format!("diff_tools output not valid JSON: {e}"))?;
+            Ok(Some(v))
+        }
+        Some(2) => Ok(None),
+        code => {
+            let stderr = String::from_utf8_lossy(&out.stderr);
+            Err(format!(
+                "diff_tools.rs exited with {code:?}: {stderr}"
+            ))
+        }
+    }
 }
 
 fn which(binary: &str) -> bool {

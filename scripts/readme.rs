@@ -69,7 +69,7 @@ fn main() -> ExitCode {
     env.set_loader(path_loader(&template_dir));
     env.add_filter("escape_pipe", escape_pipe);
 
-    let tmpl = match env.get_template("README.md.jinja2") {
+    let tmpl = match env.get_template("README.md.j2") {
         Ok(t) => t,
         Err(e) => {
             eprintln!("error: loading template: {e}");

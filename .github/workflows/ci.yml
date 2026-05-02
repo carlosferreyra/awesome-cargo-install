@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           # need history so we can diff against the previous commit on main
@@ -58,39 +58,19 @@ jobs:
       - name: Validate tools.json schema
         run: cargo +nightly -Zscript scripts/checks.rs
 
-      # On scheduled / manual / first-commit runs, fall back to testing every tool.
-      # On push runs we diff against HEAD~1 and only test tools that were added.
-      - name: Determine tools to test
-        id: tools
-        run: |
-          set +e
-          if [ "${{ github.event_name }}" = "push" ]; then
-            TOOLS=$(cargo +nightly -Zscript scripts/diff_tools.rs -- --base HEAD~1)
-            EXIT=$?
-            if [ $EXIT -eq 2 ]; then
-              echo "no_tools=true" >> "$GITHUB_OUTPUT"
-              echo "No new tools in this push — skipping install tests."
-              exit 0
-            elif [ $EXIT -ne 0 ]; then
-              echo "diff_error=true" >> "$GITHUB_OUTPUT"
-              echo "Diff failed; falling back to full tool list."
-              TOOLS=$(jq -c '[.categories[].tools | to_entries[] | {package: .key, execs: .value.execs}]' tools.json)
-            fi
-          else
-            # schedule / workflow_dispatch: re-test everything
-            TOOLS=$(jq -c '[.categories[].tools | to_entries[] | {package: .key, execs: .value.execs}]' tools.json)
-          fi
-          echo "no_tools=false" >> "$GITHUB_OUTPUT"
-          echo "json=$TOOLS" >> "$GITHUB_OUTPUT"
-
-      - name: Test tools via binstall + cargo install fallback
-        if: steps.tools.outputs.no_tools != 'true'
+      # On push: only test tools added in this push (HEAD~1..HEAD).
+      # On schedule / workflow_dispatch: re-test the full catalog.
+      - name: Test tools (diff on push, full on schedule/dispatch)
         id: test
         continue-on-error: true
         run: |
-          cargo +nightly -Zscript scripts/test_clients.rs -- \
-            --tools '${{ steps.tools.outputs.json }}' \
-            --output output.log
+          if [ "${{ github.event_name }}" = "push" ]; then
+            cargo +nightly -Zscript scripts/test_clients.rs -- \
+              --diff HEAD~1 --output output.log
+          else
+            cargo +nightly -Zscript scripts/test_clients.rs -- \
+              --all --output output.log
+          fi
 
       - name: Upload validation report
         if: always()
@@ -107,10 +87,24 @@ jobs:
         if: always()
         run: rm -f checks.log output.log
 
+      # Only regenerate the README when tools.json or the template actually
+      # changed (push diff). Schedule/dispatch always regenerates.
+      - name: Detect README-relevant changes
+        id: readme_changes
+        if: github.event_name == 'push'
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -E '^(tools\.json|template/)' >/dev/null; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Regenerate README
+        if: github.event_name != 'push' || steps.readme_changes.outputs.changed == 'true'
         run: cargo +nightly -Zscript scripts/readme.rs
 
       - name: Commit README if changed
+        if: github.event_name != 'push' || steps.readme_changes.outputs.changed == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(readme): regenerate from tools.json [skip ci]'
