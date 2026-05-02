@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout PR branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -51,31 +51,14 @@ jobs:
       - name: Validate tools.json schema
         run: cargo +nightly -Zscript scripts/checks.rs
 
-      - name: Extract added tools from diff
-        id: diff
-        continue-on-error: true
-        run: |
-          set +e
-          TOOLS=$(cargo +nightly -Zscript scripts/diff_tools.rs -- --base origin/main)
-          EXIT=$?
-          if [ $EXIT -eq 2 ]; then
-            echo "no_new_tools=true" >> "$GITHUB_OUTPUT"
-            echo "No new tools in this PR — schema-only change."
-          elif [ $EXIT -ne 0 ]; then
-            echo "diff_error=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "tools=$TOOLS" >> "$GITHUB_OUTPUT"
-            echo "no_new_tools=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Test new tools via binstall + cargo install fallback
-        if: steps.diff.outputs.no_new_tools != 'true' && steps.diff.outputs.diff_error != 'true'
+      # Single call: --diff exits 0 cleanly when no tools were added,
+      # so "schema-only PR" and "all new tools passed" share a path.
+      - name: Test newly added tools
         id: test
         continue-on-error: true
         run: |
           cargo +nightly -Zscript scripts/test_clients.rs -- \
-            --tools '${{ steps.diff.outputs.tools }}' \
-            --output output.log
+            --diff origin/main --output output.log
 
       - name: Comment on PR — tool failure
         if: steps.test.outcome == 'failure'
@@ -86,7 +69,7 @@ jobs:
         run: cargo +nightly -Zscript scripts/check_and_comment.rs
 
       - name: Auto-approve PR
-        if: steps.test.outcome == 'success' || steps.diff.outputs.no_new_tools == 'true'
+        if: steps.test.outcome == 'success'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
