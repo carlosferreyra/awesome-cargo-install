@@ -247,8 +247,8 @@
           "execs": [
             "cargo-deny"
           ],
-          "version": "0.19.4",
-          "last_release": "2026-04-15"
+          "version": "0.19.5",
+          "last_release": "2026-05-09"
         },
         "cargo-udeps": {
           "description": "Find unused dependencies in your Cargo.toml",
@@ -311,8 +311,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.19.0",
-          "last_release": "2026-05-03"
+          "version": "1.19.1",
+          "last_release": "2026-05-06"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -356,8 +356,8 @@
           "execs": [
             "cargo-llvm-cov"
           ],
-          "version": "0.8.5",
-          "last_release": "2026-03-20"
+          "version": "0.8.6",
+          "last_release": "2026-05-09"
         },
         "flamegraph": {
           "description": "Easy flamegraphs for Rust projects and anything else, without Perl or pipes",
@@ -615,8 +615,8 @@
           "execs": [
             "jj"
           ],
-          "version": "0.40.0",
-          "last_release": "2026-04-02"
+          "version": "0.41.0",
+          "last_release": "2026-05-07"
         },
         "git-cliff": {
           "description": "A highly customizable changelog generator that follows conventional commits",
@@ -649,8 +649,8 @@
             "yazi",
             "ya"
           ],
-          "version": "26.1.22",
-          "last_release": "2026-01-22"
+          "version": "26.5.6",
+          "last_release": "2026-05-05"
         },
         "xplr": {
           "description": "A hackable, minimal, fast TUI file explorer",
@@ -770,8 +770,8 @@
           "execs": [
             "zellij"
           ],
-          "version": "0.44.1",
-          "last_release": "2026-04-07"
+          "version": "0.44.2",
+          "last_release": "2026-05-05"
         },
         "atuin": {
           "description": "Magical shell history — sync, search, and backup your shell history",
@@ -794,8 +794,8 @@
           "execs": [
             "just"
           ],
-          "version": "1.50.0",
-          "last_release": "2026-04-19"
+          "version": "1.51.0",
+          "last_release": "2026-05-10"
         },
         "watchexec-cli": {
           "description": "Executes commands in response to file modifications",
