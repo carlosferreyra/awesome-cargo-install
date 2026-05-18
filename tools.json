@@ -247,8 +247,8 @@
           "execs": [
             "cargo-deny"
           ],
-          "version": "0.19.5",
-          "last_release": "2026-05-09"
+          "version": "0.19.6",
+          "last_release": "2026-05-11"
         },
         "cargo-udeps": {
           "description": "Find unused dependencies in your Cargo.toml",
@@ -265,8 +265,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.133",
-          "last_release": "2026-04-14"
+          "version": "0.9.136",
+          "last_release": "2026-05-17"
         },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
@@ -356,8 +356,8 @@
           "execs": [
             "cargo-llvm-cov"
           ],
-          "version": "0.8.6",
-          "last_release": "2026-05-09"
+          "version": "0.8.7",
+          "last_release": "2026-05-13"
         },
         "flamegraph": {
           "description": "Easy flamegraphs for Rust projects and anything else, without Perl or pipes",
@@ -564,8 +564,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.4.0",
-          "last_release": "2026-04-24"
+          "version": "17.5.0",
+          "last_release": "2026-05-15"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -639,8 +639,8 @@
           "execs": [
             "broot"
           ],
-          "version": "1.56.2",
-          "last_release": "2026-03-26"
+          "version": "1.56.4",
+          "last_release": "2026-05-14"
         },
         "yazi-fm": {
           "description": "Blazing fast terminal file manager written in Rust, based on async I/O",
@@ -770,8 +770,8 @@
           "execs": [
             "zellij"
           ],
-          "version": "0.44.2",
-          "last_release": "2026-05-05"
+          "version": "0.44.3",
+          "last_release": "2026-05-13"
         },
         "atuin": {
           "description": "Magical shell history — sync, search, and backup your shell history",
@@ -779,8 +779,8 @@
           "execs": [
             "atuin"
           ],
-          "version": "18.16.0",
-          "last_release": "2026-04-28"
+          "version": "18.16.1",
+          "last_release": "2026-05-12"
         }
       }
     },
