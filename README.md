@@ -61,7 +61,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [pastel](https://github.com/sharkdp/pastel) | A command-line tool to generate, analyze, convert and manipulate colors | ```pastel``` | 0.12.0<br>2026-02-14 |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | Recursively search directories for a regex pattern — a faster grep<br><details><summary><strong><a href="#">Examples</a></strong></summary><br>`cargo install ripgrep` — Install ripgrep (provides the `rg` binary)<br>`rg 'fn main' --type rust` — Search for `fn main` only in Rust files<br></details> | ```rg``` | 15.1.0<br>2025-10-22 |
 | [sd](https://github.com/chmln/sd) | An intuitive find & replace CLI — an alternative to `sed` | ```sd``` | 1.0.0<br>2023-11-08 |
-| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | ```sk``` | 4.6.2<br>2026-05-02 |
+| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | ```sk``` | 4.7.0<br>2026-05-23 |
 | [tealdeer](https://github.com/dbrgn/tealdeer) | A very fast implementation of `tldr` in Rust | ```tldr``` | 1.8.1<br>2025-11-11 |
 | [tokei](https://github.com/XAMPPRocky/tokei) | Count lines of code across a codebase, grouped by language | ```tokei``` | 14.0.0<br>2025-12-30 |
 | [tre-command](https://github.com/dduan/tre) | A modern alternative to `tree` with git/gitignore awareness | ```tre``` | 0.4.0<br>2022-06-19 |
@@ -80,11 +80,11 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [cargo-cache](https://github.com/matthiaskrgr/cargo-cache) | Manage cargo cache (`~/.cargo/`), print sizes and remove directories | ```cargo-cache``` | 0.8.3<br>2022-09-11 |
 | [cargo-chef](https://github.com/LukeMathWalker/cargo-chef) | A cargo-subcommand to speed up Rust Docker builds using Docker layer caching | ```cargo-chef``` | 0.1.77<br>2026-03-03 |
 | [cargo-deadlinks](https://github.com/deadlinks/cargo-deadlinks) | Cargo subcommand for checking your `cargo doc` output for broken links | ```cargo-deadlinks```, ```deadlinks``` | 0.8.1<br>2021-10-13 |
-| [cargo-deny](https://github.com/EmbarkStudios/cargo-deny) | Lint your dependencies: licenses, bans, advisories, sources | ```cargo-deny``` | 0.19.6<br>2026-05-11 |
-| [cargo-dist](https://github.com/axodotdev/cargo-dist) | Shippable application packaging for Rust — prebuilt binary distribution | ```dist``` | 0.31.0<br>2026-02-23 |
+| [cargo-deny](https://github.com/EmbarkStudios/cargo-deny) | Lint your dependencies: licenses, bans, advisories, sources | ```cargo-deny``` | 0.19.7<br>2026-05-22 |
+| [cargo-dist](https://github.com/axodotdev/cargo-dist) | Shippable application packaging for Rust — prebuilt binary distribution | ```dist``` | 0.32.0<br>2026-05-22 |
 | [cargo-edit](https://github.com/killercup/cargo-edit) | Managing cargo dependencies from the command line (`cargo add/rm/upgrade`) | ```cargo-upgrade```, ```cargo-set-version``` | 0.13.10<br>2026-04-17 |
-| [cargo-expand](https://github.com/dtolnay/cargo-expand) | Shows the result of macro expansion and `#[derive]` expansion | ```cargo-expand``` | 1.0.121<br>2026-02-12 |
-| [cargo-generate](https://github.com/cargo-generate/cargo-generate) | A developer tool to help you get up and running quickly with a new Rust project | ```cargo-generate``` | 0.23.8<br>2026-04-01 |
+| [cargo-expand](https://github.com/dtolnay/cargo-expand) | Shows the result of macro expansion and `#[derive]` expansion | ```cargo-expand``` | 1.0.122<br>2026-05-18 |
+| [cargo-generate](https://github.com/cargo-generate/cargo-generate) | A developer tool to help you get up and running quickly with a new Rust project | ```cargo-generate``` | 0.23.10<br>2026-05-21 |
 | [cargo-hack](https://github.com/taiki-e/cargo-hack) | A cargo subcommand for testing feature flag combinations | ```cargo-hack``` | 0.6.44<br>2026-03-20 |
 | [cargo-info](https://gitlab.com/imp/cargo-info) | Show crate information from the terminal, pulled from crates.io | ```cargo-info``` | 0.7.7<br>2024-09-06 |
 | [cargo-llvm-cov](https://github.com/taiki-e/cargo-llvm-cov) | Cargo subcommand to easily use LLVM source-based code coverage | ```cargo-llvm-cov``` | 0.8.7<br>2026-05-13 |
@@ -117,7 +117,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [procs](https://github.com/dalance/procs) | A modern replacement for `ps` written in Rust | ```procs``` | 0.14.11<br>2026-02-27 |
 | [rustscan](https://github.com/RustScan/RustScan) | The modern port scanner — fast and extensible with a scripting engine | ```rustscan``` | 2.4.1<br>2025-02-23 |
 | [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) | Speedtest.net testing utility implemented in Rust | ```speedtest-rs``` | 0.2.0<br>2024-07-28 |
-| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | ```topgrade``` | 17.5.0<br>2026-05-15 |
+| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | ```topgrade``` | 17.5.1<br>2026-05-20 |
 | [xh](https://github.com/ducaale/xh) | A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust | ```xh```, ```xhs``` | 0.25.3<br>2025-12-16 |
 
 
@@ -150,7 +150,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [jaq](https://github.com/01mf02/jaq) | A clone of jq — a JSON data processing tool | ```jaq``` | 3.0.0<br>2026-03-27 |
 | [jql](https://github.com/yamafaktory/jql) | A JSON Query Language CLI tool | ```jql``` | 8.1.2<br>2026-03-18 |
 | [qsv](https://github.com/dathere/qsv) | CSVs sliced, diced & analyzed — a blazing-fast data-wrangling toolkit | ```qsv``` | 16.1.0<br>2026-02-15 |
-| [sqlx-cli](https://github.com/launchbadge/sqlx) | Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data | ```sqlx```, ```cargo-sqlx``` | 0.8.6<br>2025-05-19 |
+| [sqlx-cli](https://github.com/launchbadge/sqlx) | Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data | ```sqlx```, ```cargo-sqlx``` | 0.9.0<br>2026-05-21 |
 | [xan](https://github.com/medialab/xan) | The CSV magician — process CSV files from the command line | ```xan``` | 0.57.1<br>2026-04-15 |
 | [xsv](https://github.com/BurntSushi/xsv) | A fast CSV command-line toolkit written in Rust | ```xsv``` | 0.13.0<br>2018-05-12 |
 
@@ -160,7 +160,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [atuin](https://github.com/atuinsh/atuin) | Magical shell history — sync, search, and backup your shell history | ```atuin``` | 18.16.1<br>2026-05-12 |
-| [nu](https://github.com/nushell/nushell) | Nushell — a new type of shell where data is structured | ```nu``` | 0.112.2<br>2026-04-15 |
+| [nu](https://github.com/nushell/nushell) | Nushell — a new type of shell where data is structured | ```nu``` | 0.113.0<br>2026-05-24 |
 | [starship](https://github.com/starship/starship) | The minimal, blazing-fast, and infinitely customizable prompt for any shell | ```starship``` | 1.25.1<br>2026-04-30 |
 | [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included — multiplexer alternative to tmux | ```zellij``` | 0.44.3<br>2026-05-13 |
 
@@ -169,7 +169,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
-| [bacon](https://github.com/Canop/bacon) | A background Rust code checker — fast and low-friction | ```bacon``` | 3.22.0<br>2026-01-16 |
+| [bacon](https://github.com/Canop/bacon) | A background Rust code checker — fast and low-friction | ```bacon``` | 3.23.0<br>2026-05-19 |
 | [just](https://github.com/casey/just) | A handy way to save and run project-specific commands — a modern `make` | ```just``` | 1.51.0<br>2026-05-10 |
 | [mask](https://github.com/jacobdeichert/mask) | A CLI task runner defined by a simple markdown file | ```mask``` | 0.11.7<br>2026-01-10 |
 | [sccache](https://github.com/mozilla/sccache) | Shared compilation cache — a `ccache`-like compiler wrapper that avoids recompilation | ```sccache``` | 0.15.0<br>2026-04-30 |
@@ -180,7 +180,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
-| [mdbook](https://github.com/rust-lang/mdBook) | Create book-style documentation from Markdown files | ```mdbook``` | 0.5.2<br>2025-12-11 |
+| [mdbook](https://github.com/rust-lang/mdBook) | Create book-style documentation from Markdown files | ```mdbook``` | 0.5.3<br>2026-05-19 |
 | [mdbook-linkcheck](https://github.com/Michael-F-Bryan/mdbook-linkcheck) | A backend for mdbook that validates links | ```mdbook-linkcheck``` | 0.7.7<br>2022-10-03 |
 | [mdbook-mermaid](https://github.com/badboy/mdbook-mermaid) | A preprocessor for mdbook that renders Mermaid diagrams | ```mdbook-mermaid``` | 0.17.0<br>2025-11-18 |
 | [typst-cli](https://github.com/typst/typst) | A new markup-based typesetting system for the sciences | ```typst``` | 0.14.2<br>2025-12-12 |

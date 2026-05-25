@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "4.6.2",
-          "last_release": "2026-05-02"
+          "version": "4.7.0",
+          "last_release": "2026-05-23"
         }
       }
     },
@@ -220,8 +220,8 @@
           "execs": [
             "cargo-expand"
           ],
-          "version": "1.0.121",
-          "last_release": "2026-02-12"
+          "version": "1.0.122",
+          "last_release": "2026-05-18"
         },
         "cargo-outdated": {
           "description": "Displays when Rust dependencies are out of date",
@@ -247,8 +247,8 @@
           "execs": [
             "cargo-deny"
           ],
-          "version": "0.19.6",
-          "last_release": "2026-05-11"
+          "version": "0.19.7",
+          "last_release": "2026-05-22"
         },
         "cargo-udeps": {
           "description": "Find unused dependencies in your Cargo.toml",
@@ -302,8 +302,8 @@
           "execs": [
             "cargo-generate"
           ],
-          "version": "0.23.8",
-          "last_release": "2026-04-01"
+          "version": "0.23.10",
+          "last_release": "2026-05-21"
         },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
@@ -448,8 +448,8 @@
           "execs": [
             "dist"
           ],
-          "version": "0.31.0",
-          "last_release": "2026-02-23"
+          "version": "0.32.0",
+          "last_release": "2026-05-22"
         },
         "cargo-machete": {
           "description": "Find and remove unused dependencies in your `Cargo.toml`",
@@ -564,8 +564,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.5.0",
-          "last_release": "2026-05-15"
+          "version": "17.5.1",
+          "last_release": "2026-05-20"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -737,8 +737,8 @@
             "sqlx",
             "cargo-sqlx"
           ],
-          "version": "0.8.6",
-          "last_release": "2025-05-19"
+          "version": "0.9.0",
+          "last_release": "2026-05-21"
         }
       }
     },
@@ -761,8 +761,8 @@
           "execs": [
             "nu"
           ],
-          "version": "0.112.2",
-          "last_release": "2026-04-15"
+          "version": "0.113.0",
+          "last_release": "2026-05-24"
         },
         "zellij": {
           "description": "A terminal workspace with batteries included — multiplexer alternative to tmux",
@@ -812,8 +812,8 @@
           "execs": [
             "bacon"
           ],
-          "version": "3.22.0",
-          "last_release": "2026-01-16"
+          "version": "3.23.0",
+          "last_release": "2026-05-19"
         },
         "mask": {
           "description": "A CLI task runner defined by a simple markdown file",
@@ -845,8 +845,8 @@
           "execs": [
             "mdbook"
           ],
-          "version": "0.5.2",
-          "last_release": "2025-12-11"
+          "version": "0.5.3",
+          "last_release": "2026-05-19"
         },
         "mdbook-mermaid": {
           "description": "A preprocessor for mdbook that renders Mermaid diagrams",
