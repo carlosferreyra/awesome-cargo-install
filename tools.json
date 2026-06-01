@@ -158,8 +158,8 @@
           "execs": [
             "ouch"
           ],
-          "version": "0.7.1",
-          "last_release": "2026-04-27"
+          "version": "0.8.0",
+          "last_release": "2026-05-26"
         },
         "coreutils": {
           "description": "Cross-platform Rust rewrite of the GNU coreutils",
@@ -167,8 +167,8 @@
           "execs": [
             "coreutils"
           ],
-          "version": "0.8.0",
-          "last_release": "2026-04-07"
+          "version": "0.9.0",
+          "last_release": "2026-05-30"
         },
         "skim": {
           "description": "Fuzzy finder in Rust — an alternative to fzf",
@@ -192,8 +192,8 @@
             "cargo-upgrade",
             "cargo-set-version"
           ],
-          "version": "0.13.10",
-          "last_release": "2026-04-17"
+          "version": "0.13.11",
+          "last_release": "2026-05-28"
         },
         "cargo-watch": {
           "description": "Watches over your project's source for changes, runs commands when they occur",
@@ -247,8 +247,8 @@
           "execs": [
             "cargo-deny"
           ],
-          "version": "0.19.7",
-          "last_release": "2026-05-22"
+          "version": "0.19.8",
+          "last_release": "2026-05-28"
         },
         "cargo-udeps": {
           "description": "Find unused dependencies in your Cargo.toml",
@@ -265,8 +265,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.136",
-          "last_release": "2026-05-17"
+          "version": "0.9.137",
+          "last_release": "2026-05-26"
         },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
@@ -302,8 +302,8 @@
           "execs": [
             "cargo-generate"
           ],
-          "version": "0.23.10",
-          "last_release": "2026-05-21"
+          "version": "0.23.11",
+          "last_release": "2026-05-28"
         },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
@@ -347,8 +347,8 @@
           "execs": [
             "cargo-hack"
           ],
-          "version": "0.6.44",
-          "last_release": "2026-03-20"
+          "version": "0.6.45",
+          "last_release": "2026-05-30"
         },
         "cargo-llvm-cov": {
           "description": "Cargo subcommand to easily use LLVM source-based code coverage",
@@ -384,8 +384,8 @@
           "execs": [
             "cargo-semver-checks"
           ],
-          "version": "0.47.0",
-          "last_release": "2026-03-08"
+          "version": "0.48.0",
+          "last_release": "2026-05-31"
         },
         "cargo-chef": {
           "description": "A cargo-subcommand to speed up Rust Docker builds using Docker layer caching",
@@ -429,8 +429,8 @@
           "execs": [
             "cargo-bundle"
           ],
-          "version": "0.10.0",
-          "last_release": "2026-04-18"
+          "version": "0.11.0",
+          "last_release": "2026-05-30"
         },
         "cargo-deadlinks": {
           "description": "Cargo subcommand for checking your `cargo doc` output for broken links",
@@ -761,8 +761,8 @@
           "execs": [
             "nu"
           ],
-          "version": "0.113.0",
-          "last_release": "2026-05-24"
+          "version": "0.113.1",
+          "last_release": "2026-05-29"
         },
         "zellij": {
           "description": "A terminal workspace with batteries included — multiplexer alternative to tmux",
