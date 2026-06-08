@@ -238,8 +238,8 @@
           "execs": [
             "cargo-audit"
           ],
-          "version": "0.22.1",
-          "last_release": "2026-02-04"
+          "version": "0.22.2",
+          "last_release": "2026-06-05"
         },
         "cargo-deny": {
           "description": "Lint your dependencies: licenses, bans, advisories, sources",
@@ -366,8 +366,8 @@
             "cargo-flamegraph",
             "flamegraph"
           ],
-          "version": "0.6.12",
-          "last_release": "2026-04-08"
+          "version": "0.6.13",
+          "last_release": "2026-06-05"
         },
         "cargo-msrv": {
           "description": "Find the Minimum Supported Rust Version for your project",
@@ -615,8 +615,8 @@
           "execs": [
             "jj"
           ],
-          "version": "0.41.0",
-          "last_release": "2026-05-07"
+          "version": "0.42.0",
+          "last_release": "2026-06-04"
         },
         "git-cliff": {
           "description": "A highly customizable changelog generator that follows conventional commits",
@@ -639,8 +639,8 @@
           "execs": [
             "broot"
           ],
-          "version": "1.56.4",
-          "last_release": "2026-05-14"
+          "version": "1.57.0",
+          "last_release": "2026-06-01"
         },
         "yazi-fm": {
           "description": "Blazing fast terminal file manager written in Rust, based on async I/O",
@@ -727,8 +727,8 @@
           "execs": [
             "xan"
           ],
-          "version": "0.57.1",
-          "last_release": "2026-04-15"
+          "version": "0.58.0",
+          "last_release": "2026-06-02"
         },
         "sqlx-cli": {
           "description": "Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data",

@@ -72,7 +72,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
-| [cargo-audit](https://github.com/rustsec/rustsec/tree/main/cargo-audit) | Audit `Cargo.lock` for crates with security vulnerabilities | ```cargo-audit``` | 0.22.1<br>2026-02-04 |
+| [cargo-audit](https://github.com/rustsec/rustsec/tree/main/cargo-audit) | Audit `Cargo.lock` for crates with security vulnerabilities | ```cargo-audit``` | 0.22.2<br>2026-06-05 |
 | [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) | Make production Rust binaries auditable — embed dep info into the binary | ```cargo-auditable``` | 0.7.4<br>2026-03-04 |
 | [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) | Install prebuilt Rust binaries without having to compile from source | ```cargo-binstall``` | 1.19.1<br>2026-05-06 |
 | [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) | Find out what takes most of the space in your executable | ```cargo-bloat``` | 0.12.1<br>2024-05-10 |
@@ -103,7 +103,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [cargo-update](https://github.com/nabijaczleweli/cargo-update) | Cargo subcommand for checking and applying updates to installed executables | ```cargo-install-update``` | 20.0.0<br>2026-04-06 |
 | [cargo-watch](https://github.com/watchexec/cargo-watch) | Watches over your project's source for changes, runs commands when they occur<br><details><summary><strong><a href="#">Examples</a></strong></summary><br>`cargo install cargo-watch` — Install cargo-watch<br>`cargo watch -x check -x test` — Re-run `cargo check` and `cargo test` on every source change<br></details> | ```cargo-watch``` | 8.5.3<br>2024-10-02 |
 | [cargo-workspaces](https://github.com/pksunkara/cargo-workspaces) | A tool for managing cargo workspaces and their crates | ```cargo-workspaces```, ```cargo-ws``` | 0.4.2<br>2025-12-03 |
-| [flamegraph](https://github.com/flamegraph-rs/flamegraph) | Easy flamegraphs for Rust projects and anything else, without Perl or pipes | ```cargo-flamegraph```, ```flamegraph``` | 0.6.12<br>2026-04-08 |
+| [flamegraph](https://github.com/flamegraph-rs/flamegraph) | Easy flamegraphs for Rust projects and anything else, without Perl or pipes | ```cargo-flamegraph```, ```flamegraph``` | 0.6.13<br>2026-06-05 |
 
 
 ## System Monitoring & Infrastructure
@@ -128,7 +128,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [git-cliff](https://github.com/orhun/git-cliff) | A highly customizable changelog generator that follows conventional commits | ```git-cliff``` | 2.13.1<br>2026-04-26 |
 | [git-delta](https://github.com/dandavison/delta) | A syntax-highlighting pager for git, diff, grep, and blame output | ```delta``` | 0.19.2<br>2026-03-28 |
 | [gitui](https://github.com/gitui-org/gitui) | Blazing fast terminal-UI for git, written in Rust | ```gitui``` | 0.28.1<br>2026-03-24 |
-| [jj-cli](https://github.com/jj-vcs/jj) | Jujutsu — a Git-compatible VCS that is both simple and powerful | ```jj``` | 0.41.0<br>2026-05-07 |
+| [jj-cli](https://github.com/jj-vcs/jj) | Jujutsu — a Git-compatible VCS that is both simple and powerful | ```jj``` | 0.42.0<br>2026-06-04 |
 | [onefetch](https://github.com/o2sh/onefetch) | Git repository summary on your terminal — languages, stats and commit info | ```onefetch``` | 2.27.1<br>2026-03-19 |
 
 
@@ -136,7 +136,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
-| [broot](https://github.com/Canop/broot) | A new way to see and navigate directory trees | ```broot``` | 1.56.4<br>2026-05-14 |
+| [broot](https://github.com/Canop/broot) | A new way to see and navigate directory trees | ```broot``` | 1.57.0<br>2026-06-01 |
 | [felix](https://github.com/kyoheiu/felix) | A tui file manager with Vim-like key mapping | ```fx``` | 2.16.1<br>2025-04-12 |
 | [nomino](https://github.com/yaa110/nomino) | Batch rename utility for developers | ```nomino``` | 1.6.4<br>2025-08-07 |
 | [xplr](https://github.com/sayanarijit/xplr) | A hackable, minimal, fast TUI file explorer | ```xplr``` | 1.1.0<br>2025-12-08 |
@@ -151,7 +151,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [jql](https://github.com/yamafaktory/jql) | A JSON Query Language CLI tool | ```jql``` | 8.1.2<br>2026-03-18 |
 | [qsv](https://github.com/dathere/qsv) | CSVs sliced, diced & analyzed — a blazing-fast data-wrangling toolkit | ```qsv``` | 16.1.0<br>2026-02-15 |
 | [sqlx-cli](https://github.com/launchbadge/sqlx) | Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data | ```sqlx```, ```cargo-sqlx``` | 0.9.0<br>2026-05-21 |
-| [xan](https://github.com/medialab/xan) | The CSV magician — process CSV files from the command line | ```xan``` | 0.57.1<br>2026-04-15 |
+| [xan](https://github.com/medialab/xan) | The CSV magician — process CSV files from the command line | ```xan``` | 0.58.0<br>2026-06-02 |
 | [xsv](https://github.com/BurntSushi/xsv) | A fast CSV command-line toolkit written in Rust | ```xsv``` | 0.13.0<br>2018-05-12 |
 
 
