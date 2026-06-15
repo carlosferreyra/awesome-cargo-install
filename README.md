@@ -74,7 +74,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 |:-----|:------------|:--------------|:--------------|
 | [cargo-audit](https://github.com/rustsec/rustsec/tree/main/cargo-audit) | Audit `Cargo.lock` for crates with security vulnerabilities | ```cargo-audit``` | 0.22.2<br>2026-06-05 |
 | [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) | Make production Rust binaries auditable — embed dep info into the binary | ```cargo-auditable``` | 0.7.4<br>2026-03-04 |
-| [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) | Install prebuilt Rust binaries without having to compile from source | ```cargo-binstall``` | 1.19.1<br>2026-05-06 |
+| [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) | Install prebuilt Rust binaries without having to compile from source | ```cargo-binstall``` | 1.20.0<br>2026-06-08 |
 | [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) | Find out what takes most of the space in your executable | ```cargo-bloat``` | 0.12.1<br>2024-05-10 |
 | [cargo-bundle](https://github.com/burtonageo/cargo-bundle) | Wrap Rust executables in OS-specific app bundles | ```cargo-bundle``` | 0.11.0<br>2026-05-30 |
 | [cargo-cache](https://github.com/matthiaskrgr/cargo-cache) | Manage cargo cache (`~/.cargo/`), print sizes and remove directories | ```cargo-cache``` | 0.8.3<br>2022-09-11 |
@@ -84,7 +84,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [cargo-dist](https://github.com/axodotdev/cargo-dist) | Shippable application packaging for Rust — prebuilt binary distribution | ```dist``` | 0.32.0<br>2026-05-22 |
 | [cargo-edit](https://github.com/killercup/cargo-edit) | Managing cargo dependencies from the command line (`cargo add/rm/upgrade`) | ```cargo-upgrade```, ```cargo-set-version``` | 0.13.11<br>2026-05-28 |
 | [cargo-expand](https://github.com/dtolnay/cargo-expand) | Shows the result of macro expansion and `#[derive]` expansion | ```cargo-expand``` | 1.0.122<br>2026-05-18 |
-| [cargo-generate](https://github.com/cargo-generate/cargo-generate) | A developer tool to help you get up and running quickly with a new Rust project | ```cargo-generate``` | 0.23.11<br>2026-05-28 |
+| [cargo-generate](https://github.com/cargo-generate/cargo-generate) | A developer tool to help you get up and running quickly with a new Rust project | ```cargo-generate``` | 0.23.12<br>2026-06-12 |
 | [cargo-hack](https://github.com/taiki-e/cargo-hack) | A cargo subcommand for testing feature flag combinations | ```cargo-hack``` | 0.6.45<br>2026-05-30 |
 | [cargo-info](https://gitlab.com/imp/cargo-info) | Show crate information from the terminal, pulled from crates.io | ```cargo-info``` | 0.7.7<br>2024-09-06 |
 | [cargo-llvm-cov](https://github.com/taiki-e/cargo-llvm-cov) | Cargo subcommand to easily use LLVM source-based code coverage | ```cargo-llvm-cov``` | 0.8.7<br>2026-05-13 |
@@ -100,7 +100,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [cargo-sweep](https://github.com/holmgr/cargo-sweep) | A cargo subcommand for cleaning unused build files created by Cargo | ```cargo-sweep``` | 0.8.0<br>2025-10-11 |
 | [cargo-tarpaulin](https://github.com/xd009642/tarpaulin) | A code coverage tool for Rust projects | ```cargo-tarpaulin``` | 0.35.4<br>2026-04-25 |
 | [cargo-udeps](https://github.com/est31/cargo-udeps) | Find unused dependencies in your Cargo.toml | ```cargo-udeps``` | 0.1.61<br>2026-04-29 |
-| [cargo-update](https://github.com/nabijaczleweli/cargo-update) | Cargo subcommand for checking and applying updates to installed executables | ```cargo-install-update``` | 20.0.0<br>2026-04-06 |
+| [cargo-update](https://github.com/nabijaczleweli/cargo-update) | Cargo subcommand for checking and applying updates to installed executables | ```cargo-install-update``` | 20.0.2<br>2026-06-09 |
 | [cargo-watch](https://github.com/watchexec/cargo-watch) | Watches over your project's source for changes, runs commands when they occur<br><details><summary><strong><a href="#">Examples</a></strong></summary><br>`cargo install cargo-watch` — Install cargo-watch<br>`cargo watch -x check -x test` — Re-run `cargo check` and `cargo test` on every source change<br></details> | ```cargo-watch``` | 8.5.3<br>2024-10-02 |
 | [cargo-workspaces](https://github.com/pksunkara/cargo-workspaces) | A tool for managing cargo workspaces and their crates | ```cargo-workspaces```, ```cargo-ws``` | 0.4.2<br>2025-12-03 |
 | [flamegraph](https://github.com/flamegraph-rs/flamegraph) | Easy flamegraphs for Rust projects and anything else, without Perl or pipes | ```cargo-flamegraph```, ```flamegraph``` | 0.6.13<br>2026-06-05 |
@@ -112,12 +112,12 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 |:-----|:------------|:--------------|:--------------|
 | [bandwhich](https://github.com/imsnif/bandwhich) | Terminal bandwidth utilization tool | ```bandwhich``` | 0.23.1<br>2024-10-08 |
 | [bottom](https://github.com/ClementTsang/bottom) | Yet another cross-platform graphical process/system monitor | ```btm``` | 0.12.3<br>2026-01-01 |
-| [gping](https://github.com/orf/gping) | Ping, but with a graph | ```gping``` | 1.20.1<br>2025-08-15 |
+| [gping](https://github.com/orf/gping) | Ping, but with a graph | ```gping``` | 1.20.2<br>2026-06-14 |
 | [oha](https://github.com/hatoo/oha) | HTTP load generator with a TUI, inspired by rakyll/hey | ```oha``` | 1.14.0<br>2026-02-28 |
 | [procs](https://github.com/dalance/procs) | A modern replacement for `ps` written in Rust | ```procs``` | 0.14.11<br>2026-02-27 |
 | [rustscan](https://github.com/RustScan/RustScan) | The modern port scanner — fast and extensible with a scripting engine | ```rustscan``` | 2.4.1<br>2025-02-23 |
 | [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) | Speedtest.net testing utility implemented in Rust | ```speedtest-rs``` | 0.2.0<br>2024-07-28 |
-| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | ```topgrade``` | 17.5.1<br>2026-05-20 |
+| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | ```topgrade``` | 17.6.1<br>2026-06-10 |
 | [xh](https://github.com/ducaale/xh) | A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust | ```xh```, ```xhs``` | 0.25.3<br>2025-12-16 |
 
 
@@ -147,7 +147,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
-| [jaq](https://github.com/01mf02/jaq) | A clone of jq — a JSON data processing tool | ```jaq``` | 3.0.0<br>2026-03-27 |
+| [jaq](https://github.com/01mf02/jaq) | A clone of jq — a JSON data processing tool | ```jaq``` | 3.1.0<br>2026-06-11 |
 | [jql](https://github.com/yamafaktory/jql) | A JSON Query Language CLI tool | ```jql``` | 8.1.2<br>2026-03-18 |
 | [qsv](https://github.com/dathere/qsv) | CSVs sliced, diced & analyzed — a blazing-fast data-wrangling toolkit | ```qsv``` | 16.1.0<br>2026-02-15 |
 | [sqlx-cli](https://github.com/launchbadge/sqlx) | Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data | ```sqlx```, ```cargo-sqlx``` | 0.9.0<br>2026-05-21 |
@@ -170,7 +170,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [bacon](https://github.com/Canop/bacon) | A background Rust code checker — fast and low-friction | ```bacon``` | 3.23.0<br>2026-05-19 |
-| [just](https://github.com/casey/just) | A handy way to save and run project-specific commands — a modern `make` | ```just``` | 1.51.0<br>2026-05-10 |
+| [just](https://github.com/casey/just) | A handy way to save and run project-specific commands — a modern `make` | ```just``` | 1.52.0<br>2026-06-08 |
 | [mask](https://github.com/jacobdeichert/mask) | A CLI task runner defined by a simple markdown file | ```mask``` | 0.11.7<br>2026-01-10 |
 | [sccache](https://github.com/mozilla/sccache) | Shared compilation cache — a `ccache`-like compiler wrapper that avoids recompilation | ```sccache``` | 0.15.0<br>2026-04-30 |
 | [watchexec-cli](https://github.com/watchexec/watchexec) | Executes commands in response to file modifications | ```watchexec``` | 2.5.1<br>2026-03-30 |
