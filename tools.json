@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "4.7.0",
-          "last_release": "2026-05-23"
+          "version": "4.8.0",
+          "last_release": "2026-06-17"
         }
       }
     },
@@ -220,8 +220,8 @@
           "execs": [
             "cargo-expand"
           ],
-          "version": "1.0.122",
-          "last_release": "2026-05-18"
+          "version": "1.0.123",
+          "last_release": "2026-06-16"
         },
         "cargo-outdated": {
           "description": "Displays when Rust dependencies are out of date",
@@ -247,8 +247,8 @@
           "execs": [
             "cargo-deny"
           ],
-          "version": "0.19.8",
-          "last_release": "2026-05-28"
+          "version": "0.19.9",
+          "last_release": "2026-06-15"
         },
         "cargo-udeps": {
           "description": "Find unused dependencies in your Cargo.toml",
@@ -265,8 +265,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.137",
-          "last_release": "2026-05-26"
+          "version": "0.9.138",
+          "last_release": "2026-06-21"
         },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
@@ -293,8 +293,8 @@
           "execs": [
             "cargo-tarpaulin"
           ],
-          "version": "0.35.4",
-          "last_release": "2026-04-25"
+          "version": "0.35.5",
+          "last_release": "2026-06-20"
         },
         "cargo-generate": {
           "description": "A developer tool to help you get up and running quickly with a new Rust project",
@@ -311,8 +311,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.20.0",
-          "last_release": "2026-06-08"
+          "version": "1.20.1",
+          "last_release": "2026-06-21"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -500,8 +500,8 @@
           "execs": [
             "btm"
           ],
-          "version": "0.12.3",
-          "last_release": "2026-01-01"
+          "version": "0.14.1",
+          "last_release": "2026-06-22"
         },
         "procs": {
           "description": "A modern replacement for `ps` written in Rust",
@@ -546,8 +546,8 @@
             "xh",
             "xhs"
           ],
-          "version": "0.25.3",
-          "last_release": "2025-12-16"
+          "version": "0.26.1",
+          "last_release": "2026-06-19"
         },
         "rustscan": {
           "description": "The modern port scanner — fast and extensible with a scripting engine",
@@ -564,8 +564,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.6.1",
-          "last_release": "2026-06-10"
+          "version": "17.6.2",
+          "last_release": "2026-06-20"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -727,8 +727,8 @@
           "execs": [
             "xan"
           ],
-          "version": "0.58.0",
-          "last_release": "2026-06-02"
+          "version": "0.59.0",
+          "last_release": "2026-06-17"
         },
         "sqlx-cli": {
           "description": "Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data",
@@ -794,8 +794,8 @@
           "execs": [
             "just"
           ],
-          "version": "1.52.0",
-          "last_release": "2026-06-08"
+          "version": "1.53.0",
+          "last_release": "2026-06-16"
         },
         "watchexec-cli": {
           "description": "Executes commands in response to file modifications",
@@ -830,8 +830,8 @@
           "execs": [
             "sccache"
           ],
-          "version": "0.15.0",
-          "last_release": "2026-04-30"
+          "version": "0.16.0",
+          "last_release": "2026-06-19"
         }
       }
     },
@@ -872,8 +872,8 @@
           "execs": [
             "typst"
           ],
-          "version": "0.14.2",
-          "last_release": "2025-12-12"
+          "version": "0.15.0",
+          "last_release": "2026-06-15"
         }
       }
     },
