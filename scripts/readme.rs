@@ -8,7 +8,7 @@ edition = "2024"
 serde_json = "1"
 minijinja = { version = "2", features = ["loader", "json"] }
 ---
-//! Generate README.md from tools.json using the Jinja2 template in `template/`.
+//! Generate or check README.md from tools.json using the Jinja2 template in `template/`.
 
 use std::path::{Path, PathBuf};
 use std::process::ExitCode;
@@ -29,6 +29,23 @@ fn escape_pipe(value: Value) -> String {
 }
 
 fn main() -> ExitCode {
+    let args: Vec<String> = std::env::args().collect();
+    let user_args: Vec<&str> = args
+        .iter()
+        .skip(1)
+        .map(String::as_str)
+        .filter(|arg| *arg != "--")
+        .collect();
+    let check = user_args.iter().any(|arg| *arg == "--check");
+    if user_args.iter().any(|arg| *arg == "-h" || *arg == "--help") {
+        println!("usage: readme [--check]");
+        return ExitCode::SUCCESS;
+    }
+    if user_args.iter().any(|arg| *arg != "--check") {
+        eprintln!("error: unknown argument. usage: readme [--check]");
+        return ExitCode::FAILURE;
+    }
+
     let root = repo_root();
     let tools_path = root.join("tools.json");
     let template_dir = root.join("template");
@@ -87,6 +104,24 @@ fn main() -> ExitCode {
             return ExitCode::FAILURE;
         }
     };
+
+    if check {
+        let current = match std::fs::read_to_string(&readme_path) {
+            Ok(s) => s,
+            Err(e) => {
+                eprintln!("error: reading {}: {e}", readme_path.display());
+                return ExitCode::FAILURE;
+            }
+        };
+        if current == rendered {
+            println!("README.md is up to date.");
+            return ExitCode::SUCCESS;
+        }
+        eprintln!(
+            "error: README.md is stale. Run `cargo +nightly -Zscript scripts/readme.rs` and commit the result."
+        );
+        return ExitCode::FAILURE;
+    }
 
     if let Err(e) = std::fs::write(&readme_path, rendered) {
         eprintln!("error: writing README.md: {e}");

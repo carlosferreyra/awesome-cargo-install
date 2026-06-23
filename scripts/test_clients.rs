@@ -286,12 +286,7 @@ fn load_all(path: &Path) -> Result<Json, String> {
 }
 
 fn load_diff(base: &str, tools_path: &Path) -> Result<Option<Json>, String> {
-    // Locate diff_tools.rs next to this script.
-    let script_dir = PathBuf::from(file!())
-        .parent()
-        .map(Path::to_path_buf)
-        .unwrap_or_else(|| PathBuf::from("scripts"));
-    let diff_script = script_dir.join("diff_tools.rs");
+    let diff_script = locate_diff_script();
 
     let out = Command::new("cargo")
         .args([
@@ -322,6 +317,22 @@ fn load_diff(base: &str, tools_path: &Path) -> Result<Option<Json>, String> {
             ))
         }
     }
+}
+
+fn locate_diff_script() -> PathBuf {
+    for candidate in [
+        PathBuf::from("scripts/diff_tools.rs"),
+        PathBuf::from("diff_tools.rs"),
+    ] {
+        if candidate.exists() {
+            return candidate;
+        }
+    }
+
+    PathBuf::from(file!())
+        .parent()
+        .map(|p| p.join("diff_tools.rs"))
+        .unwrap_or_else(|| PathBuf::from("scripts/diff_tools.rs"))
 }
 
 fn which(binary: &str) -> bool {

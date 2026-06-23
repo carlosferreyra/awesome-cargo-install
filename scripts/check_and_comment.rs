@@ -120,7 +120,7 @@ fn approve(token: &str, owner: &str, repo: &str, pr: u64) -> Result<(), String> 
     let url = format!("{API}/repos/{owner}/{repo}/pulls/{pr}/reviews");
     let payload = json!({
         "event": "APPROVE",
-        "body": "✅ All proposed crates validated successfully via `cargo binstall`/`cargo install`. Ready for merge.",
+        "body": "✅ Curated tool data and generated README checks passed. Ready for maintainer review/merge.",
     });
     post_json(&url, token, &payload)
 }
@@ -139,6 +139,13 @@ fn post_json(url: &str, token: &str, body: &Json) -> Result<(), String> {
         Ok(_) => Ok(()),
         Err(ureq::Error::Status(code, resp)) => {
             let msg = resp.into_string().unwrap_or_default();
+            if body.get("event").and_then(Json::as_str) == Some("APPROVE")
+                && code == 422
+                && msg.contains("GitHub Actions is not permitted to approve pull requests")
+            {
+                eprintln!("warning: GitHub Actions is not permitted to approve pull requests; validation still passed");
+                return Ok(());
+            }
             Err(format!("GitHub API error: {code} {msg}"))
         }
         Err(e) => Err(format!("request error: {e}")),
