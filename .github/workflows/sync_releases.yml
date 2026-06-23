@@ -31,7 +31,7 @@ jobs:
             ${{ env.CARGO_HOME }}/registry/cache
             ${{ env.CARGO_HOME }}/git/db
             ${{ env.CARGO_HOME }}/build
-          key: cargo-sync-${{ runner.os }}-nightly-${{ hashFiles('scripts/latest_release.rs') }}
+          key: cargo-sync-${{ runner.os }}-nightly-${{ hashFiles('scripts/latest_release.rs', 'scripts/readme.rs', 'template/**') }}
           restore-keys: |
             cargo-sync-${{ runner.os }}-nightly-
             cargo-${{ runner.os }}-nightly-

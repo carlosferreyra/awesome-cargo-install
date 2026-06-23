@@ -48,29 +48,31 @@ jobs:
             ${{ env.CARGO_HOME }}/git/db
             ${{ env.CARGO_HOME }}/build
             ${{ env.CARGO_HOME }}/bin
-          key: cargo-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'tools.json') }}
+          key: cargo-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'template/**') }}
           restore-keys: |
             cargo-${{ runner.os }}-nightly-
 
-      - name: Install cargo-binstall (prebuilt, no compile)
+      - name: Install cargo-binstall (scheduled/manual install validation)
+        if: github.event_name != 'push'
         uses: cargo-bins/cargo-binstall@main
 
-      - name: Validate tools.json schema
+      - name: Validate curated tool data
         run: cargo +nightly -Zscript scripts/checks.rs
 
-      # On push: only test tools added in this push (HEAD~1..HEAD).
-      # On schedule / workflow_dispatch: re-test the full catalog.
-      - name: Test tools (diff on push, full on schedule/dispatch)
+      - name: Test newly added tools (advisory on main push)
+        if: github.event_name == 'push'
         id: test
         continue-on-error: true
         run: |
-          if [ "${{ github.event_name }}" = "push" ]; then
-            cargo +nightly -Zscript scripts/test_clients.rs -- \
-              --diff HEAD~1 --output output.log
-          else
-            cargo +nightly -Zscript scripts/test_clients.rs -- \
-              --all --output output.log
-          fi
+          cargo +nightly -Zscript scripts/test_clients.rs -- \
+            --diff HEAD~1 --output output.log
+
+      - name: Test full catalog (scheduled/manual)
+        if: github.event_name != 'push'
+        id: full_test
+        run: |
+          cargo +nightly -Zscript scripts/test_clients.rs -- \
+            --all --output output.log
 
       - name: Upload validation report
         if: always()
@@ -87,32 +89,25 @@ jobs:
         if: always()
         run: rm -f checks.log output.log
 
-      # Only regenerate the README when tools.json or the template actually
-      # changed (push diff). Schedule/dispatch always regenerates.
+      # Only regenerate the README when tools.json or the template actually changed.
       - name: Detect README-relevant changes
         id: readme_changes
-        if: github.event_name == 'push'
         run: |
-          if git diff --name-only HEAD~1 HEAD | grep -E '^(tools\.json|template/)' >/dev/null; then
+          if [ "${{ github.event_name }}" != "push" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          elif git diff --name-only HEAD~1 HEAD | grep -E '^(tools\.json|template/)' >/dev/null; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Regenerate README
-        if: github.event_name != 'push' || steps.readme_changes.outputs.changed == 'true'
+        if: steps.readme_changes.outputs.changed == 'true'
         run: cargo +nightly -Zscript scripts/readme.rs
 
       - name: Commit README if changed
-        if: github.event_name != 'push' || steps.readme_changes.outputs.changed == 'true'
+        if: steps.readme_changes.outputs.changed == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(readme): regenerate from tools.json [skip ci]'
           file_pattern: README.md
-
-      # Temporarily disabled: failing the job prevents the cache from being
-      # saved, so tools that need to be compiled never get cached. Re-enable
-      # once cached versions are available.
-      # - name: Fail job if tool tests failed
-      #   if: steps.test.outcome == 'failure'
-      #   run: exit 1

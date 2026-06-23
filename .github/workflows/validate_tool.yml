@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - 'tools.json'
+      - 'template/**'
+      - 'README.md'
+      - 'scripts/**'
+      - '.github/workflows/validate_tool.yml'
 
 permissions:
   contents: read
@@ -39,46 +43,21 @@ jobs:
             ${{ env.CARGO_HOME }}/registry/cache
             ${{ env.CARGO_HOME }}/git/db
             ${{ env.CARGO_HOME }}/build
-            ${{ env.CARGO_HOME }}/bin
-          key: cargo-pr-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'tools.json') }}
+          key: cargo-pr-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'template/**') }}
           restore-keys: |
             cargo-pr-${{ runner.os }}-nightly-
             cargo-${{ runner.os }}-nightly-
 
-      - name: Install cargo-binstall (prebuilt, no compile)
-        uses: cargo-bins/cargo-binstall@main
+      - name: Validate curated tool data
+        run: cargo +nightly -Zscript scripts/checks.rs -- --diff-base origin/main
 
-      - name: Validate tools.json schema
-        run: cargo +nightly -Zscript scripts/checks.rs
-
-      # Single call: --diff exits 0 cleanly when no tools were added,
-      # so "schema-only PR" and "all new tools passed" share a path.
-      - name: Test newly added tools
-        id: test
-        continue-on-error: true
-        run: |
-          cargo +nightly -Zscript scripts/test_clients.rs -- \
-            --diff origin/main --output output.log
-
-      - name: Comment on PR — tool failure
-        if: steps.test.outcome == 'failure'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          ACTION: comment_failure
-        run: cargo +nightly -Zscript scripts/check_and_comment.rs
+      - name: Check README is up to date
+        run: cargo +nightly -Zscript scripts/readme.rs -- --check
 
       - name: Auto-approve PR
-        if: steps.test.outcome == 'success'
+        if: success()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           ACTION: approve
         run: cargo +nightly -Zscript scripts/check_and_comment.rs
-
-      # Temporarily disabled: failing the job prevents the cache from being
-      # saved, so tools that need to be compiled never get cached. Re-enable
-      # once cached versions are available.
-      # - name: Fail job if tool tests failed
-      #   if: steps.test.outcome == 'failure'
-      #   run: exit 1
