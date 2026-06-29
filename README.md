@@ -61,7 +61,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [pastel](https://github.com/sharkdp/pastel) | A command-line tool to generate, analyze, convert and manipulate colors | ```pastel``` | 0.12.0<br>2026-02-14 |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | Recursively search directories for a regex pattern — a faster grep<br><details><summary><strong><a href="#">Examples</a></strong></summary><br>`cargo install ripgrep` — Install ripgrep (provides the `rg` binary)<br>`rg 'fn main' --type rust` — Search for `fn main` only in Rust files<br></details> | ```rg``` | 15.1.0<br>2025-10-22 |
 | [sd](https://github.com/chmln/sd) | An intuitive find & replace CLI — an alternative to `sed` | ```sd``` | 1.0.0<br>2023-11-08 |
-| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | ```sk``` | 4.8.0<br>2026-06-17 |
+| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | ```sk``` | 4.10.0<br>2026-06-28 |
 | [tealdeer](https://github.com/dbrgn/tealdeer) | A very fast implementation of `tldr` in Rust | ```tldr``` | 1.8.1<br>2025-11-11 |
 | [tokei](https://github.com/XAMPPRocky/tokei) | Count lines of code across a codebase, grouped by language | ```tokei``` | 14.0.0<br>2025-12-30 |
 | [tre-command](https://github.com/dduan/tre) | A modern alternative to `tree` with git/gitignore awareness | ```tre``` | 0.4.0<br>2022-06-19 |
@@ -73,7 +73,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [cargo-audit](https://github.com/rustsec/rustsec/tree/main/cargo-audit) | Audit `Cargo.lock` for crates with security vulnerabilities | ```cargo-audit``` | 0.22.2<br>2026-06-05 |
-| [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) | Make production Rust binaries auditable — embed dep info into the binary | ```cargo-auditable``` | 0.7.4<br>2026-03-04 |
+| [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) | Make production Rust binaries auditable — embed dep info into the binary | ```cargo-auditable``` | 0.7.5<br>2026-06-28 |
 | [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) | Install prebuilt Rust binaries without having to compile from source | ```cargo-binstall``` | 1.20.1<br>2026-06-21 |
 | [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) | Find out what takes most of the space in your executable | ```cargo-bloat``` | 0.12.1<br>2024-05-10 |
 | [cargo-bundle](https://github.com/burtonageo/cargo-bundle) | Wrap Rust executables in OS-specific app bundles | ```cargo-bundle``` | 0.11.0<br>2026-05-30 |
@@ -111,10 +111,10 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [bandwhich](https://github.com/imsnif/bandwhich) | Terminal bandwidth utilization tool | ```bandwhich``` | 0.23.1<br>2024-10-08 |
-| [bottom](https://github.com/ClementTsang/bottom) | Yet another cross-platform graphical process/system monitor | ```btm``` | 0.14.1<br>2026-06-22 |
-| [gping](https://github.com/orf/gping) | Ping, but with a graph | ```gping``` | 1.20.2<br>2026-06-14 |
+| [bottom](https://github.com/ClementTsang/bottom) | Yet another cross-platform graphical process/system monitor | ```btm``` | 0.14.2<br>2026-06-27 |
+| [gping](https://github.com/orf/gping) | Ping, but with a graph | ```gping``` | 1.20.4<br>2026-06-24 |
 | [oha](https://github.com/hatoo/oha) | HTTP load generator with a TUI, inspired by rakyll/hey | ```oha``` | 1.14.0<br>2026-02-28 |
-| [procs](https://github.com/dalance/procs) | A modern replacement for `ps` written in Rust | ```procs``` | 0.14.11<br>2026-02-27 |
+| [procs](https://github.com/dalance/procs) | A modern replacement for `ps` written in Rust | ```procs``` | 0.14.12<br>2026-06-25 |
 | [rustscan](https://github.com/RustScan/RustScan) | The modern port scanner — fast and extensible with a scripting engine | ```rustscan``` | 2.4.1<br>2025-02-23 |
 | [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) | Speedtest.net testing utility implemented in Rust | ```speedtest-rs``` | 0.2.0<br>2024-07-28 |
 | [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | ```topgrade``` | 17.6.2<br>2026-06-20 |
@@ -161,7 +161,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 |:-----|:------------|:--------------|:--------------|
 | [atuin](https://github.com/atuinsh/atuin) | Magical shell history — sync, search, and backup your shell history | ```atuin``` | 18.16.1<br>2026-05-12 |
 | [nu](https://github.com/nushell/nushell) | Nushell — a new type of shell where data is structured | ```nu``` | 0.113.1<br>2026-05-29 |
-| [starship](https://github.com/starship/starship) | The minimal, blazing-fast, and infinitely customizable prompt for any shell | ```starship``` | 1.25.1<br>2026-04-30 |
+| [starship](https://github.com/starship/starship) | The minimal, blazing-fast, and infinitely customizable prompt for any shell | ```starship``` | 1.26.0<br>2026-06-28 |
 | [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included — multiplexer alternative to tmux | ```zellij``` | 0.44.3<br>2026-05-13 |
 
 
@@ -170,7 +170,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [bacon](https://github.com/Canop/bacon) | A background Rust code checker — fast and low-friction | ```bacon``` | 3.23.0<br>2026-05-19 |
-| [just](https://github.com/casey/just) | A handy way to save and run project-specific commands — a modern `make` | ```just``` | 1.53.0<br>2026-06-16 |
+| [just](https://github.com/casey/just) | A handy way to save and run project-specific commands — a modern `make` | ```just``` | 1.54.0<br>2026-06-23 |
 | [mask](https://github.com/jacobdeichert/mask) | A CLI task runner defined by a simple markdown file | ```mask``` | 0.11.7<br>2026-01-10 |
 | [sccache](https://github.com/mozilla/sccache) | Shared compilation cache — a `ccache`-like compiler wrapper that avoids recompilation | ```sccache``` | 0.16.0<br>2026-06-19 |
 | [watchexec-cli](https://github.com/watchexec/watchexec) | Executes commands in response to file modifications | ```watchexec``` | 2.5.1<br>2026-03-30 |
