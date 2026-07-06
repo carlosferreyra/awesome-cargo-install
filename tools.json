@@ -113,8 +113,8 @@
           "execs": [
             "zoxide"
           ],
-          "version": "0.9.9",
-          "last_release": "2026-01-31"
+          "version": "0.10.0",
+          "last_release": "2026-07-04"
         },
         "choose": {
           "description": "A human-friendly and fast alternative to `cut` and (sometimes) `awk`",
@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "4.10.0",
-          "last_release": "2026-06-28"
+          "version": "5.0.0",
+          "last_release": "2026-07-02"
         }
       }
     },
@@ -265,8 +265,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.138",
-          "last_release": "2026-06-21"
+          "version": "0.9.140",
+          "last_release": "2026-07-05"
         },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
@@ -293,8 +293,8 @@
           "execs": [
             "cargo-tarpaulin"
           ],
-          "version": "0.35.5",
-          "last_release": "2026-06-20"
+          "version": "0.37.0",
+          "last_release": "2026-07-04"
         },
         "cargo-generate": {
           "description": "A developer tool to help you get up and running quickly with a new Rust project",
@@ -320,8 +320,8 @@
           "execs": [
             "cargo-install-update"
           ],
-          "version": "20.0.2",
-          "last_release": "2026-06-09"
+          "version": "20.0.3",
+          "last_release": "2026-07-03"
         },
         "cargo-cache": {
           "description": "Manage cargo cache (`~/.cargo/`), print sizes and remove directories",
@@ -500,8 +500,8 @@
           "execs": [
             "btm"
           ],
-          "version": "0.14.2",
-          "last_release": "2026-06-27"
+          "version": "0.14.3",
+          "last_release": "2026-07-02"
         },
         "procs": {
           "description": "A modern replacement for `ps` written in Rust",
@@ -615,8 +615,8 @@
           "execs": [
             "jj"
           ],
-          "version": "0.42.0",
-          "last_release": "2026-06-04"
+          "version": "0.43.0",
+          "last_release": "2026-07-02"
         },
         "git-cliff": {
           "description": "A highly customizable changelog generator that follows conventional commits",
@@ -761,8 +761,8 @@
           "execs": [
             "nu"
           ],
-          "version": "0.113.1",
-          "last_release": "2026-05-29"
+          "version": "0.114.0",
+          "last_release": "2026-07-05"
         },
         "zellij": {
           "description": "A terminal workspace with batteries included — multiplexer alternative to tmux",
@@ -794,8 +794,8 @@
           "execs": [
             "just"
           ],
-          "version": "1.54.0",
-          "last_release": "2026-06-23"
+          "version": "1.55.1",
+          "last_release": "2026-06-30"
         },
         "watchexec-cli": {
           "description": "Executes commands in response to file modifications",
