@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.0.0",
-          "last_release": "2026-07-02"
+          "version": "5.1.0",
+          "last_release": "2026-07-09"
         }
       }
     },
@@ -247,8 +247,8 @@
           "execs": [
             "cargo-deny"
           ],
-          "version": "0.19.9",
-          "last_release": "2026-06-15"
+          "version": "0.20.2",
+          "last_release": "2026-07-09"
         },
         "cargo-udeps": {
           "description": "Find unused dependencies in your Cargo.toml",
@@ -284,8 +284,8 @@
           "execs": [
             "cargo-release"
           ],
-          "version": "1.1.2",
-          "last_release": "2026-03-24"
+          "version": "1.1.3",
+          "last_release": "2026-07-10"
         },
         "cargo-tarpaulin": {
           "description": "A code coverage tool for Rust projects",
@@ -302,8 +302,8 @@
           "execs": [
             "cargo-generate"
           ],
-          "version": "0.23.12",
-          "last_release": "2026-06-12"
+          "version": "0.23.13",
+          "last_release": "2026-07-08"
         },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
@@ -320,8 +320,8 @@
           "execs": [
             "cargo-install-update"
           ],
-          "version": "20.0.3",
-          "last_release": "2026-07-03"
+          "version": "22.0.0",
+          "last_release": "2026-07-12"
         },
         "cargo-cache": {
           "description": "Manage cargo cache (`~/.cargo/`), print sizes and remove directories",
@@ -500,8 +500,8 @@
           "execs": [
             "btm"
           ],
-          "version": "0.14.3",
-          "last_release": "2026-07-02"
+          "version": "0.14.4",
+          "last_release": "2026-07-09"
         },
         "procs": {
           "description": "A modern replacement for `ps` written in Rust",
@@ -536,8 +536,8 @@
           "execs": [
             "oha"
           ],
-          "version": "1.14.0",
-          "last_release": "2026-02-28"
+          "version": "1.15.0",
+          "last_release": "2026-07-11"
         },
         "xh": {
           "description": "A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust",
@@ -564,8 +564,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.6.2",
-          "last_release": "2026-06-20"
+          "version": "17.7.0",
+          "last_release": "2026-07-10"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -639,8 +639,8 @@
           "execs": [
             "broot"
           ],
-          "version": "1.57.0",
-          "last_release": "2026-06-01"
+          "version": "1.58.0",
+          "last_release": "2026-07-10"
         },
         "yazi-fm": {
           "description": "Blazing fast terminal file manager written in Rust, based on async I/O",
@@ -727,8 +727,8 @@
           "execs": [
             "xan"
           ],
-          "version": "0.59.0",
-          "last_release": "2026-06-17"
+          "version": "0.60.0",
+          "last_release": "2026-07-10"
         },
         "sqlx-cli": {
           "description": "Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data",
@@ -761,8 +761,8 @@
           "execs": [
             "nu"
           ],
-          "version": "0.114.0",
-          "last_release": "2026-07-05"
+          "version": "0.114.1",
+          "last_release": "2026-07-11"
         },
         "zellij": {
           "description": "A terminal workspace with batteries included — multiplexer alternative to tmux",
@@ -779,8 +779,8 @@
           "execs": [
             "atuin"
           ],
-          "version": "18.16.1",
-          "last_release": "2026-05-12"
+          "version": "18.17.0",
+          "last_release": "2026-07-09"
         }
       }
     },
@@ -794,8 +794,8 @@
           "execs": [
             "just"
           ],
-          "version": "1.55.1",
-          "last_release": "2026-06-30"
+          "version": "1.56.0",
+          "last_release": "2026-07-10"
         },
         "watchexec-cli": {
           "description": "Executes commands in response to file modifications",
@@ -845,8 +845,8 @@
           "execs": [
             "mdbook"
           ],
-          "version": "0.5.3",
-          "last_release": "2026-05-19"
+          "version": "0.5.4",
+          "last_release": "2026-07-06"
         },
         "mdbook-mermaid": {
           "description": "A preprocessor for mdbook that renders Mermaid diagrams",
