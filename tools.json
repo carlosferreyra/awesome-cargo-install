@@ -20,8 +20,8 @@
               "description": "Search for `fn main` only in Rust files"
             }
           ],
-          "version": "15.1.0",
-          "last_release": "2025-10-22"
+          "version": "15.2.0",
+          "last_release": "2026-07-15"
         },
         "fd-find": {
           "description": "A simple, fast and user-friendly alternative to `find`",
@@ -53,8 +53,8 @@
           "execs": [
             "eza"
           ],
-          "version": "0.23.4",
-          "last_release": "2025-10-03"
+          "version": "0.23.5",
+          "last_release": "2026-07-19"
         },
         "du-dust": {
           "description": "A more intuitive version of `du` in Rust",
@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.1.0",
-          "last_release": "2026-07-09"
+          "version": "5.3.1",
+          "last_release": "2026-07-19"
         }
       }
     },
@@ -192,8 +192,8 @@
             "cargo-upgrade",
             "cargo-set-version"
           ],
-          "version": "0.13.11",
-          "last_release": "2026-05-28"
+          "version": "0.13.13",
+          "last_release": "2026-07-15"
         },
         "cargo-watch": {
           "description": "Watches over your project's source for changes, runs commands when they occur",
@@ -220,8 +220,8 @@
           "execs": [
             "cargo-expand"
           ],
-          "version": "1.0.123",
-          "last_release": "2026-06-16"
+          "version": "1.0.124",
+          "last_release": "2026-07-18"
         },
         "cargo-outdated": {
           "description": "Displays when Rust dependencies are out of date",
@@ -311,8 +311,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.20.1",
-          "last_release": "2026-06-21"
+          "version": "1.21.0",
+          "last_release": "2026-07-14"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -384,8 +384,8 @@
           "execs": [
             "cargo-semver-checks"
           ],
-          "version": "0.48.0",
-          "last_release": "2026-05-31"
+          "version": "0.49.0",
+          "last_release": "2026-07-18"
         },
         "cargo-chef": {
           "description": "A cargo-subcommand to speed up Rust Docker builds using Docker layer caching",
@@ -500,8 +500,8 @@
           "execs": [
             "btm"
           ],
-          "version": "0.14.4",
-          "last_release": "2026-07-09"
+          "version": "0.14.6",
+          "last_release": "2026-07-20"
         },
         "procs": {
           "description": "A modern replacement for `ps` written in Rust",
@@ -564,8 +564,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.7.0",
-          "last_release": "2026-07-10"
+          "version": "17.8.0",
+          "last_release": "2026-07-15"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -779,8 +779,8 @@
           "execs": [
             "atuin"
           ],
-          "version": "18.17.0",
-          "last_release": "2026-07-09"
+          "version": "18.17.1",
+          "last_release": "2026-07-14"
         }
       }
     },
@@ -794,8 +794,8 @@
           "execs": [
             "just"
           ],
-          "version": "1.56.0",
-          "last_release": "2026-07-10"
+          "version": "1.57.0",
+          "last_release": "2026-07-19"
         },
         "watchexec-cli": {
           "description": "Executes commands in response to file modifications",
@@ -812,8 +812,8 @@
           "execs": [
             "bacon"
           ],
-          "version": "3.23.0",
-          "last_release": "2026-05-19"
+          "version": "3.24.0",
+          "last_release": "2026-07-14"
         },
         "mask": {
           "description": "A CLI task runner defined by a simple markdown file",
@@ -872,8 +872,8 @@
           "execs": [
             "typst"
           ],
-          "version": "0.15.0",
-          "last_release": "2026-06-15"
+          "version": "0.15.1",
+          "last_release": "2026-07-17"
         }
       }
     },
