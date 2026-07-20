@@ -92,6 +92,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [cargo-make](https://github.com/sagiegurari/cargo-make) | Rust task runner and build tool — supports tasks, dependencies, and conditions | ```cargo-make```, ```makers``` | 0.37.24<br>2025-01-18 |
 | [cargo-modules](https://github.com/regexident/cargo-modules) | A cargo plugin for showing a tree-like overview of a crate's modules | ```cargo-modules``` | 0.26.0<br>2026-04-18 |
 | [cargo-msrv](https://github.com/foresterre/cargo-msrv) | Find the Minimum Supported Rust Version for your project | ```cargo-msrv``` | 0.19.3<br>2026-03-25 |
+| [cargo-mutants](https://github.com/sourcefrog/cargo-mutants) | Find gaps in test suites by injecting mutations and checking whether tests catch them<br><details><summary><strong><a href="#">Examples</a></strong></summary><br>`cargo mutants` — Run mutation testing on the current Rust project<br></details> | ```cargo-mutants``` | — |
 | [cargo-nextest](https://github.com/nextest-rs/nextest) | A next-generation test runner for Rust — up to 3x faster than `cargo test` | ```cargo-nextest``` | 0.9.140<br>2026-07-05 |
 | [cargo-outdated](https://github.com/kbknapp/cargo-outdated) | Displays when Rust dependencies are out of date | ```cargo-outdated``` | 0.19.0<br>2026-04-14 |
 | [cargo-release](https://github.com/crate-ci/cargo-release) | Cargo subcommand for smoothly releasing a new version of your crate | ```cargo-release``` | 1.1.3<br>2026-07-10 |
