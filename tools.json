@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.3.1",
-          "last_release": "2026-07-19"
+          "version": "5.5.0",
+          "last_release": "2026-07-23"
         }
       }
     },
@@ -302,8 +302,8 @@
           "execs": [
             "cargo-generate"
           ],
-          "version": "0.23.13",
-          "last_release": "2026-07-08"
+          "version": "0.23.14",
+          "last_release": "2026-07-23"
         },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
@@ -311,8 +311,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.21.0",
-          "last_release": "2026-07-14"
+          "version": "1.21.1",
+          "last_release": "2026-07-25"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -320,8 +320,8 @@
           "execs": [
             "cargo-install-update"
           ],
-          "version": "22.0.0",
-          "last_release": "2026-07-12"
+          "version": "22.1.0",
+          "last_release": "2026-07-21"
         },
         "cargo-cache": {
           "description": "Manage cargo cache (`~/.cargo/`), print sizes and remove directories",
@@ -546,8 +546,8 @@
             "xh",
             "xhs"
           ],
-          "version": "0.26.1",
-          "last_release": "2026-06-19"
+          "version": "0.26.2",
+          "last_release": "2026-07-26"
         },
         "rustscan": {
           "description": "The modern port scanner — fast and extensible with a scripting engine",
