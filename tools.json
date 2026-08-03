@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.5.0",
-          "last_release": "2026-07-23"
+          "version": "5.6.1",
+          "last_release": "2026-07-27"
         }
       }
     },
@@ -320,8 +320,8 @@
           "execs": [
             "cargo-install-update"
           ],
-          "version": "22.1.0",
-          "last_release": "2026-07-21"
+          "version": "22.1.1",
+          "last_release": "2026-07-27"
         },
         "cargo-cache": {
           "description": "Manage cargo cache (`~/.cargo/`), print sizes and remove directories",
@@ -384,8 +384,8 @@
           "execs": [
             "cargo-semver-checks"
           ],
-          "version": "0.49.0",
-          "last_release": "2026-07-18"
+          "version": "0.50.0",
+          "last_release": "2026-08-01"
         },
         "cargo-chef": {
           "description": "A cargo-subcommand to speed up Rust Docker builds using Docker layer caching",
@@ -500,8 +500,8 @@
           "execs": [
             "btm"
           ],
-          "version": "0.14.6",
-          "last_release": "2026-07-20"
+          "version": "0.14.7",
+          "last_release": "2026-07-27"
         },
         "procs": {
           "description": "A modern replacement for `ps` written in Rust",
@@ -564,8 +564,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.8.0",
-          "last_release": "2026-07-15"
+          "version": "17.9.0",
+          "last_release": "2026-07-28"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -779,8 +779,8 @@
           "execs": [
             "atuin"
           ],
-          "version": "18.17.1",
-          "last_release": "2026-07-14"
+          "version": "18.18.1",
+          "last_release": "2026-07-28"
         }
       }
     },
@@ -830,8 +830,8 @@
           "execs": [
             "sccache"
           ],
-          "version": "0.16.0",
-          "last_release": "2026-06-19"
+          "version": "0.17.0",
+          "last_release": "2026-07-29"
         }
       }
     },
