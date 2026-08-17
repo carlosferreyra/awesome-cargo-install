@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.6.3",
-          "last_release": "2026-08-07"
+          "version": "5.6.5",
+          "last_release": "2026-08-16"
         }
       }
     },
@@ -284,8 +284,8 @@
           "execs": [
             "cargo-release"
           ],
-          "version": "1.1.4",
-          "last_release": "2026-08-06"
+          "version": "1.1.5",
+          "last_release": "2026-08-11"
         },
         "cargo-tarpaulin": {
           "description": "A code coverage tool for Rust projects",
@@ -293,8 +293,8 @@
           "execs": [
             "cargo-tarpaulin"
           ],
-          "version": "0.37.0",
-          "last_release": "2026-07-04"
+          "version": "0.37.2",
+          "last_release": "2026-08-15"
         },
         "cargo-generate": {
           "description": "A developer tool to help you get up and running quickly with a new Rust project",
@@ -356,8 +356,8 @@
           "execs": [
             "cargo-llvm-cov"
           ],
-          "version": "0.8.7",
-          "last_release": "2026-05-13"
+          "version": "0.9.0",
+          "last_release": "2026-08-16"
         },
         "flamegraph": {
           "description": "Easy flamegraphs for Rust projects and anything else, without Perl or pipes",
@@ -366,8 +366,8 @@
             "cargo-flamegraph",
             "flamegraph"
           ],
-          "version": "0.6.13",
-          "last_release": "2026-06-05"
+          "version": "0.6.14",
+          "last_release": "2026-08-12"
         },
         "cargo-msrv": {
           "description": "Find the Minimum Supported Rust Version for your project",
@@ -393,8 +393,8 @@
           "execs": [
             "cargo-chef"
           ],
-          "version": "0.1.77",
-          "last_release": "2026-03-03"
+          "version": "0.1.78",
+          "last_release": "2026-08-12"
         },
         "cargo-modules": {
           "description": "A cargo plugin for showing a tree-like overview of a crate's modules",
@@ -500,8 +500,8 @@
           "execs": [
             "btm"
           ],
-          "version": "0.14.7",
-          "last_release": "2026-07-27"
+          "version": "0.14.8",
+          "last_release": "2026-08-13"
         },
         "procs": {
           "description": "A modern replacement for `ps` written in Rust",
@@ -658,8 +658,8 @@
           "execs": [
             "xplr"
           ],
-          "version": "1.1.0",
-          "last_release": "2025-12-08"
+          "version": "1.1.1",
+          "last_release": "2026-08-15"
         },
         "nomino": {
           "description": "Batch rename utility for developers",
@@ -761,8 +761,8 @@
           "execs": [
             "nu"
           ],
-          "version": "0.114.1",
-          "last_release": "2026-07-11"
+          "version": "0.115.0",
+          "last_release": "2026-08-15"
         },
         "zellij": {
           "description": "A terminal workspace with batteries included — multiplexer alternative to tmux",
@@ -854,8 +854,8 @@
           "execs": [
             "mdbook-mermaid"
           ],
-          "version": "0.17.0",
-          "last_release": "2025-11-18"
+          "version": "0.17.1",
+          "last_release": "2026-08-14"
         },
         "mdbook-linkcheck": {
           "description": "A backend for mdbook that validates links",
