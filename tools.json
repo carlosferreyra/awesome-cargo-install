@@ -62,8 +62,8 @@
           "execs": [
             "dust"
           ],
-          "version": "1.2.4",
-          "last_release": "2026-01-08"
+          "version": "1.2.5",
+          "last_release": "2026-08-19"
         },
         "sd": {
           "description": "An intuitive find & replace CLI — an alternative to `sed`",
@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.6.5",
-          "last_release": "2026-08-16"
+          "version": "5.6.6",
+          "last_release": "2026-08-22"
         }
       }
     },
@@ -220,8 +220,8 @@
           "execs": [
             "cargo-expand"
           ],
-          "version": "1.0.124",
-          "last_release": "2026-07-18"
+          "version": "1.0.126",
+          "last_release": "2026-08-19"
         },
         "cargo-outdated": {
           "description": "Displays when Rust dependencies are out of date",
@@ -311,8 +311,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.21.1",
-          "last_release": "2026-07-25"
+          "version": "1.22.0",
+          "last_release": "2026-08-22"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -536,8 +536,8 @@
           "execs": [
             "oha"
           ],
-          "version": "1.15.0",
-          "last_release": "2026-07-11"
+          "version": "1.16.0",
+          "last_release": "2026-08-23"
         },
         "xh": {
           "description": "A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust",
@@ -761,8 +761,8 @@
           "execs": [
             "nu"
           ],
-          "version": "0.115.0",
-          "last_release": "2026-08-15"
+          "version": "0.115.1",
+          "last_release": "2026-08-23"
         },
         "zellij": {
           "description": "A terminal workspace with batteries included — multiplexer alternative to tmux",
@@ -770,8 +770,8 @@
           "execs": [
             "zellij"
           ],
-          "version": "0.44.3",
-          "last_release": "2026-05-13"
+          "version": "0.45.0",
+          "last_release": "2026-08-20"
         },
         "atuin": {
           "description": "Magical shell history — sync, search, and backup your shell history",
@@ -803,8 +803,8 @@
           "execs": [
             "watchexec"
           ],
-          "version": "2.5.1",
-          "last_release": "2026-03-30"
+          "version": "2.6.1",
+          "last_release": "2026-08-22"
         },
         "bacon": {
           "description": "A background Rust code checker — fast and low-friction",
@@ -812,8 +812,8 @@
           "execs": [
             "bacon"
           ],
-          "version": "3.24.0",
-          "last_release": "2026-07-14"
+          "version": "3.25.0",
+          "last_release": "2026-08-23"
         },
         "mask": {
           "description": "A CLI task runner defined by a simple markdown file",
