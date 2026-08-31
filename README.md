@@ -54,15 +54,15 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [coreutils](https://github.com/uutils/coreutils) | Cross-platform Rust rewrite of the GNU coreutils | ```coreutils``` | 0.10.0<br>2026-08-05 |
 | [du-dust](https://github.com/bootandy/dust) | A more intuitive version of `du` in Rust | ```dust``` | 1.2.5<br>2026-08-19 |
 | [eza](https://github.com/eza-community/eza) | A modern, maintained replacement for `ls` | ```eza``` | 0.23.5<br>2026-07-19 |
-| [fd-find](https://github.com/sharkdp/fd) | A simple, fast and user-friendly alternative to `find`<br><details><summary><strong><a href="#">Examples</a></strong></summary><br>`cargo install fd-find` — Install fd-find (provides the `fd` binary)<br></details> | ```fd``` | 10.4.2<br>2026-03-10 |
+| [fd-find](https://github.com/sharkdp/fd) | A simple, fast and user-friendly alternative to `find`<br><details><summary><strong><a href="#">Examples</a></strong></summary><br>`cargo install fd-find` — Install fd-find (provides the `fd` binary)<br></details> | ```fd``` | 10.5.0<br>2026-08-26 |
 | [grex](https://github.com/pemistahl/grex) | Generate regular expressions from user-provided test cases | ```grex``` | 1.4.6<br>2025-11-14 |
 | [hyperfine](https://github.com/sharkdp/hyperfine) | A command-line benchmarking tool with statistical analysis<br><details><summary><strong><a href="#">Examples</a></strong></summary><br>`hyperfine 'sleep 0.1' 'sleep 0.2'` — Benchmark two commands head-to-head<br></details> | ```hyperfine``` | 1.20.0<br>2025-11-18 |
-| [ouch](https://github.com/ouch-org/ouch) | Painless compression and decompression for your terminal | ```ouch``` | 0.8.0<br>2026-05-26 |
+| [ouch](https://github.com/ouch-org/ouch) | Painless compression and decompression for your terminal | ```ouch``` | 0.8.2<br>2026-08-31 |
 | [pastel](https://github.com/sharkdp/pastel) | A command-line tool to generate, analyze, convert and manipulate colors | ```pastel``` | 0.12.0<br>2026-02-14 |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | Recursively search directories for a regex pattern — a faster grep<br><details><summary><strong><a href="#">Examples</a></strong></summary><br>`cargo install ripgrep` — Install ripgrep (provides the `rg` binary)<br>`rg 'fn main' --type rust` — Search for `fn main` only in Rust files<br></details> | ```rg``` | 15.2.0<br>2026-07-15 |
 | [sd](https://github.com/chmln/sd) | An intuitive find & replace CLI — an alternative to `sed` | ```sd``` | 1.0.0<br>2023-11-08 |
 | [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | ```sk``` | 5.6.6<br>2026-08-22 |
-| [tealdeer](https://github.com/dbrgn/tealdeer) | A very fast implementation of `tldr` in Rust | ```tldr``` | 1.8.1<br>2025-11-11 |
+| [tealdeer](https://github.com/dbrgn/tealdeer) | A very fast implementation of `tldr` in Rust | ```tldr``` | 1.9.0<br>2026-08-24 |
 | [tokei](https://github.com/XAMPPRocky/tokei) | Count lines of code across a codebase, grouped by language | ```tokei``` | 14.0.0<br>2025-12-30 |
 | [tre-command](https://github.com/dduan/tre) | A modern alternative to `tree` with git/gitignore awareness | ```tre``` | 0.4.0<br>2022-06-19 |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | A smarter `cd` command — jump to frecent directories | ```zoxide``` | 0.10.0<br>2026-07-04 |
@@ -111,7 +111,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [bandwhich](https://github.com/imsnif/bandwhich) | Terminal bandwidth utilization tool | ```bandwhich``` | 0.23.1<br>2024-10-08 |
-| [bottom](https://github.com/ClementTsang/bottom) | Yet another cross-platform graphical process/system monitor | ```btm``` | 0.14.8<br>2026-08-13 |
+| [bottom](https://github.com/ClementTsang/bottom) | Yet another cross-platform graphical process/system monitor | ```btm``` | 0.14.9<br>2026-08-27 |
 | [gping](https://github.com/orf/gping) | Ping, but with a graph | ```gping``` | 1.20.4<br>2026-06-24 |
 | [oha](https://github.com/hatoo/oha) | HTTP load generator with a TUI, inspired by rakyll/hey | ```oha``` | 1.16.0<br>2026-08-23 |
 | [procs](https://github.com/dalance/procs) | A modern replacement for `ps` written in Rust | ```procs``` | 0.14.12<br>2026-06-25 |
@@ -129,14 +129,14 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [git-delta](https://github.com/dandavison/delta) | A syntax-highlighting pager for git, diff, grep, and blame output | ```delta``` | 0.19.2<br>2026-03-28 |
 | [gitui](https://github.com/gitui-org/gitui) | Blazing fast terminal-UI for git, written in Rust | ```gitui``` | 0.28.1<br>2026-03-24 |
 | [jj-cli](https://github.com/jj-vcs/jj) | Jujutsu — a Git-compatible VCS that is both simple and powerful | ```jj``` | 0.44.0<br>2026-08-06 |
-| [onefetch](https://github.com/o2sh/onefetch) | Git repository summary on your terminal — languages, stats and commit info | ```onefetch``` | 2.27.1<br>2026-03-19 |
+| [onefetch](https://github.com/o2sh/onefetch) | Git repository summary on your terminal — languages, stats and commit info | ```onefetch``` | 2.28.1<br>2026-08-30 |
 
 
 ## File Management
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
-| [broot](https://github.com/Canop/broot) | A new way to see and navigate directory trees | ```broot``` | 1.58.0<br>2026-07-10 |
+| [broot](https://github.com/Canop/broot) | A new way to see and navigate directory trees | ```broot``` | 1.59.0<br>2026-08-24 |
 | [felix](https://github.com/kyoheiu/felix) | A tui file manager with Vim-like key mapping | ```fx``` | 2.16.1<br>2025-04-12 |
 | [nomino](https://github.com/yaa110/nomino) | Batch rename utility for developers | ```nomino``` | 1.6.4<br>2025-08-07 |
 | [xplr](https://github.com/sayanarijit/xplr) | A hackable, minimal, fast TUI file explorer | ```xplr``` | 1.1.1<br>2026-08-15 |
@@ -159,10 +159,10 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
-| [atuin](https://github.com/atuinsh/atuin) | Magical shell history — sync, search, and backup your shell history | ```atuin``` | 18.19.0<br>2026-08-03 |
+| [atuin](https://github.com/atuinsh/atuin) | Magical shell history — sync, search, and backup your shell history | ```atuin``` | 18.20.1<br>2026-08-26 |
 | [nu](https://github.com/nushell/nushell) | Nushell — a new type of shell where data is structured | ```nu``` | 0.115.1<br>2026-08-23 |
 | [starship](https://github.com/starship/starship) | The minimal, blazing-fast, and infinitely customizable prompt for any shell | ```starship``` | 1.26.0<br>2026-06-28 |
-| [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included — multiplexer alternative to tmux | ```zellij``` | 0.45.0<br>2026-08-20 |
+| [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included — multiplexer alternative to tmux | ```zellij``` | 0.45.1<br>2026-08-28 |
 
 
 ## Build Tools & Task Runners
@@ -173,7 +173,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [just](https://github.com/casey/just) | A handy way to save and run project-specific commands — a modern `make` | ```just``` | 1.58.0<br>2026-08-03 |
 | [mask](https://github.com/jacobdeichert/mask) | A CLI task runner defined by a simple markdown file | ```mask``` | 0.11.7<br>2026-01-10 |
 | [sccache](https://github.com/mozilla/sccache) | Shared compilation cache — a `ccache`-like compiler wrapper that avoids recompilation | ```sccache``` | 0.17.0<br>2026-07-29 |
-| [watchexec-cli](https://github.com/watchexec/watchexec) | Executes commands in response to file modifications | ```watchexec``` | 2.6.1<br>2026-08-22 |
+| [watchexec-cli](https://github.com/watchexec/watchexec) | Executes commands in response to file modifications | ```watchexec``` | 2.7.0<br>2026-08-24 |
 
 
 ## Documentation & Writing
