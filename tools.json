@@ -95,8 +95,8 @@
           "execs": [
             "tokei"
           ],
-          "version": "14.0.0",
-          "last_release": "2025-12-30"
+          "version": "15.0.0",
+          "last_release": "2026-09-06"
         },
         "tealdeer": {
           "description": "A very fast implementation of `tldr` in Rust",
@@ -167,8 +167,8 @@
           "execs": [
             "coreutils"
           ],
-          "version": "0.10.0",
-          "last_release": "2026-08-05"
+          "version": "0.11.0",
+          "last_release": "2026-09-01"
         },
         "skim": {
           "description": "Fuzzy finder in Rust — an alternative to fzf",
@@ -302,8 +302,8 @@
           "execs": [
             "cargo-generate"
           ],
-          "version": "0.23.14",
-          "last_release": "2026-07-23"
+          "version": "0.24.0",
+          "last_release": "2026-08-31"
         },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
@@ -311,8 +311,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.22.0",
-          "last_release": "2026-08-22"
+          "version": "1.23.0",
+          "last_release": "2026-09-05"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -356,8 +356,8 @@
           "execs": [
             "cargo-llvm-cov"
           ],
-          "version": "0.9.0",
-          "last_release": "2026-08-16"
+          "version": "0.9.1",
+          "last_release": "2026-09-06"
         },
         "flamegraph": {
           "description": "Easy flamegraphs for Rust projects and anything else, without Perl or pipes",
@@ -527,8 +527,8 @@
           "execs": [
             "gping"
           ],
-          "version": "1.20.4",
-          "last_release": "2026-06-24"
+          "version": "1.21.0",
+          "last_release": "2026-08-31"
         },
         "oha": {
           "description": "HTTP load generator with a TUI, inspired by rakyll/hey",
@@ -615,8 +615,8 @@
           "execs": [
             "jj"
           ],
-          "version": "0.44.0",
-          "last_release": "2026-08-06"
+          "version": "0.45.1",
+          "last_release": "2026-09-03"
         },
         "git-cliff": {
           "description": "A highly customizable changelog generator that follows conventional commits",
@@ -624,8 +624,8 @@
           "execs": [
             "git-cliff"
           ],
-          "version": "2.13.1",
-          "last_release": "2026-04-26"
+          "version": "2.14.1",
+          "last_release": "2026-09-01"
         }
       }
     },
@@ -639,8 +639,8 @@
           "execs": [
             "broot"
           ],
-          "version": "1.59.0",
-          "last_release": "2026-08-24"
+          "version": "1.60.0",
+          "last_release": "2026-09-05"
         },
         "yazi-fm": {
           "description": "Blazing fast terminal file manager written in Rust, based on async I/O",
@@ -691,8 +691,8 @@
           "execs": [
             "jql"
           ],
-          "version": "8.1.2",
-          "last_release": "2026-03-18"
+          "version": "8.3.0",
+          "last_release": "2026-09-07"
         },
         "jaq": {
           "description": "A clone of jq — a JSON data processing tool",
@@ -779,8 +779,8 @@
           "execs": [
             "atuin"
           ],
-          "version": "18.20.1",
-          "last_release": "2026-08-26"
+          "version": "18.21.0",
+          "last_release": "2026-08-31"
         }
       }
     },
@@ -803,8 +803,8 @@
           "execs": [
             "watchexec"
           ],
-          "version": "2.7.0",
-          "last_release": "2026-08-24"
+          "version": "2.7.2",
+          "last_release": "2026-09-06"
         },
         "bacon": {
           "description": "A background Rust code checker — fast and low-friction",
@@ -911,8 +911,8 @@
           "execs": [
             "oxipng"
           ],
-          "version": "10.2.0",
-          "last_release": "2026-08-09"
+          "version": "10.2.1",
+          "last_release": "2026-09-02"
         }
       }
     },
