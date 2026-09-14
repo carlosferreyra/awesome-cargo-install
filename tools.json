@@ -158,8 +158,8 @@
           "execs": [
             "ouch"
           ],
-          "version": "0.8.2",
-          "last_release": "2026-08-31"
+          "version": "0.8.3",
+          "last_release": "2026-09-13"
         },
         "coreutils": {
           "description": "Cross-platform Rust rewrite of the GNU coreutils",
@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.6.6",
-          "last_release": "2026-08-22"
+          "version": "5.7.0",
+          "last_release": "2026-09-08"
         }
       }
     },
@@ -265,8 +265,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.143",
-          "last_release": "2026-08-04"
+          "version": "0.9.144",
+          "last_release": "2026-09-10"
         },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
@@ -420,8 +420,8 @@
           "execs": [
             "cargo-auditable"
           ],
-          "version": "0.7.5",
-          "last_release": "2026-06-28"
+          "version": "0.7.6",
+          "last_release": "2026-09-13"
         },
         "cargo-bundle": {
           "description": "Wrap Rust executables in OS-specific app bundles",
@@ -564,8 +564,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.9.0",
-          "last_release": "2026-07-28"
+          "version": "17.11.0",
+          "last_release": "2026-09-13"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -639,8 +639,8 @@
           "execs": [
             "broot"
           ],
-          "version": "1.60.0",
-          "last_release": "2026-09-05"
+          "version": "1.60.1",
+          "last_release": "2026-09-08"
         },
         "yazi-fm": {
           "description": "Blazing fast terminal file manager written in Rust, based on async I/O",
@@ -691,8 +691,8 @@
           "execs": [
             "jql"
           ],
-          "version": "8.3.0",
-          "last_release": "2026-09-07"
+          "version": "9.0.3",
+          "last_release": "2026-09-08"
         },
         "jaq": {
           "description": "A clone of jq — a JSON data processing tool",
@@ -727,8 +727,8 @@
           "execs": [
             "xan"
           ],
-          "version": "0.60.0",
-          "last_release": "2026-07-10"
+          "version": "0.61.0",
+          "last_release": "2026-09-11"
         },
         "sqlx-cli": {
           "description": "Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data",
@@ -779,8 +779,8 @@
           "execs": [
             "atuin"
           ],
-          "version": "18.21.0",
-          "last_release": "2026-08-31"
+          "version": "18.22.0",
+          "last_release": "2026-09-09"
         }
       }
     },
