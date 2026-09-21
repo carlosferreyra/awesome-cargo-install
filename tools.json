@@ -62,8 +62,8 @@
           "execs": [
             "dust"
           ],
-          "version": "1.2.5",
-          "last_release": "2026-08-19"
+          "version": "1.2.6",
+          "last_release": "2026-09-16"
         },
         "sd": {
           "description": "An intuitive find & replace CLI — an alternative to `sed`",
@@ -167,8 +167,8 @@
           "execs": [
             "coreutils"
           ],
-          "version": "0.11.0",
-          "last_release": "2026-09-01"
+          "version": "0.12.0",
+          "last_release": "2026-09-17"
         },
         "skim": {
           "description": "Fuzzy finder in Rust — an alternative to fzf",
@@ -265,8 +265,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.144",
-          "last_release": "2026-09-10"
+          "version": "0.9.145",
+          "last_release": "2026-09-16"
         },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
@@ -284,8 +284,8 @@
           "execs": [
             "cargo-release"
           ],
-          "version": "1.1.5",
-          "last_release": "2026-08-11"
+          "version": "1.1.6",
+          "last_release": "2026-09-16"
         },
         "cargo-tarpaulin": {
           "description": "A code coverage tool for Rust projects",
@@ -293,8 +293,8 @@
           "execs": [
             "cargo-tarpaulin"
           ],
-          "version": "0.37.2",
-          "last_release": "2026-08-15"
+          "version": "0.37.4",
+          "last_release": "2026-09-21"
         },
         "cargo-generate": {
           "description": "A developer tool to help you get up and running quickly with a new Rust project",
@@ -302,8 +302,8 @@
           "execs": [
             "cargo-generate"
           ],
-          "version": "0.24.0",
-          "last_release": "2026-08-31"
+          "version": "0.25.0",
+          "last_release": "2026-09-18"
         },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
@@ -429,8 +429,8 @@
           "execs": [
             "cargo-bundle"
           ],
-          "version": "0.11.0",
-          "last_release": "2026-05-30"
+          "version": "0.12.0",
+          "last_release": "2026-09-20"
         },
         "cargo-deadlinks": {
           "description": "Cargo subcommand for checking your `cargo doc` output for broken links",
@@ -564,8 +564,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.11.0",
-          "last_release": "2026-09-13"
+          "version": "17.12.0",
+          "last_release": "2026-09-20"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -624,8 +624,8 @@
           "execs": [
             "git-cliff"
           ],
-          "version": "2.14.1",
-          "last_release": "2026-09-01"
+          "version": "2.14.2",
+          "last_release": "2026-09-18"
         }
       }
     },
@@ -658,8 +658,8 @@
           "execs": [
             "xplr"
           ],
-          "version": "1.1.1",
-          "last_release": "2026-08-15"
+          "version": "1.1.2",
+          "last_release": "2026-09-15"
         },
         "nomino": {
           "description": "Batch rename utility for developers",
@@ -803,8 +803,8 @@
           "execs": [
             "watchexec"
           ],
-          "version": "2.7.2",
-          "last_release": "2026-09-06"
+          "version": "2.7.3",
+          "last_release": "2026-09-15"
         },
         "bacon": {
           "description": "A background Rust code checker — fast and low-friction",
@@ -830,8 +830,8 @@
           "execs": [
             "sccache"
           ],
-          "version": "0.17.0",
-          "last_release": "2026-07-29"
+          "version": "0.18.0",
+          "last_release": "2026-09-16"
         }
       }
     },
