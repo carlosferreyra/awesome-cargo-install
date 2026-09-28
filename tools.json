@@ -176,8 +176,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.7.0",
-          "last_release": "2026-09-08"
+          "version": "5.7.2",
+          "last_release": "2026-09-27"
         }
       }
     },
@@ -265,8 +265,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.145",
-          "last_release": "2026-09-16"
+          "version": "0.9.146",
+          "last_release": "2026-09-21"
         },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
@@ -293,8 +293,8 @@
           "execs": [
             "cargo-tarpaulin"
           ],
-          "version": "0.37.4",
-          "last_release": "2026-09-21"
+          "version": "0.37.5",
+          "last_release": "2026-09-27"
         },
         "cargo-generate": {
           "description": "A developer tool to help you get up and running quickly with a new Rust project",
@@ -311,8 +311,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.23.0",
-          "last_release": "2026-09-05"
+          "version": "1.24.0",
+          "last_release": "2026-09-26"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -564,8 +564,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.12.0",
-          "last_release": "2026-09-20"
+          "version": "17.12.2",
+          "last_release": "2026-09-26"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -639,8 +639,8 @@
           "execs": [
             "broot"
           ],
-          "version": "1.60.1",
-          "last_release": "2026-09-08"
+          "version": "1.60.2",
+          "last_release": "2026-09-26"
         },
         "yazi-fm": {
           "description": "Blazing fast terminal file manager written in Rust, based on async I/O",
@@ -761,8 +761,8 @@
           "execs": [
             "nu"
           ],
-          "version": "0.115.1",
-          "last_release": "2026-08-23"
+          "version": "0.116.0",
+          "last_release": "2026-09-26"
         },
         "zellij": {
           "description": "A terminal workspace with batteries included — multiplexer alternative to tmux",
@@ -779,8 +779,8 @@
           "execs": [
             "atuin"
           ],
-          "version": "18.22.0",
-          "last_release": "2026-09-09"
+          "version": "18.23.0",
+          "last_release": "2026-09-22"
         }
       }
     },
@@ -812,8 +812,8 @@
           "execs": [
             "bacon"
           ],
-          "version": "3.25.0",
-          "last_release": "2026-08-23"
+          "version": "3.26.0",
+          "last_release": "2026-09-26"
         },
         "mask": {
           "description": "A CLI task runner defined by a simple markdown file",
@@ -935,8 +935,8 @@
           "execs": [
             "bob"
           ],
-          "version": "4.1.7",
-          "last_release": "2026-04-27"
+          "version": "4.2.0",
+          "last_release": "2026-09-22"
         },
         "presenterm": {
           "description": "A markdown terminal slideshow tool",
