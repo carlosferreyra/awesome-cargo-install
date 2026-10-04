@@ -12,6 +12,9 @@ To add a new CLI tool to the list:
 3. The tool must be actively maintained
 4. The tool should be useful for a general developer audience
 
+Archived or explicitly unmaintained tools are removed from the catalog when a maintained
+alternative is available. A release date alone does not establish maintenance status.
+
 ### Required Information
 
 Each community-maintained tool entry needs:
@@ -158,6 +161,8 @@ Your contribution will be automatically checked for:
 Real install validation (`cargo binstall` with `cargo install --locked` fallback) is intentionally
 kept out of ordinary pull request checks because it can be slow and flaky. Maintainers can run it
 manually, and the repository runs full catalog install validation on a schedule.
+Each install attempt uses a fresh temporary installation root and checks every declared binary.
+Failure reports include installer output; existing binaries on `PATH` do not count as validation.
 
 ## Running the scripts locally
 
@@ -183,7 +188,14 @@ cargo +nightly -Zscript scripts/latest_release.rs
 
 # run real install validation manually when needed
 cargo +nightly -Zscript scripts/test_clients.rs -- --all --output output.log
+
+# run install-isolation and release-sync regression checks without installing catalog tools
+python3 tests/test_scripts.py -v
 ```
+
+Release metadata sync exits unsuccessfully if any registry lookup fails. Successful lookups
+are saved locally, and failed lookups retain their previous metadata. The sync workflow does
+not commit a partial result after a failed run.
 
 ## Code of Conduct
 

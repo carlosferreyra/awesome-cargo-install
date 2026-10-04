@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools.json'
       - 'scripts/**'
+      - 'tests/**'
       - 'template/**'
   schedule:
     # monthly: run full validation on the 1st at 00:00 UTC
@@ -58,6 +59,9 @@ jobs:
 
       - name: Validate curated tool data
         run: cargo +nightly -Zscript scripts/checks.rs
+
+      - name: Test maintenance scripts
+        run: python3 tests/test_scripts.py -v
 
       - name: Test newly added tools (advisory on main push)
         if: github.event_name == 'push'

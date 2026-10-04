@@ -8,6 +8,7 @@ on:
       - 'template/**'
       - 'README.md'
       - 'scripts/**'
+      - 'tests/**'
       - '.github/workflows/validate_tool.yml'
 
 permissions:
@@ -53,6 +54,9 @@ jobs:
 
       - name: Check README is up to date
         run: cargo +nightly -Zscript scripts/readme.rs -- --check
+
+      - name: Test maintenance scripts
+        run: python3 tests/test_scripts.py -v
 
       - name: Auto-approve PR
         if: success()
