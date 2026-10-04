@@ -18,7 +18,7 @@
         <img src="https://img.shields.io/github/stars/carlosferreyra/awesome-cargo-install" alt="Stars">
     </p>
     <a href="https://github.com/carlosferreyra/awesome-cargo-install/actions/workflows/ci.yml">
-        <img src="https://github.com/carlosferreyra/awesome-cargo-install/actions/workflows/ci.yml/badge.svg" alt="Validation and Sync">
+        <img src="https://github.com/carlosferreyra/awesome-cargo-install/actions/workflows/ci.yml/badge.svg" alt="Validate Catalog">
     </a>
 </div>
 

@@ -1,0 +1,73 @@
+name: Validate Installs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: installs-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: '0'
+  CARGO_HOME: ${{ github.workspace }}/.cargo-home
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Install Rust (nightly, for cargo -Zscript)
+        uses: dtolnay/rust-toolchain@nightly
+
+      - name: Cache cargo registry and build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.CARGO_HOME }}/registry/index
+            ${{ env.CARGO_HOME }}/registry/cache
+            ${{ env.CARGO_HOME }}/git/db
+            ${{ env.CARGO_HOME }}/build
+          key: cargo-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'template/**') }}
+          restore-keys: |
+            cargo-${{ runner.os }}-nightly-
+
+      - name: Install cargo-binstall
+        uses: cargo-bins/cargo-binstall@main
+
+      - name: Validate curated tool data
+        id: catalog
+        run: cargo +nightly -Zscript scripts/checks.rs 2>&1 | tee validation.log
+
+      - name: Test full catalog
+        id: installs
+        run: cargo +nightly -Zscript scripts/test_clients.rs -- --all --output output.log 2>&1 | tee install.log
+
+      - name: Summarize install validation
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          CATALOG_STATUS: ${{ steps.catalog.outcome }}
+          INSTALLS_STATUS: ${{ steps.installs.outcome }}
+        run: python3 scripts/actions_summary.py installs
+
+      - name: Upload failure details
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: install-validation-failure
+          path: |
+            checks.log
+            validation.log
+            output.log
+            install.log
+          retention-days: 14
+          if-no-files-found: ignore

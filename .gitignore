@@ -19,6 +19,7 @@ Thumbs.db
 *.swo
 
 # Logs
+__pycache__/
 *.log
 checks.log
 output.log

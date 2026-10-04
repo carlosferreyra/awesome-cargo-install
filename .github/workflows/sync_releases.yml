@@ -1,4 +1,4 @@
-name: Sync crates.io Release Metadata
+name: Sync Release Metadata
 
 on:
   schedule:
@@ -6,7 +6,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: release-metadata-main
+  cancel-in-progress: false
 
 env:
   CARGO_TERM_COLOR: always
@@ -15,15 +19,21 @@ env:
 
 jobs:
   sync:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
     steps:
-      - name: Checkout code
+      - name: Checkout main
         uses: actions/checkout@v6
+        with:
+          ref: main
 
       - name: Install Rust (nightly, for cargo -Zscript)
         uses: dtolnay/rust-toolchain@nightly
 
-      - name: Cache cargo registry, git, build cache
+      - name: Cache cargo registry and build cache
         uses: actions/cache@v4
         with:
           path: |
@@ -31,20 +41,67 @@ jobs:
             ${{ env.CARGO_HOME }}/registry/cache
             ${{ env.CARGO_HOME }}/git/db
             ${{ env.CARGO_HOME }}/build
-          key: cargo-sync-${{ runner.os }}-nightly-${{ hashFiles('scripts/latest_release.rs', 'scripts/readme.rs', 'template/**') }}
+          key: cargo-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'template/**') }}
           restore-keys: |
-            cargo-sync-${{ runner.os }}-nightly-
             cargo-${{ runner.os }}-nightly-
 
+      - name: Validate catalog before sync
+        id: before
+        run: cargo +nightly -Zscript scripts/checks.rs 2>&1 | tee before-sync.log
+
       - name: Fetch latest release info from crates.io
-        run: cargo +nightly -Zscript scripts/latest_release.rs
+        id: metadata
+        run: cargo +nightly -Zscript scripts/latest_release.rs 2>&1 | tee sync.log
 
-      - name: Regenerate README from updated tools.json
-        run: cargo +nightly -Zscript scripts/readme.rs
+      - name: Validate updated catalog
+        id: after
+        run: cargo +nightly -Zscript scripts/checks.rs 2>&1 | tee after-sync.log
 
-      - name: Commit changes if any
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Generate and check README
+        id: readme
+        run: |
+          cargo +nightly -Zscript scripts/readme.rs 2>&1 | tee readme.log
+          cargo +nightly -Zscript scripts/readme.rs -- --check 2>&1 | tee -a readme.log
+
+      - name: Commit and push metadata changes
+        id: publish
+        shell: bash
+        run: |
+          if git diff --quiet -- tools.json README.md; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- tools.json README.md
+          git commit -m 'chore(tools): sync latest crates.io release metadata [skip ci]'
+          git push origin HEAD:main
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+
+      - name: Summarize metadata sync
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          BEFORE_STATUS: ${{ steps.before.outcome }}
+          METADATA_STATUS: ${{ steps.metadata.outcome }}
+          AFTER_STATUS: ${{ steps.after.outcome }}
+          README_STATUS: ${{ steps.readme.outcome }}
+          PUBLISH_STATUS: ${{ steps.publish.outcome }}
+          PUBLISHED_CHANGES: ${{ steps.publish.outputs.changed }}
+        run: python3 scripts/actions_summary.py sync
+
+      - name: Upload failure details
+        if: failure()
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: 'chore(tools): sync latest crates.io release metadata [skip ci]'
-          # Single-line, space-separated — the action word-splits on spaces, not newlines.
-          file_pattern: 'tools.json README.md'
+          name: release-sync-failure
+          path: |
+            checks.log
+            before-sync.log
+            sync.log
+            after-sync.log
+            readme.log
+            tools.json
+            README.md
+          retention-days: 14
+          if-no-files-found: ignore

@@ -10,8 +10,7 @@ regex = "1"
 tempfile = "3"
 ---
 //! Test that tools are installable via `cargo binstall` (fast path) with fallback to
-//! `cargo install --locked` (source compile). Classifies failures so the PR workflow
-//! can comment helpfully.
+//! `cargo install --locked` (source compile). Reports classified failures and installer logs.
 //!
 //! Usage (mutually exclusive sources):
 //!     cargo +nightly -Zscript scripts/test_clients.rs -- --all [--output <log>]
