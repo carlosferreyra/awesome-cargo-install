@@ -131,7 +131,7 @@ tldr tar
 | [ouch](https://github.com/ouch-org/ouch) | Painless compression and decompression for your terminal | `ouch` | 0.8.3<br>2026-09-13 |
 | [tre-command](https://github.com/dduan/tre) | A modern alternative to `tree` with git/gitignore awareness | `tre` | 0.4.0<br>2022-06-19 |
 | [xplr](https://github.com/sayanarijit/xplr) | A hackable, minimal, fast TUI file explorer | `xplr` | 1.1.2<br>2026-09-15 |
-| [yazi-cli](https://github.com/sxyazi/yazi) | Companion CLI for the Yazi terminal file manager | `ya` | — |
+| [yazi-cli](https://github.com/sxyazi/yazi) | Companion CLI for the Yazi terminal file manager | `ya` | 26.5.6<br>2026-05-05 |
 | [yazi-fm](https://github.com/sxyazi/yazi) | Blazing fast terminal file manager written in Rust, based on async I/O | `yazi` | 26.5.6<br>2026-05-05 |
 
 
@@ -214,7 +214,7 @@ cargo binstall yazi-fm yazi-cli
 | [atuin](https://github.com/atuinsh/atuin) | Magical shell history — sync, search, and backup your shell history | `atuin` | 18.23.0<br>2026-09-22 |
 | [nu](https://github.com/nushell/nushell) | Nushell — a new type of shell where data is structured | `nu` | 0.116.0<br>2026-09-26 |
 | [pipr](https://github.com/elkowar/pipr) | Interactive, shell-command editor with preview and safe execution | `pipr` | 0.1.0<br>2025-05-03 |
-| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | `sk` | 5.7.2<br>2026-09-27 |
+| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | `sk` | 5.7.3<br>2026-10-02 |
 | [starship](https://github.com/starship/starship) | The minimal, blazing-fast, and infinitely customizable prompt for any shell | `starship` | 1.26.0<br>2026-06-28 |
 | [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included — multiplexer alternative to tmux | `zellij` | 0.45.1<br>2026-08-28 |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | A smarter `cd` command — jump to frecent directories | `zoxide` | 0.10.0<br>2026-07-04 |
@@ -281,7 +281,7 @@ jj status
 | [just](https://github.com/casey/just) | A handy way to save and run project-specific commands — a modern `make` | `just` | 1.58.0<br>2026-08-03 |
 | [mask](https://github.com/jacobdeichert/mask) | A CLI task runner defined by a simple markdown file | `mask` | 0.11.7<br>2026-01-10 |
 | [sccache](https://github.com/mozilla/sccache) | Shared compilation cache — a `ccache`-like compiler wrapper that avoids recompilation | `sccache` | 0.18.0<br>2026-09-16 |
-| [watchexec-cli](https://github.com/watchexec/watchexec) | Executes commands in response to file modifications | `watchexec` | 2.7.3<br>2026-09-15 |
+| [watchexec-cli](https://github.com/watchexec/watchexec) | Executes commands in response to file modifications | `watchexec` | 2.7.4<br>2026-10-02 |
 
 
 <details>
@@ -310,8 +310,8 @@ watchexec -- cargo check
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [cargo-audit](https://github.com/rustsec/rustsec/tree/main/cargo-audit) | Audit `Cargo.lock` for crates with security vulnerabilities | `cargo-audit` | 0.22.2<br>2026-06-05 |
-| [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) | Make production Rust binaries auditable — embed dep info into the binary | `cargo-auditable` | 0.7.6<br>2026-09-13 |
-| [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) | Install prebuilt Rust binaries without having to compile from source | `cargo-binstall` | 1.24.0<br>2026-09-26 |
+| [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) | Make production Rust binaries auditable — embed dep info into the binary | `cargo-auditable` | 0.7.7<br>2026-10-02 |
+| [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) | Install prebuilt Rust binaries without having to compile from source | `cargo-binstall` | 1.25.1<br>2026-10-03 |
 | [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) | Find out what takes most of the space in your executable | `cargo-bloat` | 0.12.1<br>2024-05-10 |
 | [cargo-bundle](https://github.com/burtonageo/cargo-bundle) | Wrap Rust executables in OS-specific app bundles | `cargo-bundle` | 0.12.0<br>2026-09-20 |
 | [cargo-cache](https://github.com/matthiaskrgr/cargo-cache) | Manage cargo cache (`~/.cargo/`), print sizes and remove directories | `cargo-cache` | 0.8.3<br>2022-09-11 |
@@ -332,7 +332,7 @@ watchexec -- cargo check
 | [cargo-nextest](https://github.com/nextest-rs/nextest) | A test runner for Rust with parallel execution and test profiles | `cargo-nextest` | 0.9.146<br>2026-09-21 |
 | [cargo-outdated](https://github.com/kbknapp/cargo-outdated) | Displays when Rust dependencies are out of date | `cargo-outdated` | 0.19.0<br>2026-04-14 |
 | [cargo-release](https://github.com/crate-ci/cargo-release) | Cargo subcommand for smoothly releasing a new version of your crate | `cargo-release` | 1.1.6<br>2026-09-16 |
-| [cargo-semver-checks](https://github.com/obi1kenobi/cargo-semver-checks) | Scan your Rust crate for semver violations | `cargo-semver-checks` | 0.50.0<br>2026-08-01 |
+| [cargo-semver-checks](https://github.com/obi1kenobi/cargo-semver-checks) | Scan your Rust crate for semver violations | `cargo-semver-checks` | 0.51.0<br>2026-10-03 |
 | [cargo-sort](https://github.com/DevinR528/cargo-sort) | Check that tables and items in `Cargo.toml` are lexically sorted | `cargo-sort` | 2.1.4<br>2026-04-25 |
 | [cargo-sweep](https://github.com/holmgr/cargo-sweep) | A cargo subcommand for cleaning unused build files created by Cargo | `cargo-sweep` | 0.8.0<br>2025-10-11 |
 | [cargo-tarpaulin](https://github.com/xd009642/tarpaulin) | A code coverage tool for Rust projects | `cargo-tarpaulin` | 0.37.5<br>2026-09-27 |
@@ -472,7 +472,7 @@ typst compile document.typ
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [bob-nvim](https://github.com/MordechaiHadad/bob) | A version manager for neovim written in Rust | `bob` | 4.2.0<br>2026-09-22 |
-| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | `topgrade` | 17.12.2<br>2026-09-26 |
+| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | `topgrade` | 17.12.3<br>2026-10-02 |
 
 
 

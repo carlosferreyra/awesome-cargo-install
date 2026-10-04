@@ -240,7 +240,9 @@
               "cmd": "cargo binstall yazi-fm yazi-cli",
               "description": "Install Yazi and its companion CLI together"
             }
-          ]
+          ],
+          "version": "26.5.6",
+          "last_release": "2026-05-05"
         }
       }
     },
@@ -360,8 +362,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.7.2",
-          "last_release": "2026-09-27"
+          "version": "5.7.3",
+          "last_release": "2026-10-02"
         },
         "pipr": {
           "description": "Interactive, shell-command editor with preview and safe execution",
@@ -464,8 +466,8 @@
           "execs": [
             "watchexec"
           ],
-          "version": "2.7.3",
-          "last_release": "2026-09-15",
+          "version": "2.7.4",
+          "last_release": "2026-10-02",
           "examples": [
             {
               "cmd": "cargo install watchexec-cli",
@@ -637,8 +639,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.24.0",
-          "last_release": "2026-09-26"
+          "version": "1.25.1",
+          "last_release": "2026-10-03"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -720,8 +722,8 @@
           "execs": [
             "cargo-semver-checks"
           ],
-          "version": "0.50.0",
-          "last_release": "2026-08-01"
+          "version": "0.51.0",
+          "last_release": "2026-10-03"
         },
         "cargo-chef": {
           "description": "A cargo-subcommand to speed up Rust Docker builds using Docker layer caching",
@@ -756,8 +758,8 @@
           "execs": [
             "cargo-auditable"
           ],
-          "version": "0.7.6",
-          "last_release": "2026-09-13"
+          "version": "0.7.7",
+          "last_release": "2026-10-02"
         },
         "cargo-bundle": {
           "description": "Wrap Rust executables in OS-specific app bundles",
@@ -1006,8 +1008,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.12.2",
-          "last_release": "2026-09-26"
+          "version": "17.12.3",
+          "last_release": "2026-10-02"
         }
       }
     },
