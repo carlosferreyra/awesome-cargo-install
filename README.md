@@ -212,9 +212,9 @@ cargo binstall yazi-fm yazi-cli
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [atuin](https://github.com/atuinsh/atuin) | Magical shell history — sync, search, and backup your shell history | `atuin` | 18.23.0<br>2026-09-22 |
-| [nu](https://github.com/nushell/nushell) | Nushell — a new type of shell where data is structured | `nu` | 0.116.0<br>2026-09-26 |
+| [nu](https://github.com/nushell/nushell) | Nushell — a new type of shell where data is structured | `nu` | 0.116.1<br>2026-10-04 |
 | [pipr](https://github.com/elkowar/pipr) | Interactive, shell-command editor with preview and safe execution | `pipr` | 0.1.0<br>2025-05-03 |
-| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | `sk` | 5.7.3<br>2026-10-02 |
+| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | `sk` | 5.7.4<br>2026-10-04 |
 | [starship](https://github.com/starship/starship) | The minimal, blazing-fast, and infinitely customizable prompt for any shell | `starship` | 1.26.0<br>2026-06-28 |
 | [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included — multiplexer alternative to tmux | `zellij` | 0.45.1<br>2026-08-28 |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | A smarter `cd` command — jump to frecent directories | `zoxide` | 0.10.0<br>2026-07-04 |
@@ -228,7 +228,7 @@ cargo binstall yazi-fm yazi-cli
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [git-cliff](https://github.com/orhun/git-cliff) | A highly customizable changelog generator that follows conventional commits | `git-cliff` | 2.14.2<br>2026-09-18 |
-| [git-delta](https://github.com/dandavison/delta) | A syntax-highlighting pager for git, diff, grep, and blame output | `delta` | 0.19.2<br>2026-03-28 |
+| [git-delta](https://github.com/dandavison/delta) | A syntax-highlighting pager for git, diff, grep, and blame output | `delta` | 0.20.1<br>2026-10-04 |
 | [gitui](https://github.com/gitui-org/gitui) | Blazing fast terminal-UI for git, written in Rust | `gitui` | 0.28.1<br>2026-03-24 |
 | [jj-cli](https://github.com/jj-vcs/jj) | Jujutsu — a Git-compatible VCS that is both simple and powerful | `jj` | 0.45.1<br>2026-09-03 |
 | [onefetch](https://github.com/o2sh/onefetch) | Git repository summary on your terminal — languages, stats and commit info | `onefetch` | 2.28.1<br>2026-08-30 |

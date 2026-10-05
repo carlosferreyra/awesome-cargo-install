@@ -326,8 +326,8 @@
           "execs": [
             "nu"
           ],
-          "version": "0.116.0",
-          "last_release": "2026-09-26"
+          "version": "0.116.1",
+          "last_release": "2026-10-04"
         },
         "zellij": {
           "description": "A terminal workspace with batteries included — multiplexer alternative to tmux",
@@ -362,8 +362,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.7.3",
-          "last_release": "2026-10-02"
+          "version": "5.7.4",
+          "last_release": "2026-10-04"
         },
         "pipr": {
           "description": "Interactive, shell-command editor with preview and safe execution",
@@ -386,8 +386,8 @@
           "execs": [
             "delta"
           ],
-          "version": "0.19.2",
-          "last_release": "2026-03-28",
+          "version": "0.20.1",
+          "last_release": "2026-10-04",
           "examples": [
             {
               "cmd": "cargo install git-delta",
