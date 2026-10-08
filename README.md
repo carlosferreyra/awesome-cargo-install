@@ -30,7 +30,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 > [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) first, then replace
 > `cargo install <crate>` with `cargo binstall <crate>`.
 
-**96 tools across 13 categories.**
+**97 tools across 13 categories.**
 
 ## Contents
 
@@ -41,7 +41,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 - [Shells, Prompts & Terminals](#shells-prompts-and-terminals) (7)
 - [Git & Version Control](#git-and-version-control) (5)
 - [Build Tools & Task Runners](#build-tools-and-task-runners) (5)
-- [Cargo Subcommands](#cargo-subcommands) (35)
+- [Cargo Subcommands](#cargo-subcommands) (36)
 - [Documentation & Writing](#documentation-and-writing) (5)
 - [Networking & HTTP](#networking-and-http) (5)
 - [System Monitoring & Infrastructure](#system-monitoring-and-infrastructure) (2)
@@ -334,6 +334,7 @@ watchexec -- cargo check
 | [cargo-mutants](https://github.com/sourcefrog/cargo-mutants) | Find gaps in test suites by injecting mutations and checking whether tests catch them | `cargo-mutants` | — |
 | [cargo-nextest](https://github.com/nextest-rs/nextest) | A test runner for Rust with parallel execution and test profiles | `cargo-nextest` | 0.9.146<br>2026-09-21 |
 | [cargo-outdated](https://github.com/kbknapp/cargo-outdated) | Displays when Rust dependencies are out of date | `cargo-outdated` | 0.19.0<br>2026-04-14 |
+| [cargo-pgrx](https://github.com/pgcentralfoundation/pgrx/tree/develop/cargo-pgrx) | Create, test, and package PostgreSQL extensions written in Rust | `cargo-pgrx` | — |
 | [cargo-release](https://github.com/crate-ci/cargo-release) | Cargo subcommand for smoothly releasing a new version of your crate | `cargo-release` | 1.1.6<br>2026-09-16 |
 | [cargo-semver-checks](https://github.com/obi1kenobi/cargo-semver-checks) | Scan your Rust crate for semver violations | `cargo-semver-checks` | 0.51.0<br>2026-10-03 |
 | [cargo-sort](https://github.com/DevinR528/cargo-sort) | Check that tables and items in `Cargo.toml` are lexically sorted | `cargo-sort` | 2.1.4<br>2026-04-25 |
@@ -443,6 +444,30 @@ Run the Rust test suite
 
 ```sh
 cargo nextest run
+```
+
+</details>
+
+
+<details>
+<summary>cargo-pgrx examples</summary>
+
+Download and build supported PostgreSQL versions for the development environment
+
+```sh
+cargo pgrx init
+```
+
+Create a new Rust PostgreSQL extension project
+
+```sh
+cargo pgrx new my_extension
+```
+
+Run the extension's tests in the initialized PostgreSQL environment
+
+```sh
+cd my_extension && cargo pgrx test
 ```
 
 </details>

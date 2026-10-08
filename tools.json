@@ -697,6 +697,27 @@
             }
           ]
         },
+        "cargo-pgrx": {
+          "description": "Create, test, and package PostgreSQL extensions written in Rust",
+          "url": "https://github.com/pgcentralfoundation/pgrx/tree/develop/cargo-pgrx",
+          "execs": [
+            "cargo-pgrx"
+          ],
+          "examples": [
+            {
+              "cmd": "cargo pgrx init",
+              "description": "Download and build supported PostgreSQL versions for the development environment"
+            },
+            {
+              "cmd": "cargo pgrx new my_extension",
+              "description": "Create a new Rust PostgreSQL extension project"
+            },
+            {
+              "cmd": "cd my_extension && cargo pgrx test",
+              "description": "Run the extension's tests in the initialized PostgreSQL environment"
+            }
+          ]
+        },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
           "url": "https://github.com/cargo-bins/cargo-binstall",
