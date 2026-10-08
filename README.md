@@ -30,7 +30,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 > [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) first, then replace
 > `cargo install <crate>` with `cargo binstall <crate>`.
 
-**95 tools across 13 categories.**
+**96 tools across 13 categories.**
 
 ## Contents
 
@@ -41,7 +41,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 - [Shells, Prompts & Terminals](#shells-prompts-and-terminals) (7)
 - [Git & Version Control](#git-and-version-control) (5)
 - [Build Tools & Task Runners](#build-tools-and-task-runners) (5)
-- [Cargo Subcommands](#cargo-subcommands) (34)
+- [Cargo Subcommands](#cargo-subcommands) (35)
 - [Documentation & Writing](#documentation-and-writing) (5)
 - [Networking & HTTP](#networking-and-http) (5)
 - [System Monitoring & Infrastructure](#system-monitoring-and-infrastructure) (2)
@@ -323,6 +323,7 @@ watchexec -- cargo check
 | [cargo-edit](https://github.com/killercup/cargo-edit) | Upgrade dependency versions and set package versions from the command line | `cargo-upgrade`, `cargo-set-version` | 0.13.13<br>2026-07-15 |
 | [cargo-expand](https://github.com/dtolnay/cargo-expand) | Shows the result of macro expansion and `#[derive]` expansion | `cargo-expand` | 1.0.126<br>2026-08-19 |
 | [cargo-generate](https://github.com/cargo-generate/cargo-generate) | A developer tool to help you get up and running quickly with a new Rust project | `cargo-generate` | 0.25.0<br>2026-09-18 |
+| [cargo-gpu](https://github.com/Rust-GPU/rust-gpu/tree/main/crates/cargo-gpu) | Compile Rust GPU shaders to SPIR-V and manage the experimental rust-gpu toolchain | `cargo-gpu` | — |
 | [cargo-hack](https://github.com/taiki-e/cargo-hack) | A cargo subcommand for testing feature flag combinations | `cargo-hack` | 0.6.45<br>2026-05-30 |
 | [cargo-info](https://gitlab.com/imp/cargo-info) | Show crate information from the terminal, pulled from crates.io | `cargo-info` | 0.7.7<br>2024-09-06 |
 | [cargo-llvm-cov](https://github.com/taiki-e/cargo-llvm-cov) | Cargo subcommand to easily use LLVM source-based code coverage | `cargo-llvm-cov` | 0.9.1<br>2026-09-06 |
@@ -376,6 +377,24 @@ Upgrade dependency requirements
 
 ```sh
 cargo upgrade
+```
+
+</details>
+
+
+<details>
+<summary>cargo-gpu examples</summary>
+
+Compile the current shader crate to SPIR-V using the required nightly Rust toolchain
+
+```sh
+cargo gpu build
+```
+
+Compile a shader crate and choose where to write its SPIR-V files
+
+```sh
+cargo gpu build --shader-crate ./shaders --output-dir ./compiled-shaders
 ```
 
 </details>

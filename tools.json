@@ -680,6 +680,23 @@
           "version": "0.25.0",
           "last_release": "2026-09-18"
         },
+        "cargo-gpu": {
+          "description": "Compile Rust GPU shaders to SPIR-V and manage the experimental rust-gpu toolchain",
+          "url": "https://github.com/Rust-GPU/rust-gpu/tree/main/crates/cargo-gpu",
+          "execs": [
+            "cargo-gpu"
+          ],
+          "examples": [
+            {
+              "cmd": "cargo gpu build",
+              "description": "Compile the current shader crate to SPIR-V using the required nightly Rust toolchain"
+            },
+            {
+              "cmd": "cargo gpu build --shader-crate ./shaders --output-dir ./compiled-shaders",
+              "description": "Compile a shader crate and choose where to write its SPIR-V files"
+            }
+          ]
+        },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
           "url": "https://github.com/cargo-bins/cargo-binstall",
