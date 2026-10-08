@@ -567,6 +567,23 @@
           "version": "0.19.0",
           "last_release": "2026-04-14"
         },
+        "cargo-afl": {
+          "description": "Fuzz Rust programs with AFL++ to find crashes and security bugs",
+          "url": "https://github.com/rust-fuzz/afl.rs",
+          "execs": [
+            "cargo-afl"
+          ],
+          "examples": [
+            {
+              "cmd": "cargo afl build",
+              "description": "Build a Rust fuzz target with AFL++ instrumentation"
+            },
+            {
+              "cmd": "cargo afl fuzz -i in -o out target/debug/url-fuzz-target",
+              "description": "Fuzz a target binary using seed inputs in `in` and write results to `out`"
+            }
+          ]
+        },
         "cargo-audit": {
           "description": "Audit `Cargo.lock` for crates with security vulnerabilities",
           "url": "https://github.com/rustsec/rustsec/tree/main/cargo-audit",

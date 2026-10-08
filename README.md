@@ -30,7 +30,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 > [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) first, then replace
 > `cargo install <crate>` with `cargo binstall <crate>`.
 
-**94 tools across 13 categories.**
+**95 tools across 13 categories.**
 
 ## Contents
 
@@ -41,7 +41,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 - [Shells, Prompts & Terminals](#shells-prompts-and-terminals) (7)
 - [Git & Version Control](#git-and-version-control) (5)
 - [Build Tools & Task Runners](#build-tools-and-task-runners) (5)
-- [Cargo Subcommands](#cargo-subcommands) (33)
+- [Cargo Subcommands](#cargo-subcommands) (34)
 - [Documentation & Writing](#documentation-and-writing) (5)
 - [Networking & HTTP](#networking-and-http) (5)
 - [System Monitoring & Infrastructure](#system-monitoring-and-infrastructure) (2)
@@ -309,6 +309,7 @@ watchexec -- cargo check
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
+| [cargo-afl](https://github.com/rust-fuzz/afl.rs) | Fuzz Rust programs with AFL++ to find crashes and security bugs | `cargo-afl` | — |
 | [cargo-audit](https://github.com/rustsec/rustsec/tree/main/cargo-audit) | Audit `Cargo.lock` for crates with security vulnerabilities | `cargo-audit` | 0.22.2<br>2026-06-05 |
 | [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) | Make production Rust binaries auditable — embed dep info into the binary | `cargo-auditable` | 0.7.7<br>2026-10-02 |
 | [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) | Install prebuilt Rust binaries without having to compile from source | `cargo-binstall` | 1.25.1<br>2026-10-03 |
@@ -342,6 +343,24 @@ watchexec -- cargo check
 | [cargo-workspaces](https://github.com/pksunkara/cargo-workspaces) | A tool for managing cargo workspaces and their crates | `cargo-workspaces`, `cargo-ws` | 0.4.2<br>2025-12-03 |
 | [cargox-cli](https://github.com/pkgxdev/cargox) | Run Rust binaries on demand, installing them automatically with cargo-binstall or cargo install | `cargox` | — |
 | [flamegraph](https://github.com/flamegraph-rs/flamegraph) | Easy flamegraphs for Rust projects and anything else, without Perl or pipes | `cargo-flamegraph`, `flamegraph` | 0.6.14<br>2026-08-12 |
+
+
+<details>
+<summary>cargo-afl examples</summary>
+
+Build a Rust fuzz target with AFL++ instrumentation
+
+```sh
+cargo afl build
+```
+
+Fuzz a target binary using seed inputs in `in` and write results to `out`
+
+```sh
+cargo afl fuzz -i in -o out target/debug/url-fuzz-target
+```
+
+</details>
 
 
 <details>
