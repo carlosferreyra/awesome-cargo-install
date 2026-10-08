@@ -613,6 +613,19 @@
             }
           ]
         },
+        "cargo-mutants": {
+          "description": "Find gaps in test suites by injecting mutations and checking whether tests catch them",
+          "url": "https://github.com/sourcefrog/cargo-mutants",
+          "execs": [
+            "cargo-mutants"
+          ],
+          "examples": [
+            {
+              "cmd": "cargo mutants",
+              "description": "Run mutation testing on the current Rust project"
+            }
+          ]
+        },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
           "url": "https://github.com/sagiegurari/cargo-make",

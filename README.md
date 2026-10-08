@@ -30,7 +30,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 > [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) first, then replace
 > `cargo install <crate>` with `cargo binstall <crate>`.
 
-**93 tools across 13 categories.**
+**94 tools across 13 categories.**
 
 ## Contents
 
@@ -41,7 +41,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 - [Shells, Prompts & Terminals](#shells-prompts-and-terminals) (7)
 - [Git & Version Control](#git-and-version-control) (5)
 - [Build Tools & Task Runners](#build-tools-and-task-runners) (5)
-- [Cargo Subcommands](#cargo-subcommands) (32)
+- [Cargo Subcommands](#cargo-subcommands) (33)
 - [Documentation & Writing](#documentation-and-writing) (5)
 - [Networking & HTTP](#networking-and-http) (5)
 - [System Monitoring & Infrastructure](#system-monitoring-and-infrastructure) (2)
@@ -329,6 +329,7 @@ watchexec -- cargo check
 | [cargo-make](https://github.com/sagiegurari/cargo-make) | Rust task runner and build tool — supports tasks, dependencies, and conditions | `cargo-make`, `makers` | 0.37.24<br>2025-01-18 |
 | [cargo-modules](https://github.com/regexident/cargo-modules) | A cargo plugin for showing a tree-like overview of a crate's modules | `cargo-modules` | 0.27.0<br>2026-08-03 |
 | [cargo-msrv](https://github.com/foresterre/cargo-msrv) | Find the Minimum Supported Rust Version for your project | `cargo-msrv` | 0.19.3<br>2026-03-25 |
+| [cargo-mutants](https://github.com/sourcefrog/cargo-mutants) | Find gaps in test suites by injecting mutations and checking whether tests catch them | `cargo-mutants` | — |
 | [cargo-nextest](https://github.com/nextest-rs/nextest) | A test runner for Rust with parallel execution and test profiles | `cargo-nextest` | 0.9.146<br>2026-09-21 |
 | [cargo-outdated](https://github.com/kbknapp/cargo-outdated) | Displays when Rust dependencies are out of date | `cargo-outdated` | 0.19.0<br>2026-04-14 |
 | [cargo-release](https://github.com/crate-ci/cargo-release) | Cargo subcommand for smoothly releasing a new version of your crate | `cargo-release` | 1.1.6<br>2026-09-16 |
@@ -374,6 +375,18 @@ Measure Rust test coverage
 
 ```sh
 cargo llvm-cov
+```
+
+</details>
+
+
+<details>
+<summary>cargo-mutants examples</summary>
+
+Run mutation testing on the current Rust project
+
+```sh
+cargo mutants
 ```
 
 </details>
