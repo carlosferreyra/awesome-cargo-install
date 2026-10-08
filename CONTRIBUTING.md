@@ -113,6 +113,23 @@ Guidelines for writing good examples:
 - Mention the `cargo install` / `cargo binstall` invocation when the crate-name ≠ binary-name
 - Add multiple examples only when they demonstrate meaningfully different use cases
 
+### Choosing a Category
+
+Choose one existing category based on the tool's primary purpose. Categories reflect this Rust
+catalog; they do not need to match the JavaScript or Python lists.
+
+- **Cargo Subcommands** takes precedence for Cargo plugins, including scaffolding tools such as
+  `cargo-generate` and release tools such as `cargo-release` and `cargo-dist`.
+- **Build Tools & Task Runners** covers standalone build, watch, and task commands such as `just`
+  and `watchexec-cli`.
+- **Git & Version Control** covers standalone Git and version-control workflows, including
+  release-note tools such as `git-cliff`.
+- **Environment & Package Management** covers standalone environment and package maintenance.
+
+Keep category-only reorganizations separate from adding tools. When two categories fit, explain
+the main use case in the PR. Preserve existing category slugs when changing display names so
+README links keep working.
+
 ### Adding a New Category
 
 If your tool doesn't fit any existing category, add a new object to the `"categories"` array:
@@ -145,6 +162,17 @@ The GitHub Actions workflow will automatically:
 - Run the maintenance-script regression tests
 
 Checks are read-only. Review and merge decisions remain with maintainers.
+
+### Choosing a Pull Request Template
+
+Use the template that best matches your change:
+
+- [Add a new tool](https://github.com/carlosferreyra/awesome-cargo-install/compare/main...main?quick_pull=1&template=add-tool.md)
+- [Update existing tool metadata](https://github.com/carlosferreyra/awesome-cargo-install/compare/main...main?quick_pull=1&template=update-tool.md)
+- [Repo maintenance or refactor](https://github.com/carlosferreyra/awesome-cargo-install/compare/main...main?quick_pull=1&template=repo-maintenance.md)
+
+Choose your branch as the compare branch after opening the link. If none of these fit, use the
+default PR template and explain the change clearly.
 
 ## Validation Checks
 
