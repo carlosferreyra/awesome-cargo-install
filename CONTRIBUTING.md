@@ -12,6 +12,9 @@ To add a new CLI tool to the list:
 3. The tool must be actively maintained
 4. The tool should be useful for a general developer audience
 
+Archived or explicitly unmaintained tools are removed from the catalog when a maintained
+alternative is available. A release date alone does not establish maintenance status.
+
 ### Required Information
 
 Each community-maintained tool entry needs:
@@ -139,7 +142,9 @@ The GitHub Actions workflow will automatically:
 - Validate the curated `tools.json` data
 - Verify newly added crates exist on crates.io unless `crates_io` is set to `false`
 - Verify the committed `README.md` is up to date with `tools.json`
-- Auto-approve the PR if fast deterministic checks pass
+- Run the maintenance-script regression tests
+
+Checks are read-only. Review and merge decisions remain with maintainers.
 
 ## Validation Checks
 
@@ -157,7 +162,26 @@ Your contribution will be automatically checked for:
 
 Real install validation (`cargo binstall` with `cargo install --locked` fallback) is intentionally
 kept out of ordinary pull request checks because it can be slow and flaky. Maintainers can run it
-manually, and the repository runs full catalog install validation on a schedule.
+manually using the **Validate Installs** workflow; there is no install-validation schedule.
+Each install attempt uses a fresh temporary installation root and checks every declared binary.
+Failure reports include installer output; existing binaries on `PATH` do not count as validation.
+
+## GitHub Actions
+
+| Workflow | Trigger | Purpose | Repository writes |
+|:--|:--|:--|:--|
+| Validate Catalog | Relevant pushes to `main` or `codex/**`, PRs targeting `main`, manual | Catalog validation, regression tests, README freshness | None |
+| Validate Installs | Manual only | Full catalog installation checks on Linux | None |
+| Sync Release Metadata | Weekly on Monday at 06:00 UTC, manual on `main` only | Validate, fetch release metadata, regenerate README, publish changes | `tools.json` and `README.md` only |
+
+Regenerate and commit the README locally alongside catalog or template changes. CI reports a
+stale README rather than rewriting it. Push and PR validation also check newly added crates
+against the event's base commit and reject manual changes to generated release fields.
+
+Install checks have a 120-minute job limit; catalog and sync jobs have 20-minute limits.
+Each workflow writes an Actions summary and uploads diagnostic artifacts on failure.
+Sync runs are serialized, and a concurrent update to `main` causes an ordinary push failure
+rather than overwriting history. Rerun sync against the latest `main` after resolving the cause.
 
 ## Running the scripts locally
 
@@ -183,7 +207,14 @@ cargo +nightly -Zscript scripts/latest_release.rs
 
 # run real install validation manually when needed
 cargo +nightly -Zscript scripts/test_clients.rs -- --all --output output.log
+
+# run maintenance-script and publishing regression checks without installing catalog tools
+python3 -m unittest discover -s tests -v
 ```
+
+Release metadata sync exits unsuccessfully if any registry lookup fails. Successful lookups
+are saved locally, and failed lookups retain their previous metadata. The sync workflow does
+not commit a partial result after a failed run.
 
 ## Code of Conduct
 

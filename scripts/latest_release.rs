@@ -103,6 +103,7 @@ fn main() -> ExitCode {
         }
     };
 
+    let mut failed = Vec::new();
     for category in categories.iter_mut() {
         let Some(tools) = category.get_mut("tools").and_then(Json::as_object_mut) else {
             continue;
@@ -122,6 +123,7 @@ fn main() -> ExitCode {
                 }
                 None => {
                     eprintln!("WARN  {name}: skipped (no data)");
+                    failed.push(name.clone());
                 }
             }
             // be polite to crates.io
@@ -144,5 +146,10 @@ fn main() -> ExitCode {
     }
 
     println!("INFO  tools.json updated.");
-    ExitCode::SUCCESS
+    if failed.is_empty() {
+        ExitCode::SUCCESS
+    } else {
+        eprintln!("ERROR release metadata sync incomplete: {}", failed.join(", "));
+        ExitCode::FAILURE
+    }
 }

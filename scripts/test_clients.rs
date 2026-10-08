@@ -7,10 +7,10 @@ edition = "2024"
 [dependencies]
 serde_json = "1"
 regex = "1"
+tempfile = "3"
 ---
 //! Test that tools are installable via `cargo binstall` (fast path) with fallback to
-//! `cargo install --locked` (source compile). Classifies failures so the PR workflow
-//! can comment helpfully.
+//! `cargo install --locked` (source compile). Reports classified failures and installer logs.
 //!
 //! Usage (mutually exclusive sources):
 //!     cargo +nightly -Zscript scripts/test_clients.rs -- --all [--output <log>]
@@ -114,7 +114,7 @@ fn main() -> ExitCode {
         return ExitCode::FAILURE;
     };
 
-    ensure_binstall();
+    // Missing binstall falls back to cargo install without changing the global toolchain.
 
     println!("Testing {} tool(s)...\n", tools.len());
 
@@ -132,24 +132,25 @@ fn main() -> ExitCode {
 
     for tool in tools {
         let package = tool.get("package").and_then(Json::as_str).unwrap_or("").to_string();
-        let default_exec = package.split('[').next().unwrap_or(&package).to_string();
-        let exec_name = tool
+        let execs: Vec<&str> = tool
             .get("execs")
             .and_then(Json::as_array)
-            .and_then(|a| a.first())
-            .and_then(Json::as_str)
-            .unwrap_or(&default_exec)
-            .to_string();
+            .map(|items| items.iter().filter_map(Json::as_str).collect())
+            .unwrap_or_default();
+        if package.is_empty() || execs.is_empty() {
+            eprintln!("error: each tool requires a package and a non-empty execs list");
+            return ExitCode::FAILURE;
+        }
 
-        println!("  Testing: {package} ({exec_name})");
+        println!("  Testing: {package} ({})", execs.join(", "));
 
-        let (ok, reason) = test_tool(&package, &exec_name, &network_re, &not_found_re, &binary_re);
+        let (ok, reason, details) = test_tool(&package, &execs, &network_re, &not_found_re, &binary_re);
         if ok {
             println!("    ✓ ok");
             results.push(json!({ "package": package, "success": true }));
         } else {
             println!("    ✗ failed ({reason})");
-            results.push(json!({ "package": package, "success": false, "reason": reason }));
+            results.push(json!({ "package": package, "success": false, "reason": reason, "details": details }));
         }
     }
 
@@ -173,30 +174,8 @@ fn main() -> ExitCode {
     ExitCode::SUCCESS
 }
 
-fn run(cmd: &[&str]) -> Output {
-    Command::new(cmd[0])
-        .args(&cmd[1..])
-        .output()
-        .unwrap_or_else(|e| Output {
-            status: std::process::ExitStatus::default(),
-            stdout: vec![],
-            stderr: format!("{e}").into_bytes(),
-        })
-}
-
-fn ensure_binstall() {
-    let out = run(&["cargo", "binstall", "-V"]);
-    if out.status.success() {
-        return;
-    }
-    println!("cargo-binstall not found — installing via cargo install --locked...");
-    let out = run(&["cargo", "install", "--locked", "cargo-binstall"]);
-    if !out.status.success() {
-        eprintln!(
-            "warning: could not install cargo-binstall: {}",
-            String::from_utf8_lossy(&out.stderr)
-        );
-    }
+fn run(cmd: &[&str]) -> Result<Output, std::io::Error> {
+    Command::new(cmd[0]).args(&cmd[1..]).output()
 }
 
 fn classify(stdout: &str, stderr: &str, net: &Regex, nf: &Regex, bin: &Regex) -> String {
@@ -214,52 +193,69 @@ fn classify(stdout: &str, stderr: &str, net: &Regex, nf: &Regex, bin: &Regex) ->
 
 fn test_tool(
     package: &str,
-    exec_name: &str,
+    execs: &[&str],
     net: &Regex,
     nf: &Regex,
     bin: &Regex,
-) -> (bool, String) {
-    // Method 1: cargo binstall (fast, prebuilt)
-    let out = run(&["cargo", "binstall", "--no-confirm", "--force", package]);
-    let stdout = String::from_utf8_lossy(&out.stdout).to_string();
-    let stderr = String::from_utf8_lossy(&out.stderr).to_string();
-
-    if out.status.success() && which(exec_name) {
-        return (true, String::new());
-    }
-
-    if net.is_match(&format!("{stdout}{stderr}")) {
-        // Retry once for transient network failures.
-        let out2 = run(&["cargo", "binstall", "--no-confirm", "--force", package]);
-        if out2.status.success() && which(exec_name) {
-            return (true, String::new());
+) -> (bool, String, String) {
+    let mut details = String::new();
+    // Every attempt gets a fresh root, so neither PATH nor an earlier attempt can mask a missing binary.
+    let mut retry_network = false;
+    for attempt in 0..3 {
+        if attempt == 1 && !retry_network { continue; }
+        let root = match tempfile::tempdir() {
+            Ok(root) => root,
+            Err(e) => return (false, "execution_error".into(), e.to_string()),
+        };
+        let root_path = root.path().to_str().expect("temporary install path is UTF-8");
+        let cmd = if attempt < 2 {
+            vec!["cargo", "binstall", "--no-confirm", "--force", "--root", root_path, package]
+        } else {
+            vec!["cargo", "install", "--locked", "--force", "--root", root_path, package]
+        };
+        let out = match run(&cmd) {
+            Ok(out) => out,
+            Err(e) => {
+                details.push_str(&format!("{}: {e}\n", cmd.join(" ")));
+                if attempt == 2 {
+                    return (false, "execution_error".into(), details);
+                }
+                continue;
+            }
+        };
+        let stdout = String::from_utf8_lossy(&out.stdout);
+        let stderr = String::from_utf8_lossy(&out.stderr);
+        details.push_str(&format!("{}\n{stdout}\n{stderr}\n", cmd.join(" ")));
+        if out.status.success() {
+            let missing = missing_execs(root.path(), execs);
+            if missing.is_empty() {
+                return (true, String::new(), String::new());
+            }
+            details.push_str(&format!("Missing executables: {}\n", missing.join(", ")));
+            // A successful installer with missing declared binaries is a catalog error, not a network retry.
+            return (false, "wrong_binary".into(), details);
+        }
+        retry_network = net.is_match(&format!("{stdout}\n{stderr}"));
+        if attempt == 2 {
+            return (false, classify(&stdout, &stderr, net, nf, bin), details);
         }
     }
+    unreachable!("source installation returns a result")
+}
 
-    // Method 2: cargo install --locked (source compile fallback)
-    let out2 = run(&["cargo", "install", "--locked", "--force", package]);
-    let stdout2 = String::from_utf8_lossy(&out2.stdout).to_string();
-    let stderr2 = String::from_utf8_lossy(&out2.stderr).to_string();
-
-    if out2.status.success() && which(exec_name) {
-        return (true, String::new());
-    }
-
-    // If the binary is missing but install succeeded, call that wrong_binary
-    if out2.status.success() && !which(exec_name) {
-        return (false, "wrong_binary".into());
-    }
-
-    (
-        false,
-        classify(
-            &format!("{stdout}\n{stdout2}"),
-            &format!("{stderr}\n{stderr2}"),
-            net,
-            nf,
-            bin,
-        ),
-    )
+fn missing_execs<'a>(root: &Path, execs: &[&'a str]) -> Vec<&'a str> {
+    execs.iter().copied().filter(|name| {
+        let path = root.join("bin").join(format!("{name}{}", std::env::consts::EXE_SUFFIX));
+        let Ok(metadata) = fs::metadata(path) else { return true };
+        if !metadata.is_file() { return true; }
+        #[cfg(unix)]
+        {
+            use std::os::unix::fs::PermissionsExt;
+            metadata.permissions().mode() & 0o111 == 0
+        }
+        #[cfg(not(unix))]
+        { false }
+    }).collect()
 }
 
 fn load_all(path: &Path) -> Result<Json, String> {
@@ -333,17 +329,4 @@ fn locate_diff_script() -> PathBuf {
         .parent()
         .map(|p| p.join("diff_tools.rs"))
         .unwrap_or_else(|| PathBuf::from("scripts/diff_tools.rs"))
-}
-
-fn which(binary: &str) -> bool {
-    let Ok(path) = std::env::var("PATH") else {
-        return false;
-    };
-    for dir in path.split(':') {
-        let p = std::path::Path::new(dir).join(binary);
-        if p.exists() {
-            return true;
-        }
-    }
-    false
 }

@@ -1,45 +1,53 @@
-name: Validation and Sync
+name: Validate Catalog
 
 on:
   push:
+    branches: [main, 'codex/**']
+    paths:
+      - 'tools.json'
+      - 'README.md'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'template/**'
+      - '.github/workflows/**'
+  pull_request:
     branches: [main]
     paths:
       - 'tools.json'
+      - 'README.md'
       - 'scripts/**'
+      - 'tests/**'
       - 'template/**'
-  schedule:
-    # monthly: run full validation on the 1st at 00:00 UTC
-    - cron: '0 0 1 * *'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: false
+  group: catalog-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 env:
   CARGO_TERM_COLOR: always
   CARGO_INCREMENTAL: '0'
-  # keep cargo-script build dir predictable for caching
   CARGO_HOME: ${{ github.workspace }}/.cargo-home
 
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # need history so we can diff against the previous commit on main
-          fetch-depth: 2
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Install Rust (nightly, for cargo -Zscript)
         uses: dtolnay/rust-toolchain@nightly
 
-      - name: Cache cargo registry, git, build cache, binaries
+      - name: Cache cargo registry and build cache
         uses: actions/cache@v4
         with:
           path: |
@@ -47,67 +55,55 @@ jobs:
             ${{ env.CARGO_HOME }}/registry/cache
             ${{ env.CARGO_HOME }}/git/db
             ${{ env.CARGO_HOME }}/build
-            ${{ env.CARGO_HOME }}/bin
           key: cargo-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'template/**') }}
           restore-keys: |
             cargo-${{ runner.os }}-nightly-
 
-      - name: Install cargo-binstall (scheduled/manual install validation)
-        if: github.event_name != 'push'
-        uses: cargo-bins/cargo-binstall@main
-
       - name: Validate curated tool data
-        run: cargo +nightly -Zscript scripts/checks.rs
-
-      - name: Test newly added tools (advisory on main push)
-        if: github.event_name == 'push'
-        id: test
-        continue-on-error: true
+        id: catalog
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+        shell: bash
         run: |
-          cargo +nightly -Zscript scripts/test_clients.rs -- \
-            --diff HEAD~1 --output output.log
+          args=()
+          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            args=(--diff-base "$PR_BASE")
+          elif [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            base="$PUSH_BASE"
+            if [ "$base" = "0000000000000000000000000000000000000000" ]; then
+              base=$(git merge-base origin/main HEAD)
+            fi
+            args=(--diff-base "$base")
+          fi
+          cargo +nightly -Zscript scripts/checks.rs -- "${args[@]}" 2>&1 | tee validation.log
 
-      - name: Test full catalog (scheduled/manual)
-        if: github.event_name != 'push'
-        id: full_test
-        run: |
-          cargo +nightly -Zscript scripts/test_clients.rs -- \
-            --all --output output.log
+      - name: Test maintenance scripts
+        id: tests
+        run: python3 -m unittest discover -s tests -v 2>&1 | tee tests.log
 
-      - name: Upload validation report
+      - name: Check README is up to date
+        id: readme
+        run: cargo +nightly -Zscript scripts/readme.rs -- --check 2>&1 | tee readme.log
+
+      - name: Summarize validation
         if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          CATALOG_STATUS: ${{ steps.catalog.outcome }}
+          TESTS_STATUS: ${{ steps.tests.outcome }}
+          README_STATUS: ${{ steps.readme.outcome }}
+        run: python3 scripts/actions_summary.py catalog
+
+      - name: Upload failure details
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: validation-report
+          name: catalog-validation-failure
           path: |
             checks.log
-            output.log
-          retention-days: 30
+            validation.log
+            tests.log
+            readme.log
+          retention-days: 14
           if-no-files-found: ignore
-
-      - name: Remove logs from workspace
-        if: always()
-        run: rm -f checks.log output.log
-
-      # Only regenerate the README when tools.json or the template actually changed.
-      - name: Detect README-relevant changes
-        id: readme_changes
-        run: |
-          if [ "${{ github.event_name }}" != "push" ]; then
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          elif git diff --name-only HEAD~1 HEAD | grep -E '^(tools\.json|template/)' >/dev/null; then
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Regenerate README
-        if: steps.readme_changes.outputs.changed == 'true'
-        run: cargo +nightly -Zscript scripts/readme.rs
-
-      - name: Commit README if changed
-        if: steps.readme_changes.outputs.changed == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'chore(readme): regenerate from tools.json [skip ci]'
-          file_pattern: README.md
