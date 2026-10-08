@@ -512,6 +512,23 @@
       "name": "Cargo Subcommands",
       "slug": "cargo-subcommands",
       "tools": {
+        "cargox-cli": {
+          "description": "Run Rust binaries on demand, installing them automatically with cargo-binstall or cargo install",
+          "url": "https://github.com/pkgxdev/cargox",
+          "execs": [
+            "cargox"
+          ],
+          "examples": [
+            {
+              "cmd": "cargo install cargox-cli",
+              "description": "Install cargox-cli (provides the `cargox` binary)"
+            },
+            {
+              "cmd": "cargox bat ./README.md",
+              "description": "Run bat, installing it if needed"
+            }
+          ]
+        },
         "cargo-edit": {
           "description": "Upgrade dependency versions and set package versions from the command line",
           "url": "https://github.com/killercup/cargo-edit",
