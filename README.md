@@ -30,7 +30,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 > [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) first, then replace
 > `cargo install <crate>` with `cargo binstall <crate>`.
 
-**97 tools across 13 categories.**
+**98 tools across 13 categories.**
 
 ## Contents
 
@@ -41,7 +41,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 - [Shells, Prompts & Terminals](#shells-prompts-and-terminals) (7)
 - [Git & Version Control](#git-and-version-control) (5)
 - [Build Tools & Task Runners](#build-tools-and-task-runners) (5)
-- [Cargo Subcommands](#cargo-subcommands) (36)
+- [Cargo Subcommands](#cargo-subcommands) (37)
 - [Documentation & Writing](#documentation-and-writing) (5)
 - [Networking & HTTP](#networking-and-http) (5)
 - [System Monitoring & Infrastructure](#system-monitoring-and-infrastructure) (2)
@@ -343,6 +343,7 @@ watchexec -- cargo check
 | [cargo-udeps](https://github.com/est31/cargo-udeps) | Find unused dependencies in your Cargo.toml | `cargo-udeps` | 0.1.61<br>2026-04-29 |
 | [cargo-update](https://github.com/nabijaczleweli/cargo-update) | Cargo subcommand for checking and applying updates to installed executables | `cargo-install-update` | 22.1.1<br>2026-07-27 |
 | [cargo-workspaces](https://github.com/pksunkara/cargo-workspaces) | A tool for managing cargo workspaces and their crates | `cargo-workspaces`, `cargo-ws` | 0.4.2<br>2025-12-03 |
+| [cargo-zigbuild](https://github.com/rust-cross/cargo-zigbuild) | Cross-compile Rust projects using Zig as the linker | `cargo-zigbuild` | — |
 | [cargox-cli](https://github.com/pkgxdev/cargox) | Run Rust binaries on demand, installing them automatically with cargo-binstall or cargo install | `cargox` | — |
 | [flamegraph](https://github.com/flamegraph-rs/flamegraph) | Easy flamegraphs for Rust projects and anything else, without Perl or pipes | `cargo-flamegraph`, `flamegraph` | 0.6.14<br>2026-08-12 |
 
@@ -468,6 +469,24 @@ Run the extension's tests in the initialized PostgreSQL environment
 
 ```sh
 cd my_extension && cargo pgrx test
+```
+
+</details>
+
+
+<details>
+<summary>cargo-zigbuild examples</summary>
+
+Build for ARM64 Linux after installing Zig and adding the target with rustup
+
+```sh
+cargo zigbuild --release --target aarch64-unknown-linux-gnu
+```
+
+Build for ARM64 Linux with a minimum glibc version of 2.17 (requires Zig and the Rust target)
+
+```sh
+cargo zigbuild --release --target aarch64-unknown-linux-gnu.2.17
 ```
 
 </details>
