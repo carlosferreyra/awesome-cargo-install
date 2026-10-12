@@ -53,8 +53,8 @@
               "description": "Benchmark two commands head-to-head"
             }
           ],
-          "version": "1.20.0",
-          "last_release": "2025-11-18"
+          "version": "2.0.0",
+          "last_release": "2026-10-07"
         },
         "tokei": {
           "description": "Count lines of code across a codebase, grouped by language",
@@ -414,8 +414,8 @@
           "execs": [
             "onefetch"
           ],
-          "version": "2.28.1",
-          "last_release": "2026-08-30"
+          "version": "3.0.0",
+          "last_release": "2026-10-06"
         },
         "jj-cli": {
           "description": "Jujutsu — a Git-compatible VCS that is both simple and powerful",
@@ -423,8 +423,8 @@
           "execs": [
             "jj"
           ],
-          "version": "0.45.1",
-          "last_release": "2026-09-03",
+          "version": "0.46.0",
+          "last_release": "2026-10-07",
           "examples": [
             {
               "cmd": "cargo install jj-cli",
@@ -466,8 +466,8 @@
           "execs": [
             "watchexec"
           ],
-          "version": "2.7.4",
-          "last_release": "2026-10-02",
+          "version": "2.8.0",
+          "last_release": "2026-10-06",
           "examples": [
             {
               "cmd": "cargo install watchexec-cli",
@@ -527,7 +527,9 @@
               "cmd": "cargox bat ./README.md",
               "description": "Run bat, installing it if needed"
             }
-          ]
+          ],
+          "version": "0.1.0",
+          "last_release": "2025-10-15"
         },
         "cargo-edit": {
           "description": "Upgrade dependency versions and set package versions from the command line",
@@ -555,8 +557,8 @@
           "execs": [
             "cargo-expand"
           ],
-          "version": "1.0.126",
-          "last_release": "2026-08-19"
+          "version": "1.0.127",
+          "last_release": "2026-10-09"
         },
         "cargo-outdated": {
           "description": "Displays when Rust dependencies are out of date",
@@ -582,7 +584,9 @@
               "cmd": "cargo afl fuzz -i in -o out target/debug/url-fuzz-target",
               "description": "Fuzz a target binary using seed inputs in `in` and write results to `out`"
             }
-          ]
+          ],
+          "version": "0.18.2",
+          "last_release": "2026-05-11"
         },
         "cargo-audit": {
           "description": "Audit `Cargo.lock` for crates with security vulnerabilities",
@@ -617,8 +621,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.146",
-          "last_release": "2026-09-21",
+          "version": "0.9.148",
+          "last_release": "2026-10-08",
           "examples": [
             {
               "cmd": "cargo install cargo-nextest",
@@ -641,7 +645,9 @@
               "cmd": "cargo mutants",
               "description": "Run mutation testing on the current Rust project"
             }
-          ]
+          ],
+          "version": "27.1.0",
+          "last_release": "2026-06-02"
         },
         "cargo-make": {
           "description": "Rust task runner and build tool — supports tasks, dependencies, and conditions",
@@ -695,7 +701,9 @@
               "cmd": "cargo gpu build --shader-crate ./shaders --output-dir ./compiled-shaders",
               "description": "Compile a shader crate and choose where to write its SPIR-V files"
             }
-          ]
+          ],
+          "version": "0.10.0",
+          "last_release": "2026-10-01"
         },
         "cargo-pgrx": {
           "description": "Create, test, and package PostgreSQL extensions written in Rust",
@@ -716,7 +724,9 @@
               "cmd": "cd my_extension && cargo pgrx test",
               "description": "Run the extension's tests in the initialized PostgreSQL environment"
             }
-          ]
+          ],
+          "version": "0.19.3",
+          "last_release": "2026-09-27"
         },
         "cargo-binstall": {
           "description": "Install prebuilt Rust binaries without having to compile from source",
@@ -724,8 +734,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.25.1",
-          "last_release": "2026-10-03"
+          "version": "1.25.3",
+          "last_release": "2026-10-10"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -916,7 +926,9 @@
               "cmd": "cargo zigbuild --release --target aarch64-unknown-linux-gnu.2.17",
               "description": "Build for ARM64 Linux with a minimum glibc version of 2.17 (requires Zig and the Rust target)"
             }
-          ]
+          ],
+          "version": "0.23.4",
+          "last_release": "2026-09-02"
         },
         "cargo-workspaces": {
           "description": "A tool for managing cargo workspaces and their crates",
