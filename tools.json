@@ -317,8 +317,8 @@
           "execs": [
             "starship"
           ],
-          "version": "1.26.0",
-          "last_release": "2026-06-28"
+          "version": "1.27.0",
+          "last_release": "2026-10-17"
         },
         "nu": {
           "description": "Nushell — a new type of shell where data is structured",
@@ -344,8 +344,8 @@
           "execs": [
             "atuin"
           ],
-          "version": "18.23.0",
-          "last_release": "2026-09-22"
+          "version": "18.24.1",
+          "last_release": "2026-10-16"
         },
         "zoxide": {
           "description": "A smarter `cd` command — jump to frecent directories",
@@ -414,8 +414,8 @@
           "execs": [
             "onefetch"
           ],
-          "version": "3.0.0",
-          "last_release": "2026-10-06"
+          "version": "3.1.0",
+          "last_release": "2026-10-18"
         },
         "jj-cli": {
           "description": "Jujutsu — a Git-compatible VCS that is both simple and powerful",
@@ -457,8 +457,8 @@
           "execs": [
             "just"
           ],
-          "version": "1.58.0",
-          "last_release": "2026-08-03"
+          "version": "1.59.0",
+          "last_release": "2026-10-15"
         },
         "watchexec-cli": {
           "description": "Executes commands in response to file modifications",
@@ -702,8 +702,8 @@
               "description": "Compile a shader crate and choose where to write its SPIR-V files"
             }
           ],
-          "version": "0.10.0",
-          "last_release": "2026-10-01"
+          "version": "0.11.0",
+          "last_release": "2026-10-13"
         },
         "cargo-pgrx": {
           "description": "Create, test, and package PostgreSQL extensions written in Rust",
@@ -734,8 +734,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.25.3",
-          "last_release": "2026-10-10"
+          "version": "1.26.0",
+          "last_release": "2026-10-17"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -835,8 +835,8 @@
           "execs": [
             "cargo-modules"
           ],
-          "version": "0.27.0",
-          "last_release": "2026-08-03"
+          "version": "0.28.0",
+          "last_release": "2026-10-18"
         },
         "cargo-info": {
           "description": "Show crate information from the terminal, pulled from crates.io",
@@ -1122,8 +1122,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.12.3",
-          "last_release": "2026-10-02"
+          "version": "17.14.0",
+          "last_release": "2026-10-19"
         }
       }
     },
