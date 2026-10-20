@@ -27,14 +27,23 @@ if catalog.exists():
 lines += ['| Check | Result |', '|:--|:--|']
 lines += [f'| {label} | {os.environ.get(key) or "not run"} |' for label, key in checks]
 if kind == 'installs' and Path('install.log').exists():
-    log = Path('install.log').read_text()
+    log = Path('install.log').read_text(errors='replace')
     result = re.search(r'Results: (\d+) passed, (\d+) failed', log)
+    no_tools = 'No new tools' in log
+    if no_tools:
+        lines += ['', 'No new tools selected; no installation checks were performed.']
     lines += ['', f'Installs: **{result[1]} passed**, **{result[2]} failed**.' if result
-              else 'Install validation did not produce a final count; see the job log.']
+              else ('No new tools selected.' if no_tools else
+                    'Install validation did not produce a final count; see the job log.')]
     if Path('output.log').exists():
-        failures = json.loads(Path('output.log').read_text())
-        lines += ['', 'Failures:']
-        lines += [f'- `{item["package"]}`: {item["reason"]}' for item in failures]
+        try:
+            failures = json.loads(Path('output.log').read_text())
+            if not isinstance(failures, list):
+                raise ValueError('expected a failure list')
+            details = [f'- `{item["package"]}`: {item["reason"]}' for item in failures]
+            lines += ['', 'Failures:', *details]
+        except (ValueError, KeyError, TypeError):
+            lines += ['', 'Failure report is incomplete or malformed; see the job log and artifact.']
 if kind == 'sync':
     changed = os.environ.get('PUBLISHED_CHANGES')
     lines += ['', {'true': 'Published updated metadata and README.',
