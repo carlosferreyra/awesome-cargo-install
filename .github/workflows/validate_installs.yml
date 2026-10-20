@@ -2,18 +2,23 @@ name: Validate Installs
 
 on:
   workflow_dispatch:
+    inputs:
+      base_ref:
+        description: 'Optional Git base ref; leave empty to test the full catalog'
+        type: string
+        required: false
+        default: ''
 
 permissions:
   contents: read
 
 concurrency:
-  group: installs-${{ github.ref }}
-  cancel-in-progress: false
+  group: installs-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
-env:
-  CARGO_TERM_COLOR: always
-  CARGO_INCREMENTAL: '0'
-  CARGO_HOME: ${{ github.workspace }}/.cargo-home
+defaults:
+  run:
+    shell: bash
 
 jobs:
   validate:
@@ -21,35 +26,46 @@ jobs:
     timeout-minutes: 120
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
+          fetch-depth: 0
           persist-credentials: false
 
-      - name: Install Rust (nightly, for cargo -Zscript)
+      - name: Set up Rust
         uses: dtolnay/rust-toolchain@nightly
 
-      - name: Cache cargo registry and build cache
-        uses: actions/cache@v4
+      - name: Cache Cargo dependencies
+        uses: actions/cache@v5
         with:
           path: |
-            ${{ env.CARGO_HOME }}/registry/index
-            ${{ env.CARGO_HOME }}/registry/cache
-            ${{ env.CARGO_HOME }}/git/db
-            ${{ env.CARGO_HOME }}/build
-          key: cargo-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'template/**') }}
-          restore-keys: |
-            cargo-${{ runner.os }}-nightly-
+            ~/.cargo/registry
+            ~/.cargo/git
+            ~/.cargo/build
+          key: cargo-${{ runner.os }}-${{ hashFiles('scripts/**/*.rs') }}
+          restore-keys: cargo-${{ runner.os }}-
 
       - name: Install cargo-binstall
         uses: cargo-bins/cargo-binstall@main
 
-      - name: Validate curated tool data
+      - name: Validate catalog
         id: catalog
         run: cargo +nightly -Zscript scripts/checks.rs 2>&1 | tee validation.log
 
-      - name: Test full catalog
+      - name: Test tool installations
         id: installs
-        run: cargo +nightly -Zscript scripts/test_clients.rs -- --all --output output.log 2>&1 | tee install.log
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          MANUAL_BASE: ${{ inputs.base_ref }}
+          HUSKY: '0'
+        run: |
+          args=(--all)
+          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            args=(--diff "$PR_BASE")
+          elif [ -n "$MANUAL_BASE" ]; then
+            base=$(git rev-parse --verify --end-of-options "$MANUAL_BASE^{commit}")
+            args=(--diff "$base")
+          fi
+          cargo +nightly -Zscript scripts/test_clients.rs -- "${args[@]}" --output output.log 2>&1 | tee install.log
 
       - name: Summarize install validation
         if: always()
@@ -61,7 +77,7 @@ jobs:
 
       - name: Upload failure details
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: install-validation-failure
           path: |

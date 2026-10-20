@@ -2,7 +2,7 @@ name: Validate Catalog
 
 on:
   push:
-    branches: [main, 'codex/**']
+    branches: [main]
     paths:
       - 'tools.json'
       - 'README.md'
@@ -28,10 +28,9 @@ concurrency:
   group: catalog-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
-env:
-  CARGO_TERM_COLOR: always
-  CARGO_INCREMENTAL: '0'
-  CARGO_HOME: ${{ github.workspace }}/.cargo-home
+defaults:
+  run:
+    shell: bash
 
 jobs:
   validate:
@@ -39,32 +38,29 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Install Rust (nightly, for cargo -Zscript)
+      - name: Set up Rust
         uses: dtolnay/rust-toolchain@nightly
 
-      - name: Cache cargo registry and build cache
-        uses: actions/cache@v4
+      - name: Cache Cargo dependencies
+        uses: actions/cache@v5
         with:
           path: |
-            ${{ env.CARGO_HOME }}/registry/index
-            ${{ env.CARGO_HOME }}/registry/cache
-            ${{ env.CARGO_HOME }}/git/db
-            ${{ env.CARGO_HOME }}/build
-          key: cargo-${{ runner.os }}-nightly-${{ hashFiles('scripts/**/*.rs', 'template/**') }}
-          restore-keys: |
-            cargo-${{ runner.os }}-nightly-
+            ~/.cargo/registry
+            ~/.cargo/git
+            ~/.cargo/build
+          key: cargo-${{ runner.os }}-${{ hashFiles('scripts/**/*.rs') }}
+          restore-keys: cargo-${{ runner.os }}-
 
-      - name: Validate curated tool data
+      - name: Validate catalog
         id: catalog
         env:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
           PUSH_BASE: ${{ github.event.before }}
-        shell: bash
         run: |
           args=()
           if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
@@ -80,11 +76,13 @@ jobs:
 
       - name: Test maintenance scripts
         id: tests
-        run: python3 -m unittest discover -s tests -v 2>&1 | tee tests.log
+        run: |
+          { python3 -m unittest discover -s tests -v; } 2>&1 | tee tests.log
 
-      - name: Check README is up to date
+      - name: Check README freshness
         id: readme
-        run: cargo +nightly -Zscript scripts/readme.rs -- --check 2>&1 | tee readme.log
+        run: |
+          { cargo +nightly -Zscript scripts/readme.rs -- --check; } 2>&1 | tee readme.log
 
       - name: Summarize validation
         if: always()
@@ -97,7 +95,7 @@ jobs:
 
       - name: Upload failure details
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: catalog-validation-failure
           path: |
