@@ -939,6 +939,27 @@
           ],
           "version": "0.4.2",
           "last_release": "2025-12-03"
+        },
+        "cargo-vet": {
+          "description": "Track and share human dependency audits for Rust supply-chain review",
+          "url": "https://mozilla.github.io/cargo-vet/",
+          "execs": [
+            "cargo-vet"
+          ],
+          "examples": [
+            {
+              "cmd": "cargo install --locked cargo-vet",
+              "description": "Install the Cargo subcommand"
+            },
+            {
+              "cmd": "cargo vet init",
+              "description": "Initialize audit policy in an existing Cargo project with a Cargo.lock; initial exemptions are not completed audits"
+            },
+            {
+              "cmd": "cargo vet",
+              "description": "Check dependencies against the project audit policy and trusted audits"
+            }
+          ]
         }
       }
     },
@@ -1000,6 +1021,27 @@
           ],
           "version": "0.16.1",
           "last_release": "2026-02-20"
+        },
+        "lychee": {
+          "description": "Check links in Markdown, HTML, local files, and websites",
+          "url": "https://github.com/lycheeverse/lychee",
+          "execs": [
+            "lychee"
+          ],
+          "examples": [
+            {
+              "cmd": "cargo install --locked lychee",
+              "description": "Install the link checker; current releases require Rust 1.88 or newer"
+            },
+            {
+              "cmd": "lychee README.md",
+              "description": "Check links; protected sites, rate limits, and network restrictions may need exclusions"
+            },
+            {
+              "cmd": "lychee --offline README.md",
+              "description": "Check local links without making network requests"
+            }
+          ]
         }
       }
     },
@@ -1052,6 +1094,23 @@
           ],
           "version": "0.2.0",
           "last_release": "2024-07-28"
+        },
+        "trippy": {
+          "description": "Trace network routes and measure per-hop latency and packet loss",
+          "url": "https://trippy.rs/",
+          "execs": [
+            "trip"
+          ],
+          "examples": [
+            {
+              "cmd": "cargo install --locked trippy",
+              "description": "Install the crate, which provides the trip executable"
+            },
+            {
+              "cmd": "trip --unprivileged --mode json --report-cycles 1 example.com",
+              "description": "Trace without elevated privileges on supported platforms; other modes/platforms may require raw-socket privileges"
+            }
+          ]
         }
       }
     },

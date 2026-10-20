@@ -30,7 +30,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 > [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) first, then replace
 > `cargo install <crate>` with `cargo binstall <crate>`.
 
-**98 tools across 13 categories.**
+**101 tools across 13 categories.**
 
 ## Contents
 
@@ -41,9 +41,9 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 - [Shells, Prompts & Terminals](#shells-prompts-and-terminals) (7)
 - [Git & Version Control](#git-and-version-control) (5)
 - [Build Tools & Task Runners](#build-tools-and-task-runners) (5)
-- [Cargo Subcommands](#cargo-subcommands) (37)
-- [Documentation & Writing](#documentation-and-writing) (5)
-- [Networking & HTTP](#networking-and-http) (5)
+- [Cargo Subcommands](#cargo-subcommands) (38)
+- [Documentation & Writing](#documentation-and-writing) (6)
+- [Networking & HTTP](#networking-and-http) (6)
 - [System Monitoring & Infrastructure](#system-monitoring-and-infrastructure) (2)
 - [Security & Auditing](#security-and-auditing) (2)
 - [Environment & Package Management](#environment-and-package-management) (2)
@@ -342,6 +342,7 @@ watchexec -- cargo check
 | [cargo-tarpaulin](https://github.com/xd009642/tarpaulin) | A code coverage tool for Rust projects | `cargo-tarpaulin` | 0.37.5<br>2026-09-27 |
 | [cargo-udeps](https://github.com/est31/cargo-udeps) | Find unused dependencies in your Cargo.toml | `cargo-udeps` | 0.1.61<br>2026-04-29 |
 | [cargo-update](https://github.com/nabijaczleweli/cargo-update) | Cargo subcommand for checking and applying updates to installed executables | `cargo-install-update` | 22.1.1<br>2026-07-27 |
+| [cargo-vet](https://mozilla.github.io/cargo-vet/) | Track and share human dependency audits for Rust supply-chain review | `cargo-vet` | — |
 | [cargo-workspaces](https://github.com/pksunkara/cargo-workspaces) | A tool for managing cargo workspaces and their crates | `cargo-workspaces`, `cargo-ws` | 0.4.2<br>2025-12-03 |
 | [cargo-zigbuild](https://github.com/rust-cross/cargo-zigbuild) | Cross-compile Rust projects using Zig as the linker | `cargo-zigbuild` | 0.23.4<br>2026-09-02 |
 | [cargox-cli](https://github.com/pkgxdev/cargox) | Run Rust binaries on demand, installing them automatically with cargo-binstall or cargo install | `cargox` | 0.1.0<br>2025-10-15 |
@@ -475,6 +476,30 @@ cd my_extension && cargo pgrx test
 
 
 <details>
+<summary>cargo-vet examples</summary>
+
+Install the Cargo subcommand
+
+```sh
+cargo install --locked cargo-vet
+```
+
+Initialize audit policy in an existing Cargo project with a Cargo.lock; initial exemptions are not completed audits
+
+```sh
+cargo vet init
+```
+
+Check dependencies against the project audit policy and trusted audits
+
+```sh
+cargo vet
+```
+
+</details>
+
+
+<details>
 <summary>cargo-zigbuild examples</summary>
 
 Build for ARM64 Linux after installing Zig and adding the target with rustup
@@ -517,11 +542,36 @@ cargox bat ./README.md
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
+| [lychee](https://github.com/lycheeverse/lychee) | Check links in Markdown, HTML, local files, and websites | `lychee` | — |
 | [mdbook](https://github.com/rust-lang/mdBook) | Create book-style documentation from Markdown files | `mdbook` | 0.5.4<br>2026-07-06 |
 | [mdbook-linkcheck](https://github.com/Michael-F-Bryan/mdbook-linkcheck) | A backend for mdbook that validates links | `mdbook-linkcheck` | 0.7.7<br>2022-10-03 |
 | [mdbook-mermaid](https://github.com/badboy/mdbook-mermaid) | A preprocessor for mdbook that renders Mermaid diagrams | `mdbook-mermaid` | 0.17.1<br>2026-08-14 |
 | [presenterm](https://github.com/mfontanini/presenterm) | A markdown terminal slideshow tool | `presenterm` | 0.16.1<br>2026-02-20 |
 | [typst-cli](https://github.com/typst/typst) | A new markup-based typesetting system for the sciences | `typst` | 0.15.1<br>2026-07-17 |
+
+
+<details>
+<summary>lychee examples</summary>
+
+Install the link checker; current releases require Rust 1.88 or newer
+
+```sh
+cargo install --locked lychee
+```
+
+Check links; protected sites, rate limits, and network restrictions may need exclusions
+
+```sh
+lychee README.md
+```
+
+Check local links without making network requests
+
+```sh
+lychee --offline README.md
+```
+
+</details>
 
 
 <details>
@@ -553,7 +603,26 @@ typst compile document.typ
 | [gping](https://github.com/orf/gping) | Ping, but with a graph | `gping` | 1.21.0<br>2026-08-31 |
 | [oha](https://github.com/hatoo/oha) | HTTP load generator with a TUI, inspired by rakyll/hey | `oha` | 1.16.0<br>2026-08-23 |
 | [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) | Speedtest.net testing utility implemented in Rust | `speedtest-rs` | 0.2.0<br>2024-07-28 |
+| [trippy](https://trippy.rs/) | Trace network routes and measure per-hop latency and packet loss | `trip` | — |
 | [xh](https://github.com/ducaale/xh) | A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust | `xh`, `xhs` | 0.26.2<br>2026-07-26 |
+
+
+<details>
+<summary>trippy examples</summary>
+
+Install the crate, which provides the trip executable
+
+```sh
+cargo install --locked trippy
+```
+
+Trace without elevated privileges on supported platforms; other modes/platforms may require raw-socket privileges
+
+```sh
+trip --unprivileged --mode json --report-cycles 1 example.com
+```
+
+</details>
 
 
 
