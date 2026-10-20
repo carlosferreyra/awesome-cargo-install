@@ -9,11 +9,40 @@ To add a new CLI tool to the list:
 
 1. The tool must be installable via `cargo install <crate>` (and ideally `cargo binstall <crate>`)
 2. The tool must be a command-line interface (CLI) tool (or a cargo subcommand)
-3. The tool must be actively maintained
+3. The tool should have credible support and remain useful on its documented platforms
 4. The tool should be useful for a general developer audience
+5. The tool should offer a clear capability or practical advantage over existing entries
 
-Archived or explicitly unmaintained tools are removed from the catalog when a maintained
-alternative is available. A release date alone does not establish maintenance status.
+Assess support in context: mature, stable, or feature-complete tools do not need frequent
+releases. Explain the tool's distinct value, documented invocation, supported platforms, and
+material prerequisites such as accounts, payment, credentials, or external services.
+
+Use official documentation and registry metadata to qualify a proposal. Treat installation and
+a meaningful CLI invocation as separate validation, following this repository's checks before
+acceptance. Do not claim that metadata or a successful installation alone proves runtime behavior.
+
+GitHub stars may help prioritize research among otherwise suitable candidates. There is no minimum
+star count, and popularity alone does not determine addition, retention, replacement, or removal.
+Do not disadvantage niche tools, new projects, non-GitHub hosting, or packages in shared monorepos.
+
+### Updating, Replacing, or Removing a Tool
+
+Prefer the smallest correction that restores usefulness: update commands, package names, URLs,
+prerequisites, descriptions, or version guidance before proposing removal.
+
+A removal needs a specific, corroborated reason that keeping the entry would mislead or poorly
+serve users, such as confirmed package unavailability, persistent failure on a supported platform,
+misleading package identity, explicit retirement affecting continued use, or a material unresolved
+security problem that cannot reasonably be addressed by an upgrade or usage correction.
+
+Archival, feature completeness, old releases, quiet development, low stars, or a more popular
+competitor alone do not justify deletion. Defer when evidence is insufficient, and distinguish
+temporary outages or unsupported environments from defects in the tool.
+
+For a replacement, verify the successor and compare essential functionality, platform coverage,
+prerequisites, migration costs, and lost capabilities. Explain what users gain and lose, with
+evidence and estimated maintainer effort. Choose an explicit outcome: retain, update, replace,
+remove, or defer.
 
 ### Required Information
 
