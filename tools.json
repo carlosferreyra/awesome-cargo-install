@@ -71,8 +71,8 @@
           "execs": [
             "tldr"
           ],
-          "version": "1.9.0",
-          "last_release": "2026-08-24",
+          "version": "1.9.1",
+          "last_release": "2026-10-24",
           "examples": [
             {
               "cmd": "cargo install tealdeer",
@@ -138,8 +138,8 @@
           "execs": [
             "xplr"
           ],
-          "version": "1.1.2",
-          "last_release": "2026-09-15"
+          "version": "1.2.2",
+          "last_release": "2026-10-25"
         },
         "nomino": {
           "description": "Batch rename utility for developers",
@@ -265,8 +265,8 @@
           "execs": [
             "jaq"
           ],
-          "version": "3.1.1",
-          "last_release": "2026-08-05"
+          "version": "3.1.2",
+          "last_release": "2026-10-21"
         },
         "qsv": {
           "description": "CSVs sliced, diced & analyzed — a blazing-fast data-wrangling toolkit",
@@ -362,8 +362,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.7.4",
-          "last_release": "2026-10-04"
+          "version": "5.8.0",
+          "last_release": "2026-10-20"
         },
         "pipr": {
           "description": "Interactive, shell-command editor with preview and safe execution",
@@ -503,8 +503,8 @@
           "execs": [
             "sccache"
           ],
-          "version": "0.18.0",
-          "last_release": "2026-09-16"
+          "version": "0.19.0",
+          "last_release": "2026-10-24"
         }
       }
     },
@@ -538,8 +538,8 @@
             "cargo-upgrade",
             "cargo-set-version"
           ],
-          "version": "0.13.13",
-          "last_release": "2026-07-15",
+          "version": "0.13.14",
+          "last_release": "2026-10-21",
           "examples": [
             {
               "cmd": "cargo install cargo-edit",
@@ -621,8 +621,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.148",
-          "last_release": "2026-10-08",
+          "version": "0.9.149",
+          "last_release": "2026-10-20",
           "examples": [
             {
               "cmd": "cargo install cargo-nextest",
@@ -665,8 +665,8 @@
           "execs": [
             "cargo-release"
           ],
-          "version": "1.1.6",
-          "last_release": "2026-09-16"
+          "version": "1.1.7",
+          "last_release": "2026-10-21"
         },
         "cargo-tarpaulin": {
           "description": "A code coverage tool for Rust projects",
@@ -683,8 +683,8 @@
           "execs": [
             "cargo-generate"
           ],
-          "version": "0.25.0",
-          "last_release": "2026-09-18"
+          "version": "0.25.1",
+          "last_release": "2026-10-21"
         },
         "cargo-gpu": {
           "description": "Compile Rust GPU shaders to SPIR-V and manage the experimental rust-gpu toolchain",
@@ -734,8 +734,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.26.0",
-          "last_release": "2026-10-17"
+          "version": "1.26.1",
+          "last_release": "2026-10-24"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -808,8 +808,8 @@
           "execs": [
             "cargo-msrv"
           ],
-          "version": "0.19.3",
-          "last_release": "2026-03-25"
+          "version": "0.19.6",
+          "last_release": "2026-10-21"
         },
         "cargo-semver-checks": {
           "description": "Scan your Rust crate for semver violations",
@@ -927,8 +927,8 @@
               "description": "Build for ARM64 Linux with a minimum glibc version of 2.17 (requires Zig and the Rust target)"
             }
           ],
-          "version": "0.23.4",
-          "last_release": "2026-09-02"
+          "version": "0.24.0",
+          "last_release": "2026-10-21"
         },
         "cargo-workspaces": {
           "description": "A tool for managing cargo workspaces and their crates",
@@ -959,7 +959,9 @@
               "cmd": "cargo vet",
               "description": "Check dependencies against the project audit policy and trusted audits"
             }
-          ]
+          ],
+          "version": "0.10.3",
+          "last_release": "2026-10-22"
         }
       }
     },
@@ -1041,7 +1043,9 @@
               "cmd": "lychee --offline README.md",
               "description": "Check local links without making network requests"
             }
-          ]
+          ],
+          "version": "0.24.2",
+          "last_release": "2026-05-01"
         }
       }
     },
@@ -1083,8 +1087,8 @@
             "xh",
             "xhs"
           ],
-          "version": "0.26.2",
-          "last_release": "2026-07-26"
+          "version": "0.26.3",
+          "last_release": "2026-10-21"
         },
         "speedtest-rs": {
           "description": "Speedtest.net testing utility implemented in Rust",
@@ -1110,7 +1114,9 @@
               "cmd": "trip --unprivileged --mode json --report-cycles 1 example.com",
               "description": "Trace without elevated privileges on supported platforms; other modes/platforms may require raw-socket privileges"
             }
-          ]
+          ],
+          "version": "0.13.0",
+          "last_release": "2025-05-05"
         }
       }
     },
@@ -1181,8 +1187,8 @@
           "execs": [
             "topgrade"
           ],
-          "version": "17.14.0",
-          "last_release": "2026-10-19"
+          "version": "17.14.1",
+          "last_release": "2026-10-20"
         }
       }
     },

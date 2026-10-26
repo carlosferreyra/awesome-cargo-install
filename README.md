@@ -62,7 +62,7 @@ Inspired by <a href="https://github.com/rust-unofficial/awesome-rust">awesome-ru
 | [hyperfine](https://github.com/sharkdp/hyperfine) | A command-line benchmarking tool with statistical analysis | `hyperfine` | 2.0.0<br>2026-10-07 |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | Recursively search directories for a regex pattern — a faster grep | `rg` | 15.2.0<br>2026-07-15 |
 | [sd](https://github.com/chmln/sd) | An intuitive find & replace CLI — an alternative to `sed` | `sd` | 1.0.0<br>2023-11-08 |
-| [tealdeer](https://github.com/dbrgn/tealdeer) | A very fast implementation of `tldr` in Rust | `tldr` | 1.9.0<br>2026-08-24 |
+| [tealdeer](https://github.com/dbrgn/tealdeer) | A very fast implementation of `tldr` in Rust | `tldr` | 1.9.1<br>2026-10-24 |
 | [tokei](https://github.com/XAMPPRocky/tokei) | Count lines of code across a codebase, grouped by language | `tokei` | 15.0.0<br>2026-09-06 |
 
 
@@ -130,7 +130,7 @@ tldr tar
 | [nomino](https://github.com/yaa110/nomino) | Batch rename utility for developers | `nomino` | 1.6.4<br>2025-08-07 |
 | [ouch](https://github.com/ouch-org/ouch) | Painless compression and decompression for your terminal | `ouch` | 0.8.3<br>2026-09-13 |
 | [tre-command](https://github.com/dduan/tre) | A modern alternative to `tree` with git/gitignore awareness | `tre` | 0.4.0<br>2022-06-19 |
-| [xplr](https://github.com/sayanarijit/xplr) | A hackable, minimal, fast TUI file explorer | `xplr` | 1.1.2<br>2026-09-15 |
+| [xplr](https://github.com/sayanarijit/xplr) | A hackable, minimal, fast TUI file explorer | `xplr` | 1.2.2<br>2026-10-25 |
 | [yazi-cli](https://github.com/sxyazi/yazi) | Companion CLI for the Yazi terminal file manager | `ya` | 26.5.6<br>2026-05-05 |
 | [yazi-fm](https://github.com/sxyazi/yazi) | Blazing fast terminal file manager written in Rust, based on async I/O | `yazi` | 26.5.6<br>2026-05-05 |
 
@@ -197,7 +197,7 @@ cargo binstall yazi-fm yazi-cli
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [choose](https://github.com/theryangeary/choose) | A human-friendly and fast alternative to `cut` and (sometimes) `awk` | `choose` | 1.3.7<br>2025-08-26 |
-| [jaq](https://github.com/01mf02/jaq) | A clone of jq — a JSON data processing tool | `jaq` | 3.1.1<br>2026-08-05 |
+| [jaq](https://github.com/01mf02/jaq) | A clone of jq — a JSON data processing tool | `jaq` | 3.1.2<br>2026-10-21 |
 | [jql](https://github.com/yamafaktory/jql) | A JSON Query Language CLI tool | `jql` | 9.0.3<br>2026-09-08 |
 | [qsv](https://github.com/dathere/qsv) | CSVs sliced, diced & analyzed — a blazing-fast data-wrangling toolkit | `qsv` | 16.1.0<br>2026-02-15 |
 | [sqlx-cli](https://github.com/launchbadge/sqlx) | Command-line utility for SQLx — creates DBs, runs migrations, prepares offline data | `sqlx`, `cargo-sqlx` | 0.9.0<br>2026-05-21 |
@@ -214,7 +214,7 @@ cargo binstall yazi-fm yazi-cli
 | [atuin](https://github.com/atuinsh/atuin) | Magical shell history — sync, search, and backup your shell history | `atuin` | 18.24.1<br>2026-10-16 |
 | [nu](https://github.com/nushell/nushell) | Nushell — a new type of shell where data is structured | `nu` | 0.116.1<br>2026-10-04 |
 | [pipr](https://github.com/elkowar/pipr) | Interactive, shell-command editor with preview and safe execution | `pipr` | 0.1.0<br>2025-05-03 |
-| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | `sk` | 5.7.4<br>2026-10-04 |
+| [skim](https://github.com/skim-rs/skim) | Fuzzy finder in Rust — an alternative to fzf | `sk` | 5.8.0<br>2026-10-20 |
 | [starship](https://github.com/starship/starship) | The minimal, blazing-fast, and infinitely customizable prompt for any shell | `starship` | 1.27.0<br>2026-10-17 |
 | [zellij](https://github.com/zellij-org/zellij) | A terminal workspace with batteries included — multiplexer alternative to tmux | `zellij` | 0.45.1<br>2026-08-28 |
 | [zoxide](https://github.com/ajeetdsouza/zoxide) | A smarter `cd` command — jump to frecent directories | `zoxide` | 0.10.0<br>2026-07-04 |
@@ -280,7 +280,7 @@ jj status
 | [bacon](https://github.com/Canop/bacon) | A background Rust code checker — fast and low-friction | `bacon` | 3.26.0<br>2026-09-26 |
 | [just](https://github.com/casey/just) | A handy way to save and run project-specific commands — a modern `make` | `just` | 1.59.0<br>2026-10-15 |
 | [mask](https://github.com/jacobdeichert/mask) | A CLI task runner defined by a simple markdown file | `mask` | 0.11.7<br>2026-01-10 |
-| [sccache](https://github.com/mozilla/sccache) | Shared compilation cache — a `ccache`-like compiler wrapper that avoids recompilation | `sccache` | 0.18.0<br>2026-09-16 |
+| [sccache](https://github.com/mozilla/sccache) | Shared compilation cache — a `ccache`-like compiler wrapper that avoids recompilation | `sccache` | 0.19.0<br>2026-10-24 |
 | [watchexec-cli](https://github.com/watchexec/watchexec) | Executes commands in response to file modifications | `watchexec` | 2.8.0<br>2026-10-06 |
 
 
@@ -312,7 +312,7 @@ watchexec -- cargo check
 | [cargo-afl](https://github.com/rust-fuzz/afl.rs) | Fuzz Rust programs with AFL++ to find crashes and security bugs | `cargo-afl` | 0.18.2<br>2026-05-11 |
 | [cargo-audit](https://github.com/rustsec/rustsec/tree/main/cargo-audit) | Audit `Cargo.lock` for crates with security vulnerabilities | `cargo-audit` | 0.22.2<br>2026-06-05 |
 | [cargo-auditable](https://github.com/rust-secure-code/cargo-auditable) | Make production Rust binaries auditable — embed dep info into the binary | `cargo-auditable` | 0.7.7<br>2026-10-02 |
-| [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) | Install prebuilt Rust binaries without having to compile from source | `cargo-binstall` | 1.26.0<br>2026-10-17 |
+| [cargo-binstall](https://github.com/cargo-bins/cargo-binstall) | Install prebuilt Rust binaries without having to compile from source | `cargo-binstall` | 1.26.1<br>2026-10-24 |
 | [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat) | Find out what takes most of the space in your executable | `cargo-bloat` | 0.12.1<br>2024-05-10 |
 | [cargo-bundle](https://github.com/burtonageo/cargo-bundle) | Wrap Rust executables in OS-specific app bundles | `cargo-bundle` | 0.12.0<br>2026-09-20 |
 | [cargo-cache](https://github.com/matthiaskrgr/cargo-cache) | Manage cargo cache (`~/.cargo/`), print sizes and remove directories | `cargo-cache` | 0.8.3<br>2022-09-11 |
@@ -320,9 +320,9 @@ watchexec -- cargo check
 | [cargo-deadlinks](https://github.com/deadlinks/cargo-deadlinks) | Cargo subcommand for checking your `cargo doc` output for broken links | `cargo-deadlinks`, `deadlinks` | 0.8.1<br>2021-10-13 |
 | [cargo-deny](https://github.com/EmbarkStudios/cargo-deny) | Lint your dependencies: licenses, bans, advisories, sources | `cargo-deny` | 0.20.2<br>2026-07-09 |
 | [cargo-dist](https://github.com/axodotdev/cargo-dist) | Shippable application packaging for Rust — prebuilt binary distribution | `dist` | 0.32.0<br>2026-05-22 |
-| [cargo-edit](https://github.com/killercup/cargo-edit) | Upgrade dependency versions and set package versions from the command line | `cargo-upgrade`, `cargo-set-version` | 0.13.13<br>2026-07-15 |
+| [cargo-edit](https://github.com/killercup/cargo-edit) | Upgrade dependency versions and set package versions from the command line | `cargo-upgrade`, `cargo-set-version` | 0.13.14<br>2026-10-21 |
 | [cargo-expand](https://github.com/dtolnay/cargo-expand) | Shows the result of macro expansion and `#[derive]` expansion | `cargo-expand` | 1.0.127<br>2026-10-09 |
-| [cargo-generate](https://github.com/cargo-generate/cargo-generate) | A developer tool to help you get up and running quickly with a new Rust project | `cargo-generate` | 0.25.0<br>2026-09-18 |
+| [cargo-generate](https://github.com/cargo-generate/cargo-generate) | A developer tool to help you get up and running quickly with a new Rust project | `cargo-generate` | 0.25.1<br>2026-10-21 |
 | [cargo-gpu](https://github.com/Rust-GPU/rust-gpu/tree/main/crates/cargo-gpu) | Compile Rust GPU shaders to SPIR-V and manage the experimental rust-gpu toolchain | `cargo-gpu` | 0.11.0<br>2026-10-13 |
 | [cargo-hack](https://github.com/taiki-e/cargo-hack) | A cargo subcommand for testing feature flag combinations | `cargo-hack` | 0.6.45<br>2026-05-30 |
 | [cargo-info](https://gitlab.com/imp/cargo-info) | Show crate information from the terminal, pulled from crates.io | `cargo-info` | 0.7.7<br>2024-09-06 |
@@ -330,21 +330,21 @@ watchexec -- cargo check
 | [cargo-machete](https://github.com/bnjbvr/cargo-machete) | Find and remove unused dependencies in your `Cargo.toml` | `cargo-machete` | 0.9.2<br>2026-04-15 |
 | [cargo-make](https://github.com/sagiegurari/cargo-make) | Rust task runner and build tool — supports tasks, dependencies, and conditions | `cargo-make`, `makers` | 0.37.24<br>2025-01-18 |
 | [cargo-modules](https://github.com/regexident/cargo-modules) | A cargo plugin for showing a tree-like overview of a crate's modules | `cargo-modules` | 0.28.0<br>2026-10-18 |
-| [cargo-msrv](https://github.com/foresterre/cargo-msrv) | Find the Minimum Supported Rust Version for your project | `cargo-msrv` | 0.19.3<br>2026-03-25 |
+| [cargo-msrv](https://github.com/foresterre/cargo-msrv) | Find the Minimum Supported Rust Version for your project | `cargo-msrv` | 0.19.6<br>2026-10-21 |
 | [cargo-mutants](https://github.com/sourcefrog/cargo-mutants) | Find gaps in test suites by injecting mutations and checking whether tests catch them | `cargo-mutants` | 27.1.0<br>2026-06-02 |
-| [cargo-nextest](https://github.com/nextest-rs/nextest) | A test runner for Rust with parallel execution and test profiles | `cargo-nextest` | 0.9.148<br>2026-10-08 |
+| [cargo-nextest](https://github.com/nextest-rs/nextest) | A test runner for Rust with parallel execution and test profiles | `cargo-nextest` | 0.9.149<br>2026-10-20 |
 | [cargo-outdated](https://github.com/kbknapp/cargo-outdated) | Displays when Rust dependencies are out of date | `cargo-outdated` | 0.19.0<br>2026-04-14 |
 | [cargo-pgrx](https://github.com/pgcentralfoundation/pgrx/tree/develop/cargo-pgrx) | Create, test, and package PostgreSQL extensions written in Rust | `cargo-pgrx` | 0.19.3<br>2026-09-27 |
-| [cargo-release](https://github.com/crate-ci/cargo-release) | Cargo subcommand for smoothly releasing a new version of your crate | `cargo-release` | 1.1.6<br>2026-09-16 |
+| [cargo-release](https://github.com/crate-ci/cargo-release) | Cargo subcommand for smoothly releasing a new version of your crate | `cargo-release` | 1.1.7<br>2026-10-21 |
 | [cargo-semver-checks](https://github.com/obi1kenobi/cargo-semver-checks) | Scan your Rust crate for semver violations | `cargo-semver-checks` | 0.51.0<br>2026-10-03 |
 | [cargo-sort](https://github.com/DevinR528/cargo-sort) | Check that tables and items in `Cargo.toml` are lexically sorted | `cargo-sort` | 2.1.4<br>2026-04-25 |
 | [cargo-sweep](https://github.com/holmgr/cargo-sweep) | A cargo subcommand for cleaning unused build files created by Cargo | `cargo-sweep` | 0.8.0<br>2025-10-11 |
 | [cargo-tarpaulin](https://github.com/xd009642/tarpaulin) | A code coverage tool for Rust projects | `cargo-tarpaulin` | 0.37.5<br>2026-09-27 |
 | [cargo-udeps](https://github.com/est31/cargo-udeps) | Find unused dependencies in your Cargo.toml | `cargo-udeps` | 0.1.61<br>2026-04-29 |
 | [cargo-update](https://github.com/nabijaczleweli/cargo-update) | Cargo subcommand for checking and applying updates to installed executables | `cargo-install-update` | 22.1.1<br>2026-07-27 |
-| [cargo-vet](https://mozilla.github.io/cargo-vet/) | Track and share human dependency audits for Rust supply-chain review | `cargo-vet` | — |
+| [cargo-vet](https://mozilla.github.io/cargo-vet/) | Track and share human dependency audits for Rust supply-chain review | `cargo-vet` | 0.10.3<br>2026-10-22 |
 | [cargo-workspaces](https://github.com/pksunkara/cargo-workspaces) | A tool for managing cargo workspaces and their crates | `cargo-workspaces`, `cargo-ws` | 0.4.2<br>2025-12-03 |
-| [cargo-zigbuild](https://github.com/rust-cross/cargo-zigbuild) | Cross-compile Rust projects using Zig as the linker | `cargo-zigbuild` | 0.23.4<br>2026-09-02 |
+| [cargo-zigbuild](https://github.com/rust-cross/cargo-zigbuild) | Cross-compile Rust projects using Zig as the linker | `cargo-zigbuild` | 0.24.0<br>2026-10-21 |
 | [cargox-cli](https://github.com/pkgxdev/cargox) | Run Rust binaries on demand, installing them automatically with cargo-binstall or cargo install | `cargox` | 0.1.0<br>2025-10-15 |
 | [flamegraph](https://github.com/flamegraph-rs/flamegraph) | Easy flamegraphs for Rust projects and anything else, without Perl or pipes | `cargo-flamegraph`, `flamegraph` | 0.6.14<br>2026-08-12 |
 
@@ -542,7 +542,7 @@ cargox bat ./README.md
 
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
-| [lychee](https://github.com/lycheeverse/lychee) | Check links in Markdown, HTML, local files, and websites | `lychee` | — |
+| [lychee](https://github.com/lycheeverse/lychee) | Check links in Markdown, HTML, local files, and websites | `lychee` | 0.24.2<br>2026-05-01 |
 | [mdbook](https://github.com/rust-lang/mdBook) | Create book-style documentation from Markdown files | `mdbook` | 0.5.4<br>2026-07-06 |
 | [mdbook-linkcheck](https://github.com/Michael-F-Bryan/mdbook-linkcheck) | A backend for mdbook that validates links | `mdbook-linkcheck` | 0.7.7<br>2022-10-03 |
 | [mdbook-mermaid](https://github.com/badboy/mdbook-mermaid) | A preprocessor for mdbook that renders Mermaid diagrams | `mdbook-mermaid` | 0.17.1<br>2026-08-14 |
@@ -603,8 +603,8 @@ typst compile document.typ
 | [gping](https://github.com/orf/gping) | Ping, but with a graph | `gping` | 1.21.0<br>2026-08-31 |
 | [oha](https://github.com/hatoo/oha) | HTTP load generator with a TUI, inspired by rakyll/hey | `oha` | 1.16.0<br>2026-08-23 |
 | [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) | Speedtest.net testing utility implemented in Rust | `speedtest-rs` | 0.2.0<br>2024-07-28 |
-| [trippy](https://trippy.rs/) | Trace network routes and measure per-hop latency and packet loss | `trip` | — |
-| [xh](https://github.com/ducaale/xh) | A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust | `xh`, `xhs` | 0.26.2<br>2026-07-26 |
+| [trippy](https://trippy.rs/) | Trace network routes and measure per-hop latency and packet loss | `trip` | 0.13.0<br>2025-05-05 |
+| [xh](https://github.com/ducaale/xh) | A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust | `xh`, `xhs` | 0.26.3<br>2026-10-21 |
 
 
 <details>
@@ -655,7 +655,7 @@ trip --unprivileged --mode json --report-cycles 1 example.com
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [bob-nvim](https://github.com/MordechaiHadad/bob) | A version manager for neovim written in Rust | `bob` | 4.2.0<br>2026-09-22 |
-| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | `topgrade` | 17.14.0<br>2026-10-19 |
+| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | `topgrade` | 17.14.1<br>2026-10-20 |
 
 
 
