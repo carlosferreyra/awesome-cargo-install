@@ -227,7 +227,7 @@ Failure reports include installer output; existing binaries on `PATH` do not cou
 
 | Workflow | Trigger | Purpose | Repository writes |
 |:--|:--|:--|:--|
-| Validate Catalog | Relevant pushes to `main` or `codex/**`, PRs targeting `main`, manual | Catalog validation, regression tests, README freshness | None |
+| Validate Catalog | Relevant pushes to `main`, PRs targeting `main`, manual | Catalog validation, regression tests, README freshness | None |
 | Validate Installs | Manual only | Full catalog installation checks on Linux | None |
 | Sync Release Metadata | Weekly on Monday at 06:00 UTC, manual on `main` only | Validate, fetch release metadata, regenerate README, publish changes | `tools.json` and `README.md` only |
 
@@ -272,6 +272,32 @@ python3 -m unittest discover -s tests -v
 Release metadata sync exits unsuccessfully if any registry lookup fails. Successful lookups
 are saved locally, and failed lookups retain their previous metadata. The sync workflow does
 not commit a partial result after a failed run.
+
+## Validation Workflow Structure
+
+All three catalogs separate fast checks from installation work:
+
+- **Validate Catalog** (`ci.yml`) runs on relevant PRs, pushes to `main`, and manual requests.
+  It validates the catalog, runs maintenance-script tests, and checks generated README freshness.
+  The job has a 20-minute timeout and does not install catalog packages.
+- **Validate Installs** (`validate_installs.yml`) performs package installation checks separately.
+  Manual runs accept an optional `base_ref`: leave it empty for the full catalog, or provide a
+  Git ref to select newly added package names relative to that commit. Changes to existing
+  entries and examples still need targeted maintainer validation.
+- Both validation workflows use read-only repository permissions, discard checkout credentials,
+  write an Actions summary even after failure, and upload available failure logs for 14 days.
+  Missing/partial reports are shown as incomplete; they are not treated as successful coverage.
+  Validation never approves or merges PRs and does not require permission to post comments.
+
+Cargo install checks remain manual only, with a 120-minute timeout because source builds can
+be expensive. Ordinary catalog CI checks new crates in the registry without compiling them.
+
+A green installation check is limited to the probes implemented by the ecosystem validator;
+it does not prove every documented command or platform works. Use meaningful fixtures before
+accepting a candidate. Job timeouts and permission failures require inspecting the logs; they
+do not by themselves establish that a catalog tool is broken.
+
+Release-metadata publication keeps this repository's existing behavior and schedule.
 
 ## Code of Conduct
 
