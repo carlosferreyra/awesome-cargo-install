@@ -114,8 +114,8 @@
           "execs": [
             "broot"
           ],
-          "version": "1.60.2",
-          "last_release": "2026-09-26"
+          "version": "1.62.0",
+          "last_release": "2026-11-01"
         },
         "yazi-fm": {
           "description": "Blazing fast terminal file manager written in Rust, based on async I/O",
@@ -189,8 +189,8 @@
           "execs": [
             "dust"
           ],
-          "version": "1.2.6",
-          "last_release": "2026-09-16",
+          "version": "1.2.7",
+          "last_release": "2026-11-01",
           "examples": [
             {
               "cmd": "cargo install du-dust",
@@ -344,8 +344,8 @@
           "execs": [
             "atuin"
           ],
-          "version": "18.24.1",
-          "last_release": "2026-10-16"
+          "version": "18.24.4",
+          "last_release": "2026-10-30"
         },
         "zoxide": {
           "description": "A smarter `cd` command — jump to frecent directories",
@@ -362,8 +362,8 @@
           "execs": [
             "sk"
           ],
-          "version": "5.8.0",
-          "last_release": "2026-10-20"
+          "version": "5.9.0",
+          "last_release": "2026-10-27"
         },
         "pipr": {
           "description": "Interactive, shell-command editor with preview and safe execution",
@@ -414,8 +414,8 @@
           "execs": [
             "onefetch"
           ],
-          "version": "3.1.0",
-          "last_release": "2026-10-18"
+          "version": "3.2.0",
+          "last_release": "2026-10-31"
         },
         "jj-cli": {
           "description": "Jujutsu — a Git-compatible VCS that is both simple and powerful",
@@ -621,8 +621,8 @@
           "execs": [
             "cargo-nextest"
           ],
-          "version": "0.9.149",
-          "last_release": "2026-10-20",
+          "version": "0.9.150",
+          "last_release": "2026-10-26",
           "examples": [
             {
               "cmd": "cargo install cargo-nextest",
@@ -683,8 +683,8 @@
           "execs": [
             "cargo-generate"
           ],
-          "version": "0.25.1",
-          "last_release": "2026-10-21"
+          "version": "0.26.0",
+          "last_release": "2026-10-30"
         },
         "cargo-gpu": {
           "description": "Compile Rust GPU shaders to SPIR-V and manage the experimental rust-gpu toolchain",
@@ -734,8 +734,8 @@
           "execs": [
             "cargo-binstall"
           ],
-          "version": "1.26.1",
-          "last_release": "2026-10-24"
+          "version": "1.26.2",
+          "last_release": "2026-10-31"
         },
         "cargo-update": {
           "description": "Cargo subcommand for checking and applying updates to installed executables",
@@ -770,8 +770,8 @@
           "execs": [
             "cargo-hack"
           ],
-          "version": "0.6.45",
-          "last_release": "2026-05-30"
+          "version": "0.6.46",
+          "last_release": "2026-11-01"
         },
         "cargo-llvm-cov": {
           "description": "Cargo subcommand to easily use LLVM source-based code coverage",
@@ -799,8 +799,8 @@
             "cargo-flamegraph",
             "flamegraph"
           ],
-          "version": "0.6.14",
-          "last_release": "2026-08-12"
+          "version": "0.6.15",
+          "last_release": "2026-11-02"
         },
         "cargo-msrv": {
           "description": "Find the Minimum Supported Rust Version for your project",
@@ -881,8 +881,8 @@
           "execs": [
             "dist"
           ],
-          "version": "0.32.0",
-          "last_release": "2026-05-22"
+          "version": "0.34.0",
+          "last_release": "2026-11-02"
         },
         "cargo-machete": {
           "description": "Find and remove unused dependencies in your `Cargo.toml`",
@@ -1130,8 +1130,8 @@
           "execs": [
             "btm"
           ],
-          "version": "0.14.9",
-          "last_release": "2026-08-27"
+          "version": "0.15.0",
+          "last_release": "2026-11-01"
         },
         "procs": {
           "description": "A modern replacement for `ps` written in Rust",
@@ -1178,8 +1178,8 @@
           "execs": [
             "bob"
           ],
-          "version": "4.2.0",
-          "last_release": "2026-09-22"
+          "version": "4.3.0",
+          "last_release": "2026-10-30"
         },
         "topgrade": {
           "description": "Upgrade all the things — a unified upgrade runner for many package managers",
