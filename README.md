@@ -604,7 +604,7 @@ typst compile document.typ
 | [oha](https://github.com/hatoo/oha) | HTTP load generator with a TUI, inspired by rakyll/hey | `oha` | 1.16.0<br>2026-08-23 |
 | [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) | Speedtest.net testing utility implemented in Rust | `speedtest-rs` | 0.2.0<br>2024-07-28 |
 | [trippy](https://trippy.rs/) | Trace network routes and measure per-hop latency and packet loss | `trip` | 0.13.0<br>2025-05-05 |
-| [xh](https://github.com/ducaale/xh) | A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust | `xh`, `xhs` | 0.26.3<br>2026-10-21 |
+| [xh](https://github.com/ducaale/xh) | A friendly and fast tool for sending HTTP requests — HTTPie clone in Rust | `xh` | 0.26.3<br>2026-10-21 |
 
 
 <details>
@@ -620,6 +620,18 @@ Trace without elevated privileges on supported platforms; other modes/platforms 
 
 ```sh
 trip --unprivileged --mode json --report-cycles 1 example.com
+```
+
+</details>
+
+
+<details>
+<summary>xh examples</summary>
+
+Use an explicit HTTPS URL; cargo install provides xh, not an xhs alias
+
+```sh
+xh GET https://httpbin.org/get
 ```
 
 </details>
