@@ -124,7 +124,7 @@ tldr tar
 | [broot](https://github.com/Canop/broot) | A new way to see and navigate directory trees | `broot` | 1.62.0<br>2026-11-01 |
 | [du-dust](https://github.com/bootandy/dust) | A more intuitive version of `du` in Rust | `dust` | 1.2.7<br>2026-11-01 |
 | [eza](https://github.com/eza-community/eza) | A modern, maintained replacement for `ls` | `eza` | 0.23.5<br>2026-07-19 |
-| [fd-find](https://github.com/sharkdp/fd) | A simple, fast and user-friendly alternative to `find` | `fd` | 10.5.0<br>2026-08-26 |
+| [fd-find](https://github.com/sharkdp/fd) | A simple, fast and user-friendly alternative to `find` | `fd` | 10.5.2<br>2026-11-07 |
 | [felix](https://github.com/kyoheiu/felix) | A tui file manager with Vim-like key mapping | `fx` | 2.16.1<br>2025-04-12 |
 | [kondo](https://github.com/tbillington/kondo) | Cleans non-essential files from your software projects | `kondo` | 0.9.0<br>2026-01-23 |
 | [nomino](https://github.com/yaa110/nomino) | Batch rename utility for developers | `nomino` | 1.6.4<br>2025-08-07 |
@@ -230,7 +230,7 @@ cargo binstall yazi-fm yazi-cli
 | [git-cliff](https://github.com/orhun/git-cliff) | A highly customizable changelog generator that follows conventional commits | `git-cliff` | 2.14.2<br>2026-09-18 |
 | [git-delta](https://github.com/dandavison/delta) | A syntax-highlighting pager for git, diff, grep, and blame output | `delta` | 0.20.1<br>2026-10-04 |
 | [gitui](https://github.com/gitui-org/gitui) | Blazing fast terminal-UI for git, written in Rust | `gitui` | 0.28.1<br>2026-03-24 |
-| [jj-cli](https://github.com/jj-vcs/jj) | Jujutsu — a Git-compatible VCS that is both simple and powerful | `jj` | 0.46.0<br>2026-10-07 |
+| [jj-cli](https://github.com/jj-vcs/jj) | Jujutsu — a Git-compatible VCS that is both simple and powerful | `jj` | 0.47.1<br>2026-11-05 |
 | [onefetch](https://github.com/o2sh/onefetch) | Git repository summary on your terminal — languages, stats and commit info | `onefetch` | 3.2.0<br>2026-10-31 |
 
 
@@ -332,19 +332,19 @@ watchexec -- cargo check
 | [cargo-modules](https://github.com/regexident/cargo-modules) | A cargo plugin for showing a tree-like overview of a crate's modules | `cargo-modules` | 0.28.0<br>2026-10-18 |
 | [cargo-msrv](https://github.com/foresterre/cargo-msrv) | Find the Minimum Supported Rust Version for your project | `cargo-msrv` | 0.19.6<br>2026-10-21 |
 | [cargo-mutants](https://github.com/sourcefrog/cargo-mutants) | Find gaps in test suites by injecting mutations and checking whether tests catch them | `cargo-mutants` | 27.1.0<br>2026-06-02 |
-| [cargo-nextest](https://github.com/nextest-rs/nextest) | A test runner for Rust with parallel execution and test profiles | `cargo-nextest` | 0.9.150<br>2026-10-26 |
+| [cargo-nextest](https://github.com/nextest-rs/nextest) | A test runner for Rust with parallel execution and test profiles | `cargo-nextest` | 0.9.151<br>2026-11-03 |
 | [cargo-outdated](https://github.com/kbknapp/cargo-outdated) | Displays when Rust dependencies are out of date | `cargo-outdated` | 0.19.0<br>2026-04-14 |
 | [cargo-pgrx](https://github.com/pgcentralfoundation/pgrx/tree/develop/cargo-pgrx) | Create, test, and package PostgreSQL extensions written in Rust | `cargo-pgrx` | 0.19.3<br>2026-09-27 |
 | [cargo-release](https://github.com/crate-ci/cargo-release) | Cargo subcommand for smoothly releasing a new version of your crate | `cargo-release` | 1.1.7<br>2026-10-21 |
 | [cargo-semver-checks](https://github.com/obi1kenobi/cargo-semver-checks) | Scan your Rust crate for semver violations | `cargo-semver-checks` | 0.51.0<br>2026-10-03 |
 | [cargo-sort](https://github.com/DevinR528/cargo-sort) | Check that tables and items in `Cargo.toml` are lexically sorted | `cargo-sort` | 2.1.4<br>2026-04-25 |
 | [cargo-sweep](https://github.com/holmgr/cargo-sweep) | A cargo subcommand for cleaning unused build files created by Cargo | `cargo-sweep` | 0.8.0<br>2025-10-11 |
-| [cargo-tarpaulin](https://github.com/xd009642/tarpaulin) | A code coverage tool for Rust projects | `cargo-tarpaulin` | 0.37.5<br>2026-09-27 |
+| [cargo-tarpaulin](https://github.com/xd009642/tarpaulin) | A code coverage tool for Rust projects | `cargo-tarpaulin` | 0.37.6<br>2026-11-05 |
 | [cargo-udeps](https://github.com/est31/cargo-udeps) | Find unused dependencies in your Cargo.toml | `cargo-udeps` | 0.1.61<br>2026-04-29 |
 | [cargo-update](https://github.com/nabijaczleweli/cargo-update) | Cargo subcommand for checking and applying updates to installed executables | `cargo-install-update` | 22.1.1<br>2026-07-27 |
 | [cargo-vet](https://mozilla.github.io/cargo-vet/) | Track and share human dependency audits for Rust supply-chain review | `cargo-vet` | 0.10.3<br>2026-10-22 |
 | [cargo-workspaces](https://github.com/pksunkara/cargo-workspaces) | A tool for managing cargo workspaces and their crates | `cargo-workspaces`, `cargo-ws` | 0.4.2<br>2025-12-03 |
-| [cargo-zigbuild](https://github.com/rust-cross/cargo-zigbuild) | Cross-compile Rust projects using Zig as the linker | `cargo-zigbuild` | 0.24.0<br>2026-10-21 |
+| [cargo-zigbuild](https://github.com/rust-cross/cargo-zigbuild) | Cross-compile Rust projects using Zig as the linker | `cargo-zigbuild` | 0.24.1<br>2026-11-04 |
 | [cargox-cli](https://github.com/pkgxdev/cargox) | Run Rust binaries on demand, installing them automatically with cargo-binstall or cargo install | `cargox` | 0.1.0<br>2025-10-15 |
 | [flamegraph](https://github.com/flamegraph-rs/flamegraph) | Easy flamegraphs for Rust projects and anything else, without Perl or pipes | `cargo-flamegraph`, `flamegraph` | 0.6.15<br>2026-11-02 |
 
@@ -667,7 +667,7 @@ xh GET https://httpbin.org/get
 | Name | Description | Executable(s) | Latest Release |
 |:-----|:------------|:--------------|:--------------|
 | [bob-nvim](https://github.com/MordechaiHadad/bob) | A version manager for neovim written in Rust | `bob` | 4.3.0<br>2026-10-30 |
-| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | `topgrade` | 17.14.1<br>2026-10-20 |
+| [topgrade](https://github.com/topgrade-rs/topgrade) | Upgrade all the things — a unified upgrade runner for many package managers | `topgrade` | 17.16.0<br>2026-11-09 |
 
 
 
